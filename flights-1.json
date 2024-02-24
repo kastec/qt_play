@@ -1,0 +1,49 @@
+{
+	"date": "2023-09-09T20:55:11",
+	"originCity": "Moscow",
+	3
+	"legs": [
+		{
+			"passCount": 5,
+			"date": "2023-09-09T09:09:09",
+			"gate": "A-B",
+			"tail": {
+				"number": 1946,
+				"name": "Airbus-123",
+				"persons": [
+					{
+						"id": 12,
+						"tabelNumber": 123456,
+						"name": "IVAN"
+					},
+					{
+						"id": 132,
+						"tabelNumber": 2222,
+						"name": "VASIL"
+					},
+					{
+						"id": 12,
+						"tabelNumber": 333,
+						"name": "TOLYAN"
+					}
+				]
+			}
+		},
+		{
+			"passCount": 13,
+			"date": "2023-11-11T23:23:23",
+			"gate": "B-D",
+			"tail": {
+				"number": 1947,
+				"name": "Boeng-733",
+				"persons": [
+					{
+						"id": 21,
+						"tabelNumber": 777,
+						"name": "OLEG"
+					}
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,7100 @@
+[
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:55:00.000",
+        "dateLocal": "2023-09-12T23:55:00.000",
+        "destAirportCode": "MSQ",
+        "destCity": "Minsk",
+        "id": 2763650,
+        "legs": [
+        ],
+        "number": 1834,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:55:00.000",
+        "dateLocal": "2023-09-12T23:55:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2763547,
+        "legs": [
+        ],
+        "number": 1484,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:40:00.000",
+        "dateLocal": "2023-09-12T23:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763706,
+        "legs": [
+        ],
+        "number": 2135,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:40:00.000",
+        "dateLocal": "2023-09-12T23:40:00.000",
+        "destAirportCode": "TJM",
+        "destCity": "Tyumen",
+        "id": 2763540,
+        "legs": [
+        ],
+        "number": 1502,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:30:00.000",
+        "dateLocal": "2023-09-12T23:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2811150,
+        "legs": [
+        ],
+        "number": 7109,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:30:00.000",
+        "dateLocal": "2023-09-12T23:30:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763713,
+        "legs": [
+        ],
+        "number": 2816,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:30:00.000",
+        "dateLocal": "2023-09-12T23:30:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763709,
+        "legs": [
+        ],
+        "number": 2138,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:25:00.000",
+        "dateLocal": "2023-09-12T23:25:00.000",
+        "destAirportCode": "NQZ",
+        "destCity": "Nur-Sultan",
+        "id": 2763673,
+        "legs": [
+        ],
+        "number": 1986,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:15:00.000",
+        "dateLocal": "2023-09-12T23:15:00.000",
+        "destAirportCode": "TOF",
+        "destCity": "Tomsk",
+        "id": 2763557,
+        "legs": [
+        ],
+        "number": 1530,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:15:00.000",
+        "dateLocal": "2023-09-12T23:15:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763300,
+        "legs": [
+        ],
+        "number": 34,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:10:00.000",
+        "dateLocal": "2023-09-12T23:10:00.000",
+        "destAirportCode": "VOG",
+        "destCity": "Volgograd",
+        "id": 2763379,
+        "legs": [
+        ],
+        "number": 1184,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T20:00:00.000",
+        "dateLocal": "2023-09-12T23:00:00.000",
+        "destAirportCode": "VVO",
+        "destCity": "Vladivostok",
+        "id": 2763644,
+        "legs": [
+        ],
+        "number": 1790,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:55:00.000",
+        "dateLocal": "2023-09-12T22:55:00.000",
+        "destAirportCode": "MMK",
+        "destCity": "Murmansk",
+        "id": 2763457,
+        "legs": [
+        ],
+        "number": 1326,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:55:00.000",
+        "dateLocal": "2023-09-12T22:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763297,
+        "legs": [
+        ],
+        "number": 31,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:50:00.000",
+        "dateLocal": "2023-09-12T22:50:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763365,
+        "legs": [
+        ],
+        "number": 1072,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:45:00.000",
+        "dateLocal": "2023-09-12T22:45:00.000",
+        "destAirportCode": "NJC",
+        "destCity": "Nizhnevartovsk",
+        "id": 2763602,
+        "legs": [
+        ],
+        "number": 1646,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:45:00.000",
+        "dateLocal": "2023-09-12T22:45:00.000",
+        "destAirportCode": "KEJ",
+        "destCity": "Kemerovo",
+        "id": 2763511,
+        "legs": [
+        ],
+        "number": 1450,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:40:00.000",
+        "dateLocal": "2023-09-12T22:40:00.000",
+        "destAirportCode": "VVO",
+        "destCity": "Vladivostok",
+        "id": 2763600,
+        "legs": [
+        ],
+        "number": 1706,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:35:00.000",
+        "dateLocal": "2023-09-12T22:35:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763399,
+        "legs": [
+        ],
+        "number": 1216,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:30:00.000",
+        "dateLocal": "2023-09-12T22:30:00.000",
+        "destAirportCode": "OMS",
+        "destCity": "Omsk",
+        "id": 2763745,
+        "legs": [
+        ],
+        "number": 2928,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:20:00.000",
+        "dateLocal": "2023-09-12T22:20:00.000",
+        "destAirportCode": "NOZ",
+        "destCity": "Novokuznetsk",
+        "id": 2763513,
+        "legs": [
+        ],
+        "number": 1458,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:20:00.000",
+        "dateLocal": "2023-09-12T22:20:00.000",
+        "destAirportCode": "ULV",
+        "destCity": "Ulyanovsk",
+        "id": 2763433,
+        "legs": [
+        ],
+        "number": 1288,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:20:00.000",
+        "dateLocal": "2023-09-12T22:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763354,
+        "legs": [
+        ],
+        "number": 1119,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:15:00.000",
+        "dateLocal": "2023-09-12T22:15:00.000",
+        "destAirportCode": "OMS",
+        "destCity": "Omsk",
+        "id": 2763620,
+        "legs": [
+        ],
+        "number": 1762,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:15:00.000",
+        "dateLocal": "2023-09-12T22:15:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763407,
+        "legs": [
+        ],
+        "number": 1198,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:10:00.000",
+        "dateLocal": "2023-09-12T22:10:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763738,
+        "legs": [
+        ],
+        "number": 2960,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:10:00.000",
+        "dateLocal": "2023-09-12T22:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763295,
+        "legs": [
+        ],
+        "number": 29,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:05:00.000",
+        "dateLocal": "2023-09-12T22:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763462,
+        "legs": [
+        ],
+        "number": 1303,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:05:00.000",
+        "dateLocal": "2023-09-12T22:05:00.000",
+        "destAirportCode": "NBC",
+        "destCity": "Nizhnekamsk - Naberezhnye Chelny",
+        "id": 2763420,
+        "legs": [
+        ],
+        "number": 1250,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:05:00.000",
+        "dateLocal": "2023-09-12T22:05:00.000",
+        "destAirportCode": "MLE",
+        "destCity": "Malé",
+        "id": 2763761,
+        "legs": [
+        ],
+        "number": 320,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:00:00.000",
+        "dateLocal": "2023-09-12T22:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2780242,
+        "legs": [
+        ],
+        "number": 7303,
+        "originAirportCode": "",
+        "originCity": "",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:00:00.000",
+        "dateLocal": "2023-09-12T23:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763577,
+        "legs": [
+        ],
+        "number": 1605,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:00:00.000",
+        "dateLocal": "2023-09-12T22:00:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2763532,
+        "legs": [
+        ],
+        "number": 1494,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:00:00.000",
+        "dateLocal": "2023-09-12T21:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763314,
+        "legs": [
+        ],
+        "number": 1007,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T19:00:00.000",
+        "dateLocal": "2023-09-12T22:00:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763779,
+        "legs": [
+        ],
+        "number": 799,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:55:00.000",
+        "dateLocal": "2023-09-12T21:55:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2763741,
+        "legs": [
+        ],
+        "number": 2914,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:55:00.000",
+        "dateLocal": "2023-09-12T21:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763406,
+        "legs": [
+        ],
+        "number": 1195,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:50:00.000",
+        "dateLocal": "2023-09-12T21:50:00.000",
+        "destAirportCode": "ASF",
+        "destCity": "Astrakhan, Astrakhan Oblast",
+        "id": 2763373,
+        "legs": [
+        ],
+        "number": 1172,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:45:00.000",
+        "dateLocal": "2023-09-12T21:45:00.000",
+        "destAirportCode": "SGC",
+        "destCity": "Surgut",
+        "id": 2763563,
+        "legs": [
+        ],
+        "number": 1510,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:35:00.000",
+        "dateLocal": "2023-09-12T21:35:00.000",
+        "destAirportCode": "FRU",
+        "destCity": "Bishkek",
+        "id": 2763652,
+        "legs": [
+        ],
+        "number": 1882,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:30:00.000",
+        "dateLocal": "2023-09-12T21:30:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763505,
+        "legs": [
+        ],
+        "number": 1406,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:25:00.000",
+        "dateLocal": "2023-09-12T21:25:00.000",
+        "destAirportCode": "GYD",
+        "destCity": "Baku",
+        "id": 2763634,
+        "legs": [
+        ],
+        "number": 1850,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:20:00.000",
+        "dateLocal": "2023-09-12T21:20:00.000",
+        "destAirportCode": "IKT",
+        "destCity": "Irkutsk",
+        "id": 2763527,
+        "legs": [
+        ],
+        "number": 1442,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:15:00.000",
+        "dateLocal": "2023-09-12T21:15:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763703,
+        "legs": [
+        ],
+        "number": 2132,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:15:00.000",
+        "dateLocal": "2023-09-12T21:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763382,
+        "legs": [
+        ],
+        "number": 1131,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:15:00.000",
+        "dateLocal": "2023-09-12T21:15:00.000",
+        "destAirportCode": "BKK",
+        "destCity": "Bangkok",
+        "id": 2763722,
+        "legs": [
+        ],
+        "number": 272,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T18:10:00.000",
+        "dateLocal": "2023-09-12T21:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763649,
+        "legs": [
+        ],
+        "number": 1833,
+        "originAirportCode": "MSQ",
+        "originCity": "Minsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:10:00.000",
+        "dateLocal": "2023-09-12T21:10:00.000",
+        "destAirportCode": "KHV",
+        "destCity": "Khabarovsk",
+        "id": 2763625,
+        "legs": [
+        ],
+        "number": 1714,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:10:00.000",
+        "dateLocal": "2023-09-12T21:10:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763451,
+        "legs": [
+        ],
+        "number": 1314,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:05:00.000",
+        "dateLocal": "2023-09-12T21:05:00.000",
+        "destAirportCode": "TJM",
+        "destCity": "Tyumen",
+        "id": 2763769,
+        "legs": [
+        ],
+        "number": 2976,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:00:00.000",
+        "dateLocal": "2023-09-12T21:00:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2811149,
+        "legs": [
+        ],
+        "number": 7108,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:00:00.000",
+        "dateLocal": "2023-09-12T21:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763587,
+        "legs": [
+        ],
+        "number": 1551,
+        "originAirportCode": "MCX",
+        "originCity": "Makhachkala",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:00:00.000",
+        "dateLocal": "2023-09-12T23:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763508,
+        "legs": [
+        ],
+        "number": 1415,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:00:00.000",
+        "dateLocal": "2023-09-12T21:00:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763443,
+        "legs": [
+        ],
+        "number": 1260,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:00:00.000",
+        "dateLocal": "2023-09-12T23:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763415,
+        "legs": [
+        ],
+        "number": 1243,
+        "originAirportCode": "REN",
+        "originCity": "Orenburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T18:00:00.000",
+        "dateLocal": "2023-09-12T21:00:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763298,
+        "legs": [
+        ],
+        "number": 32,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:50:00.000",
+        "dateLocal": "2023-09-12T20:50:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2763734,
+        "legs": [
+        ],
+        "number": 2952,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:50:00.000",
+        "dateLocal": "2023-09-12T20:50:00.000",
+        "destAirportCode": "ALA",
+        "destCity": "Almaty",
+        "id": 2763660,
+        "legs": [
+        ],
+        "number": 1942,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:40:00.000",
+        "dateLocal": "2023-09-12T20:40:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2763477,
+        "legs": [
+        ],
+        "number": 1394,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:40:00.000",
+        "dateLocal": "2023-09-12T22:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763392,
+        "legs": [
+        ],
+        "number": 1205,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:35:00.000",
+        "dateLocal": "2023-09-12T20:35:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2763543,
+        "legs": [
+        ],
+        "number": 1480,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:30:00.000",
+        "dateLocal": "2023-09-12T20:30:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763296,
+        "legs": [
+        ],
+        "number": 30,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:25:00.000",
+        "dateLocal": "2023-09-12T20:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763694,
+        "legs": [
+        ],
+        "number": 2145,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:20:00.000",
+        "dateLocal": "2023-09-12T20:20:00.000",
+        "destAirportCode": "VVO",
+        "destCity": "Vladivostok",
+        "id": 2763596,
+        "legs": [
+        ],
+        "number": 1702,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:15:00.000",
+        "dateLocal": "2023-09-12T20:15:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763732,
+        "legs": [
+        ],
+        "number": 2938,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:10:00.000",
+        "dateLocal": "2023-09-12T22:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763500,
+        "legs": [
+        ],
+        "number": 1427,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:10:00.000",
+        "dateLocal": "2023-09-12T20:10:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763315,
+        "legs": [
+        ],
+        "number": 1008,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:05:00.000",
+        "dateLocal": "2023-09-12T19:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763318,
+        "legs": [
+        ],
+        "number": 1011,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T17:05:00.000",
+        "dateLocal": "2023-09-12T20:05:00.000",
+        "destAirportCode": "PVG",
+        "destCity": "Shanghai",
+        "id": 2763671,
+        "legs": [
+        ],
+        "number": 208,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:50:00.000",
+        "dateLocal": "2023-09-12T19:50:00.000",
+        "destAirportCode": "OVB",
+        "destCity": "Novosibirsk",
+        "id": 2763767,
+        "legs": [
+        ],
+        "number": 2974,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:50:00.000",
+        "dateLocal": "2023-09-12T19:50:00.000",
+        "destAirportCode": "PKC",
+        "destCity": "Petropavlovsk-Kamchatsky",
+        "id": 2763613,
+        "legs": [
+        ],
+        "number": 1734,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:50:00.000",
+        "dateLocal": "2023-09-12T19:50:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763294,
+        "legs": [
+        ],
+        "number": 28,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:45:00.000",
+        "dateLocal": "2023-09-12T19:45:00.000",
+        "destAirportCode": "TAS",
+        "destCity": "Tashkent",
+        "id": 2763668,
+        "legs": [
+        ],
+        "number": 1870,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:45:00.000",
+        "dateLocal": "2023-09-12T20:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763663,
+        "legs": [
+        ],
+        "number": 1863,
+        "originAirportCode": "EVN",
+        "originCity": "Yerevan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:45:00.000",
+        "dateLocal": "2023-09-12T19:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763340,
+        "legs": [
+        ],
+        "number": 1057,
+        "originAirportCode": "MCX",
+        "originCity": "Makhachkala",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:40:00.000",
+        "dateLocal": "2023-09-12T19:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763472,
+        "legs": [
+        ],
+        "number": 1369,
+        "originAirportCode": "STW",
+        "originCity": "Stavropol",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:40:00.000",
+        "dateLocal": "2023-09-12T20:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763398,
+        "legs": [
+        ],
+        "number": 1215,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:35:00.000",
+        "dateLocal": "2023-09-12T19:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763440,
+        "legs": [
+        ],
+        "number": 1301,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:35:00.000",
+        "dateLocal": "2023-09-12T19:35:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763371,
+        "legs": [
+        ],
+        "number": 1140,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:35:00.000",
+        "dateLocal": "2023-09-12T19:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763360,
+        "legs": [
+        ],
+        "number": 1129,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:30:00.000",
+        "dateLocal": "2023-09-12T19:30:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763405,
+        "legs": [
+        ],
+        "number": 1194,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:20:00.000",
+        "dateLocal": "2023-09-12T19:20:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2763559,
+        "legs": [
+        ],
+        "number": 1532,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:15:00.000",
+        "dateLocal": "2023-09-12T21:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763628,
+        "legs": [
+        ],
+        "number": 1717,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:15:00.000",
+        "dateLocal": "2023-09-12T19:15:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763576,
+        "legs": [
+        ],
+        "number": 1604,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:10:00.000",
+        "dateLocal": "2023-09-12T19:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763384,
+        "legs": [
+        ],
+        "number": 1133,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:05:00.000",
+        "dateLocal": "2023-09-12T20:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763639,
+        "legs": [
+        ],
+        "number": 1857,
+        "originAirportCode": "GYD",
+        "originCity": "Baku",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T16:05:00.000",
+        "dateLocal": "2023-09-12T19:05:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763491,
+        "legs": [
+        ],
+        "number": 1418,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:55:00.000",
+        "dateLocal": "2023-09-12T20:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763442,
+        "legs": [
+        ],
+        "number": 1259,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:55:00.000",
+        "dateLocal": "2023-09-12T18:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763362,
+        "legs": [
+        ],
+        "number": 1059,
+        "originAirportCode": "MCX",
+        "originCity": "Makhachkala",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:50:00.000",
+        "dateLocal": "2023-09-12T20:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763504,
+        "legs": [
+        ],
+        "number": 1405,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:50:00.000",
+        "dateLocal": "2023-09-12T18:50:00.000",
+        "destAirportCode": "HKT",
+        "destCity": "Phuket",
+        "id": 2763724,
+        "legs": [
+        ],
+        "number": 274,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:45:00.000",
+        "dateLocal": "2023-09-12T18:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763456,
+        "legs": [
+        ],
+        "number": 1325,
+        "originAirportCode": "MMK",
+        "originCity": "Murmansk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:40:00.000",
+        "dateLocal": "2023-09-12T19:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763484,
+        "legs": [
+        ],
+        "number": 1359,
+        "originAirportCode": "GSV",
+        "originCity": "Saratov",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:40:00.000",
+        "dateLocal": "2023-09-12T18:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763404,
+        "legs": [
+        ],
+        "number": 1193,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:40:00.000",
+        "dateLocal": "2023-09-12T17:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763320,
+        "legs": [
+        ],
+        "number": 1013,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:40:00.000",
+        "dateLocal": "2023-09-12T18:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763324,
+        "legs": [
+        ],
+        "number": 39,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T15:35:00.000",
+        "dateLocal": "2023-09-12T18:35:00.000",
+        "destAirportCode": "MSQ",
+        "destCity": "Minsk",
+        "id": 2763648,
+        "legs": [
+        ],
+        "number": 1832,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:30:00.000",
+        "dateLocal": "2023-09-12T18:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763376,
+        "legs": [
+        ],
+        "number": 1177,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:25:00.000",
+        "dateLocal": "2023-09-12T18:25:00.000",
+        "destAirportCode": "VVO",
+        "destCity": "Vladivostok",
+        "id": 2763598,
+        "legs": [
+        ],
+        "number": 1704,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:25:00.000",
+        "dateLocal": "2023-09-12T18:25:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763313,
+        "legs": [
+        ],
+        "number": 1006,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:25:00.000",
+        "dateLocal": "2023-09-12T18:25:00.000",
+        "destAirportCode": "DXB",
+        "destCity": "Dubai",
+        "id": 2763755,
+        "legs": [
+        ],
+        "number": 524,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 6,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T18:20:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763712,
+        "legs": [
+        ],
+        "number": 2815,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T18:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763696,
+        "legs": [
+        ],
+        "number": 2147,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 1,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T18:20:00.000",
+        "destAirportCode": "EVN",
+        "destCity": "Yerevan",
+        "id": 2763666,
+        "legs": [
+        ],
+        "number": 1868,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T20:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763643,
+        "legs": [
+        ],
+        "number": 1769,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T18:20:00.000",
+        "destAirportCode": "KHV",
+        "destCity": "Khabarovsk",
+        "id": 2763629,
+        "legs": [
+        ],
+        "number": 1718,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T18:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763488,
+        "legs": [
+        ],
+        "number": 1365,
+        "originAirportCode": "STW",
+        "originCity": "Stavropol",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:20:00.000",
+        "dateLocal": "2023-09-12T18:20:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763788,
+        "legs": [
+        ],
+        "number": 788,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T15:00:00.000",
+        "dateLocal": "2023-09-12T17:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763350,
+        "legs": [
+        ],
+        "number": 1025,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:55:00.000",
+        "dateLocal": "2023-09-12T17:55:00.000",
+        "destAirportCode": "REN",
+        "destCity": "Orenburg",
+        "id": 2763414,
+        "legs": [
+        ],
+        "number": 1242,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:50:00.000",
+        "dateLocal": "2023-09-12T17:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763468,
+        "legs": [
+        ],
+        "number": 1311,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:50:00.000",
+        "dateLocal": "2023-09-12T17:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763378,
+        "legs": [
+        ],
+        "number": 1183,
+        "originAirportCode": "VOG",
+        "originCity": "Volgograd",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:45:00.000",
+        "dateLocal": "2023-09-12T18:45:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763737,
+        "legs": [
+        ],
+        "number": 2957,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:40:00.000",
+        "dateLocal": "2023-09-12T17:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763436,
+        "legs": [
+        ],
+        "number": 1291,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:40:00.000",
+        "dateLocal": "2023-09-12T17:40:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2763391,
+        "legs": [
+        ],
+        "number": 1204,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:40:00.000",
+        "dateLocal": "2023-09-12T17:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763358,
+        "legs": [
+        ],
+        "number": 1125,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:35:00.000",
+        "dateLocal": "2023-09-12T17:35:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763507,
+        "legs": [
+        ],
+        "number": 1414,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:35:00.000",
+        "dateLocal": "2023-09-12T19:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763430,
+        "legs": [
+        ],
+        "number": 1233,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:35:00.000",
+        "dateLocal": "2023-09-12T17:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763293,
+        "legs": [
+        ],
+        "number": 23,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:30:00.000",
+        "dateLocal": "2023-09-12T17:30:00.000",
+        "destAirportCode": "KHV",
+        "destCity": "Khabarovsk",
+        "id": 2763622,
+        "legs": [
+        ],
+        "number": 1710,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:30:00.000",
+        "dateLocal": "2023-09-12T19:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763496,
+        "legs": [
+        ],
+        "number": 1423,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:30:00.000",
+        "dateLocal": "2023-09-12T17:30:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763461,
+        "legs": [
+        ],
+        "number": 1302,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:30:00.000",
+        "dateLocal": "2023-09-12T19:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763348,
+        "legs": [
+        ],
+        "number": 1021,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:30:00.000",
+        "dateLocal": "2023-09-12T17:30:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763774,
+        "legs": [
+        ],
+        "number": 794,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:25:00.000",
+        "dateLocal": "2023-09-12T17:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763702,
+        "legs": [
+        ],
+        "number": 2131,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:25:00.000",
+        "dateLocal": "2023-09-12T17:25:00.000",
+        "destAirportCode": "IKT",
+        "destCity": "Irkutsk",
+        "id": 2763525,
+        "legs": [
+        ],
+        "number": 1440,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:25:00.000",
+        "dateLocal": "2023-09-12T17:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763426,
+        "legs": [
+        ],
+        "number": 1227,
+        "originAirportCode": "GOJ",
+        "originCity": "Nizhny Novgorod",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:25:00.000",
+        "dateLocal": "2023-09-12T17:25:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763353,
+        "legs": [
+        ],
+        "number": 1118,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:20:00.000",
+        "dateLocal": "2023-09-12T17:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763678,
+        "legs": [
+        ],
+        "number": 2123,
+        "originAirportCode": "DLM",
+        "originCity": "Dalaman",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:20:00.000",
+        "dateLocal": "2023-09-12T17:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763591,
+        "legs": [
+        ],
+        "number": 1681,
+        "originAirportCode": "NBC",
+        "originCity": "Nizhnekamsk - Naberezhnye Chelny",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:10:00.000",
+        "dateLocal": "2023-09-12T17:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763633,
+        "legs": [
+        ],
+        "number": 1843,
+        "originAirportCode": "MSQ",
+        "originCity": "Minsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:10:00.000",
+        "dateLocal": "2023-09-12T17:10:00.000",
+        "destAirportCode": "VVO",
+        "destCity": "Vladivostok",
+        "id": 2763616,
+        "legs": [
+        ],
+        "number": 1756,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 7,
+        "date": "2023-09-12T14:10:00.000",
+        "dateLocal": "2023-09-12T16:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763312,
+        "legs": [
+        ],
+        "number": 1005,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:10:00.000",
+        "dateLocal": "2023-09-12T17:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763752,
+        "legs": [
+        ],
+        "number": 427,
+        "originAirportCode": "SSH",
+        "originCity": "Sharm el-Sheikh",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T14:05:00.000",
+        "dateLocal": "2023-09-12T17:05:00.000",
+        "destAirportCode": "UUS",
+        "destCity": "Yuzhno-Sakhalinsk",
+        "id": 2763615,
+        "legs": [
+        ],
+        "number": 1744,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 7,
+        "date": "2023-09-12T14:00:00.000",
+        "dateLocal": "2023-09-12T17:00:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763785,
+        "legs": [
+        ],
+        "number": 723,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:55:00.000",
+        "dateLocal": "2023-09-12T16:55:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763397,
+        "legs": [
+        ],
+        "number": 1214,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:50:00.000",
+        "dateLocal": "2023-09-12T16:50:00.000",
+        "destAirportCode": "MCX",
+        "destCity": "Makhachkala",
+        "id": 2763586,
+        "legs": [
+        ],
+        "number": 1550,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:45:00.000",
+        "dateLocal": "2023-09-12T16:45:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763705,
+        "legs": [
+        ],
+        "number": 2134,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:45:00.000",
+        "dateLocal": "2023-09-12T16:45:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2763499,
+        "legs": [
+        ],
+        "number": 1426,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 6,
+        "date": "2023-09-12T13:40:00.000",
+        "dateLocal": "2023-09-12T20:40:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763730,
+        "legs": [
+        ],
+        "number": 2807,
+        "originAirportCode": "KJA",
+        "originCity": "Krasnoyarsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:40:00.000",
+        "dateLocal": "2023-09-12T16:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763680,
+        "legs": [
+        ],
+        "number": 2125,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:35:00.000",
+        "dateLocal": "2023-09-12T16:35:00.000",
+        "destAirportCode": "PKC",
+        "destCity": "Petropavlovsk-Kamchatsky",
+        "id": 2763611,
+        "legs": [
+        ],
+        "number": 1730,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:35:00.000",
+        "dateLocal": "2023-09-12T17:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763396,
+        "legs": [
+        ],
+        "number": 1213,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:30:00.000",
+        "dateLocal": "2023-09-12T16:30:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763317,
+        "legs": [
+        ],
+        "number": 1010,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:30:00.000",
+        "dateLocal": "2023-09-12T20:30:00.000",
+        "destAirportCode": "IKT",
+        "destCity": "Irkutsk",
+        "id": 2763781,
+        "legs": [
+        ],
+        "number": 659,
+        "originAirportCode": "BKK",
+        "originCity": "Bangkok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:30:00.000",
+        "dateLocal": "2023-09-12T20:30:00.000",
+        "destAirportCode": "KHV",
+        "destCity": "Khabarovsk",
+        "id": 2763759,
+        "legs": [
+        ],
+        "number": 657,
+        "originAirportCode": "HKT",
+        "originCity": "Phuket",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:25:00.000",
+        "dateLocal": "2023-09-12T19:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763687,
+        "legs": [
+        ],
+        "number": 1963,
+        "originAirportCode": "NQZ",
+        "originCity": "Nur-Sultan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:15:00.000",
+        "dateLocal": "2023-09-12T16:15:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763750,
+        "legs": [
+        ],
+        "number": 2935,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T13:15:00.000",
+        "dateLocal": "2023-09-12T18:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763684,
+        "legs": [
+        ],
+        "number": 1955,
+        "originAirportCode": "SCO",
+        "originCity": "Aktau",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:15:00.000",
+        "dateLocal": "2023-09-12T16:15:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763381,
+        "legs": [
+        ],
+        "number": 1130,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:15:00.000",
+        "dateLocal": "2023-09-12T16:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763334,
+        "legs": [
+        ],
+        "number": 1041,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:15:00.000",
+        "dateLocal": "2023-09-12T16:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763765,
+        "legs": [
+        ],
+        "number": 423,
+        "originAirportCode": "HRG",
+        "originCity": "Hurghada",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:15:00.000",
+        "dateLocal": "2023-09-12T16:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763763,
+        "legs": [
+        ],
+        "number": 401,
+        "originAirportCode": "CAI",
+        "originCity": "Cairo",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:05:00.000",
+        "dateLocal": "2023-09-12T16:05:00.000",
+        "destAirportCode": "GSV",
+        "destCity": "Saratov",
+        "id": 2763483,
+        "legs": [
+        ],
+        "number": 1358,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:05:00.000",
+        "dateLocal": "2023-09-12T16:05:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763403,
+        "legs": [
+        ],
+        "number": 1192,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T13:00:00.000",
+        "dateLocal": "2023-09-12T16:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763726,
+        "legs": [
+        ],
+        "number": 2173,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:55:00.000",
+        "dateLocal": "2023-09-12T15:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763486,
+        "legs": [
+        ],
+        "number": 1363,
+        "originAirportCode": "STW",
+        "originCity": "Stavropol",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:50:00.000",
+        "dateLocal": "2023-09-12T17:50:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763748,
+        "legs": [
+        ],
+        "number": 2933,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:50:00.000",
+        "dateLocal": "2023-09-12T15:50:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763627,
+        "legs": [
+        ],
+        "number": 1716,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:50:00.000",
+        "dateLocal": "2023-09-12T15:50:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763441,
+        "legs": [
+        ],
+        "number": 1258,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:50:00.000",
+        "dateLocal": "2023-09-12T15:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763356,
+        "legs": [
+        ],
+        "number": 1123,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:45:00.000",
+        "dateLocal": "2023-09-12T15:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763708,
+        "legs": [
+        ],
+        "number": 2137,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:40:00.000",
+        "dateLocal": "2023-09-12T15:40:00.000",
+        "destAirportCode": "VVO",
+        "destCity": "Vladivostok",
+        "id": 2763594,
+        "legs": [
+        ],
+        "number": 1700,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:40:00.000",
+        "dateLocal": "2023-09-12T15:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763601,
+        "legs": [
+        ],
+        "number": 1643,
+        "originAirportCode": "ASF",
+        "originCity": "Astrakhan, Astrakhan Oblast",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:40:00.000",
+        "dateLocal": "2023-09-12T15:40:00.000",
+        "destAirportCode": "MCX",
+        "destCity": "Makhachkala",
+        "id": 2763339,
+        "legs": [
+        ],
+        "number": 1056,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:40:00.000",
+        "dateLocal": "2023-09-12T14:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763346,
+        "legs": [
+        ],
+        "number": 1019,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:35:00.000",
+        "dateLocal": "2023-09-12T15:35:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763720,
+        "legs": [
+        ],
+        "number": 2905,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:30:00.000",
+        "dateLocal": "2023-09-12T15:30:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763323,
+        "legs": [
+        ],
+        "number": 38,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 1,
+        "date": "2023-09-12T12:25:00.000",
+        "dateLocal": "2023-09-12T15:25:00.000",
+        "destAirportCode": "",
+        "destCity": "",
+        "id": 2780240,
+        "legs": [
+        ],
+        "number": 7302,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:25:00.000",
+        "dateLocal": "2023-09-12T15:25:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763718,
+        "legs": [
+        ],
+        "number": 2831,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:25:00.000",
+        "dateLocal": "2023-09-12T18:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763657,
+        "legs": [
+        ],
+        "number": 1893,
+        "originAirportCode": "",
+        "originCity": "",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:25:00.000",
+        "dateLocal": "2023-09-12T19:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763550,
+        "legs": [
+        ],
+        "number": 1487,
+        "originAirportCode": "KJA",
+        "originCity": "Krasnoyarsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T12:20:00.000",
+        "dateLocal": "2023-09-12T19:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763516,
+        "legs": [
+        ],
+        "number": 1461,
+        "originAirportCode": "OVB",
+        "originCity": "Novosibirsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:20:00.000",
+        "dateLocal": "2023-09-12T15:20:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763503,
+        "legs": [
+        ],
+        "number": 1404,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:20:00.000",
+        "dateLocal": "2023-09-12T15:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763432,
+        "legs": [
+        ],
+        "number": 1277,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:20:00.000",
+        "dateLocal": "2023-09-12T15:20:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763292,
+        "legs": [
+        ],
+        "number": 22,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:15:00.000",
+        "dateLocal": "2023-09-12T15:15:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2763642,
+        "legs": [
+        ],
+        "number": 1768,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:15:00.000",
+        "dateLocal": "2023-09-12T17:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763502,
+        "legs": [
+        ],
+        "number": 1403,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:15:00.000",
+        "dateLocal": "2023-09-12T15:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763388,
+        "legs": [
+        ],
+        "number": 1137,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:10:00.000",
+        "dateLocal": "2023-09-12T18:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763682,
+        "legs": [
+        ],
+        "number": 1947,
+        "originAirportCode": "ALA",
+        "originCity": "Almaty",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:10:00.000",
+        "dateLocal": "2023-09-12T17:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763539,
+        "legs": [
+        ],
+        "number": 1501,
+        "originAirportCode": "TJM",
+        "originCity": "Tyumen",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:10:00.000",
+        "dateLocal": "2023-09-12T15:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763460,
+        "legs": [
+        ],
+        "number": 1347,
+        "originAirportCode": "KVK",
+        "originCity": "Kirovsk - Apatity",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:10:00.000",
+        "dateLocal": "2023-09-12T15:10:00.000",
+        "destAirportCode": "MMK",
+        "destCity": "Murmansk",
+        "id": 2763455,
+        "legs": [
+        ],
+        "number": 1324,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:10:00.000",
+        "dateLocal": "2023-09-12T17:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763419,
+        "legs": [
+        ],
+        "number": 1249,
+        "originAirportCode": "REN",
+        "originCity": "Orenburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:10:00.000",
+        "dateLocal": "2023-09-12T15:10:00.000",
+        "destAirportCode": "GOJ",
+        "destCity": "Nizhny Novgorod",
+        "id": 2763425,
+        "legs": [
+        ],
+        "number": 1226,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:05:00.000",
+        "dateLocal": "2023-09-12T15:05:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763439,
+        "legs": [
+        ],
+        "number": 1300,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:05:00.000",
+        "dateLocal": "2023-09-12T15:05:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763435,
+        "legs": [
+        ],
+        "number": 1290,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:05:00.000",
+        "dateLocal": "2023-09-12T15:05:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763319,
+        "legs": [
+        ],
+        "number": 1012,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:05:00.000",
+        "dateLocal": "2023-09-12T16:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763754,
+        "legs": [
+        ],
+        "number": 521,
+        "originAirportCode": "DXB",
+        "originCity": "Dubai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:00:00.000",
+        "dateLocal": "2023-09-12T15:00:00.000",
+        "destAirportCode": "EVN",
+        "destCity": "Yerevan",
+        "id": 2763662,
+        "legs": [
+        ],
+        "number": 1862,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:00:00.000",
+        "dateLocal": "2023-09-12T18:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763568,
+        "legs": [
+        ],
+        "number": 1519,
+        "originAirportCode": "RGK",
+        "originCity": "Gorno-Altaysk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:00:00.000",
+        "dateLocal": "2023-09-12T15:00:00.000",
+        "destAirportCode": "STW",
+        "destCity": "Stavropol",
+        "id": 2763471,
+        "legs": [
+        ],
+        "number": 1368,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T12:00:00.000",
+        "dateLocal": "2023-09-12T15:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763470,
+        "legs": [
+        ],
+        "number": 1313,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:55:00.000",
+        "dateLocal": "2023-09-12T16:55:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763744,
+        "legs": [
+        ],
+        "number": 2919,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:50:00.000",
+        "dateLocal": "2023-09-12T16:50:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763716,
+        "legs": [
+        ],
+        "number": 2821,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T11:50:00.000",
+        "dateLocal": "2023-09-12T15:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763637,
+        "legs": [
+        ],
+        "number": 1855,
+        "originAirportCode": "GYD",
+        "originCity": "Baku",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:50:00.000",
+        "dateLocal": "2023-09-12T14:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763310,
+        "legs": [
+        ],
+        "number": 19,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:45:00.000",
+        "dateLocal": "2023-09-12T14:45:00.000",
+        "destAirportCode": "MSQ",
+        "destCity": "Minsk",
+        "id": 2763632,
+        "legs": [
+        ],
+        "number": 1842,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:45:00.000",
+        "dateLocal": "2023-09-12T14:45:00.000",
+        "destAirportCode": "VOG",
+        "destCity": "Volgograd",
+        "id": 2763377,
+        "legs": [
+        ],
+        "number": 1182,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:40:00.000",
+        "dateLocal": "2023-09-12T14:40:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763766,
+        "legs": [
+        ],
+        "number": 2973,
+        "originAirportCode": "GOJ",
+        "originCity": "Nizhny Novgorod",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:40:00.000",
+        "dateLocal": "2023-09-12T14:40:00.000",
+        "destAirportCode": "GYD",
+        "destCity": "Baku",
+        "id": 2763638,
+        "legs": [
+        ],
+        "number": 1856,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:40:00.000",
+        "dateLocal": "2023-09-12T14:40:00.000",
+        "destAirportCode": "NBC",
+        "destCity": "Nizhnekamsk - Naberezhnye Chelny",
+        "id": 2763610,
+        "legs": [
+        ],
+        "number": 1680,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:35:00.000",
+        "dateLocal": "2023-09-12T16:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763413,
+        "legs": [
+        ],
+        "number": 1235,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:35:00.000",
+        "dateLocal": "2023-09-12T14:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763352,
+        "legs": [
+        ],
+        "number": 1117,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:35:00.000",
+        "dateLocal": "2023-09-12T14:35:00.000",
+        "destAirportCode": "MCX",
+        "destCity": "Makhachkala",
+        "id": 2763361,
+        "legs": [
+        ],
+        "number": 1058,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:30:00.000",
+        "dateLocal": "2023-09-12T14:30:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763359,
+        "legs": [
+        ],
+        "number": 1128,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:30:00.000",
+        "dateLocal": "2023-09-12T14:30:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763797,
+        "legs": [
+        ],
+        "number": 800,
+        "originAirportCode": "GOJ",
+        "originCity": "Nizhny Novgorod",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:25:00.000",
+        "dateLocal": "2023-09-12T14:25:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763429,
+        "legs": [
+        ],
+        "number": 1232,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T14:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763692,
+        "legs": [
+        ],
+        "number": 2143,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T15:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763593,
+        "legs": [
+        ],
+        "number": 1685,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T14:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763556,
+        "legs": [
+        ],
+        "number": 1529,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T19:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763530,
+        "legs": [
+        ],
+        "number": 1445,
+        "originAirportCode": "IKT",
+        "originCity": "Irkutsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T16:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763494,
+        "legs": [
+        ],
+        "number": 1421,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T14:20:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763383,
+        "legs": [
+        ],
+        "number": 1132,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:20:00.000",
+        "dateLocal": "2023-09-12T16:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763364,
+        "legs": [
+        ],
+        "number": 1061,
+        "originAirportCode": "OSW",
+        "originCity": "Orsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:15:00.000",
+        "dateLocal": "2023-09-12T14:15:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763349,
+        "legs": [
+        ],
+        "number": 1024,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:15:00.000",
+        "dateLocal": "2023-09-12T15:15:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763783,
+        "legs": [
+        ],
+        "number": 685,
+        "originAirportCode": "EVN",
+        "originCity": "Yerevan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:10:00.000",
+        "dateLocal": "2023-09-12T14:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763676,
+        "legs": [
+        ],
+        "number": 2121,
+        "originAirportCode": "BJV",
+        "originCity": "Milas - Bodrum",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:10:00.000",
+        "dateLocal": "2023-09-12T15:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763665,
+        "legs": [
+        ],
+        "number": 1867,
+        "originAirportCode": "EVN",
+        "originCity": "Yerevan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:00:00.000",
+        "dateLocal": "2023-09-12T14:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763700,
+        "legs": [
+        ],
+        "number": 2153,
+        "originAirportCode": "ADA",
+        "originCity": "Adana",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T11:00:00.000",
+        "dateLocal": "2023-09-12T14:00:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2763495,
+        "legs": [
+        ],
+        "number": 1422,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:55:00.000",
+        "dateLocal": "2023-09-12T13:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763490,
+        "legs": [
+        ],
+        "number": 1367,
+        "originAirportCode": "STW",
+        "originCity": "Stavropol",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:55:00.000",
+        "dateLocal": "2023-09-12T13:55:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763347,
+        "legs": [
+        ],
+        "number": 1020,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:50:00.000",
+        "dateLocal": "2023-09-12T16:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763655,
+        "legs": [
+        ],
+        "number": 1887,
+        "originAirportCode": "FRU",
+        "originCity": "Bishkek",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 6,
+        "date": "2023-09-12T10:50:00.000",
+        "dateLocal": "2023-09-12T12:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763330,
+        "legs": [
+        ],
+        "number": 1003,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:40:00.000",
+        "dateLocal": "2023-09-12T13:40:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763693,
+        "legs": [
+        ],
+        "number": 2144,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:40:00.000",
+        "dateLocal": "2023-09-12T13:40:00.000",
+        "destAirportCode": "STW",
+        "destCity": "Stavropol",
+        "id": 2763487,
+        "legs": [
+        ],
+        "number": 1364,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:40:00.000",
+        "dateLocal": "2023-09-12T13:40:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763395,
+        "legs": [
+        ],
+        "number": 1212,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:35:00.000",
+        "dateLocal": "2023-09-12T13:35:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763311,
+        "legs": [
+        ],
+        "number": 1004,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:30:00.000",
+        "dateLocal": "2023-09-12T13:30:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763736,
+        "legs": [
+        ],
+        "number": 2956,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:25:00.000",
+        "dateLocal": "2023-09-12T13:25:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763375,
+        "legs": [
+        ],
+        "number": 1176,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T10:05:00.000",
+        "dateLocal": "2023-09-12T13:05:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763467,
+        "legs": [
+        ],
+        "number": 1310,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:55:00.000",
+        "dateLocal": "2023-09-12T12:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763537,
+        "legs": [
+        ],
+        "number": 1499,
+        "originAirportCode": "GRV",
+        "originCity": "Grozny",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:55:00.000",
+        "dateLocal": "2023-09-12T14:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763510,
+        "legs": [
+        ],
+        "number": 1417,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:55:00.000",
+        "dateLocal": "2023-09-12T12:55:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763431,
+        "legs": [
+        ],
+        "number": 1276,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:55:00.000",
+        "dateLocal": "2023-09-12T13:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763422,
+        "legs": [
+        ],
+        "number": 1219,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:55:00.000",
+        "dateLocal": "2023-09-12T12:55:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763789,
+        "legs": [
+        ],
+        "number": 789,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:55:00.000",
+        "dateLocal": "2023-09-12T12:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763308,
+        "legs": [
+        ],
+        "number": 15,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:50:00.000",
+        "dateLocal": "2023-09-12T13:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763661,
+        "legs": [
+        ],
+        "number": 1861,
+        "originAirportCode": "EVN",
+        "originCity": "Yerevan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:40:00.000",
+        "dateLocal": "2023-09-12T14:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763570,
+        "legs": [
+        ],
+        "number": 1521,
+        "originAirportCode": "NUX",
+        "originCity": "Novy Urengoy",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:35:00.000",
+        "dateLocal": "2023-09-12T12:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763464,
+        "legs": [
+        ],
+        "number": 1305,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:35:00.000",
+        "dateLocal": "2023-09-12T12:35:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763357,
+        "legs": [
+        ],
+        "number": 1124,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:35:00.000",
+        "dateLocal": "2023-09-12T11:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763344,
+        "legs": [
+        ],
+        "number": 1017,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 6,
+        "date": "2023-09-12T09:30:00.000",
+        "dateLocal": "2023-09-12T12:30:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763711,
+        "legs": [
+        ],
+        "number": 2814,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:30:00.000",
+        "dateLocal": "2023-09-12T14:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763428,
+        "legs": [
+        ],
+        "number": 1231,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:25:00.000",
+        "dateLocal": "2023-09-12T12:25:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763309,
+        "legs": [
+        ],
+        "number": 18,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:15:00.000",
+        "dateLocal": "2023-09-12T12:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763386,
+        "legs": [
+        ],
+        "number": 1135,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:15:00.000",
+        "dateLocal": "2023-09-12T12:15:00.000",
+        "destAirportCode": "OVB",
+        "destCity": "Novosibirsk",
+        "id": 2763793,
+        "legs": [
+        ],
+        "number": 803,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:10:00.000",
+        "dateLocal": "2023-09-12T12:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763338,
+        "legs": [
+        ],
+        "number": 1053,
+        "originAirportCode": "MCX",
+        "originCity": "Makhachkala",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 13,
+        "date": "2023-09-12T09:10:00.000",
+        "dateLocal": "2023-09-12T16:10:00.000",
+        "destAirportCode": "OVB",
+        "destCity": "Novosibirsk",
+        "id": 2763796,
+        "legs": [
+        ],
+        "number": 825,
+        "originAirportCode": "HKT",
+        "originCity": "Phuket",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:05:00.000",
+        "dateLocal": "2023-09-12T12:05:00.000",
+        "destAirportCode": "ASF",
+        "destCity": "Astrakhan, Astrakhan Oblast",
+        "id": 2763580,
+        "legs": [
+        ],
+        "number": 1642,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:05:00.000",
+        "dateLocal": "2023-09-12T13:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763482,
+        "legs": [
+        ],
+        "number": 1357,
+        "originAirportCode": "GSV",
+        "originCity": "Saratov",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:05:00.000",
+        "dateLocal": "2023-09-12T12:05:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763345,
+        "legs": [
+        ],
+        "number": 1018,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 0,
+        "date": "2023-09-12T09:05:00.000",
+        "dateLocal": "2023-09-12T12:05:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763787,
+        "legs": [
+        ],
+        "number": 753,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T09:00:00.000",
+        "dateLocal": "2023-09-12T12:00:00.000",
+        "destAirportCode": "SCO",
+        "destCity": "Aktau",
+        "id": 2763683,
+        "legs": [
+        ],
+        "number": 1954,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T09:00:00.000",
+        "dateLocal": "2023-09-12T12:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763306,
+        "legs": [
+        ],
+        "number": 13,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:55:00.000",
+        "dateLocal": "2023-09-12T11:55:00.000",
+        "destAirportCode": "NQZ",
+        "destCity": "Nur-Sultan",
+        "id": 2763686,
+        "legs": [
+        ],
+        "number": 1962,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:55:00.000",
+        "dateLocal": "2023-09-12T13:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763480,
+        "legs": [
+        ],
+        "number": 1401,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:55:00.000",
+        "dateLocal": "2023-09-12T11:55:00.000",
+        "destAirportCode": "REN",
+        "destCity": "Orenburg",
+        "id": 2763418,
+        "legs": [
+        ],
+        "number": 1248,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:50:00.000",
+        "dateLocal": "2023-09-12T11:50:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763501,
+        "legs": [
+        ],
+        "number": 1402,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:45:00.000",
+        "dateLocal": "2023-09-12T11:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763584,
+        "legs": [
+        ],
+        "number": 1545,
+        "originAirportCode": "PEZ",
+        "originCity": "Penza",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:45:00.000",
+        "dateLocal": "2023-09-12T11:45:00.000",
+        "destAirportCode": "KVK",
+        "destCity": "Kirovsk - Apatity",
+        "id": 2763459,
+        "legs": [
+        ],
+        "number": 1346,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:45:00.000",
+        "dateLocal": "2023-09-12T11:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763424,
+        "legs": [
+        ],
+        "number": 1221,
+        "originAirportCode": "GOJ",
+        "originCity": "Nizhny Novgorod",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:40:00.000",
+        "dateLocal": "2023-09-12T11:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763647,
+        "legs": [
+        ],
+        "number": 1831,
+        "originAirportCode": "MSQ",
+        "originCity": "Minsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:40:00.000",
+        "dateLocal": "2023-09-12T11:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763402,
+        "legs": [
+        ],
+        "number": 1191,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:35:00.000",
+        "dateLocal": "2023-09-12T11:35:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763695,
+        "legs": [
+        ],
+        "number": 2146,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:35:00.000",
+        "dateLocal": "2023-09-12T11:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763619,
+        "legs": [
+        ],
+        "number": 1759,
+        "originAirportCode": "VOG",
+        "originCity": "Volgograd",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:30:00.000",
+        "dateLocal": "2023-09-12T11:30:00.000",
+        "destAirportCode": "TJM",
+        "destCity": "Tyumen",
+        "id": 2763538,
+        "legs": [
+        ],
+        "number": 1500,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:30:00.000",
+        "dateLocal": "2023-09-12T13:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763410,
+        "legs": [
+        ],
+        "number": 1201,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:30:00.000",
+        "dateLocal": "2023-09-12T11:30:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763333,
+        "legs": [
+        ],
+        "number": 1040,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:25:00.000",
+        "dateLocal": "2023-09-12T11:25:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763592,
+        "legs": [
+        ],
+        "number": 1684,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:25:00.000",
+        "dateLocal": "2023-09-12T15:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763518,
+        "legs": [
+        ],
+        "number": 1463,
+        "originAirportCode": "OVB",
+        "originCity": "Novosibirsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:25:00.000",
+        "dateLocal": "2023-09-12T11:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763390,
+        "legs": [
+        ],
+        "number": 1139,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:25:00.000",
+        "dateLocal": "2023-09-12T10:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763342,
+        "legs": [
+        ],
+        "number": 1015,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:20:00.000",
+        "dateLocal": "2023-09-12T11:20:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763749,
+        "legs": [
+        ],
+        "number": 2934,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:20:00.000",
+        "dateLocal": "2023-09-12T11:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763609,
+        "legs": [
+        ],
+        "number": 1679,
+        "originAirportCode": "ASF",
+        "originCity": "Astrakhan, Astrakhan Oblast",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:20:00.000",
+        "dateLocal": "2023-09-12T11:20:00.000",
+        "destAirportCode": "STW",
+        "destCity": "Stavropol",
+        "id": 2763485,
+        "legs": [
+        ],
+        "number": 1362,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:15:00.000",
+        "dateLocal": "2023-09-12T11:15:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763747,
+        "legs": [
+        ],
+        "number": 2932,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:15:00.000",
+        "dateLocal": "2023-09-12T11:15:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763412,
+        "legs": [
+        ],
+        "number": 1234,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:10:00.000",
+        "dateLocal": "2023-09-12T11:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763336,
+        "legs": [
+        ],
+        "number": 1045,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:05:00.000",
+        "dateLocal": "2023-09-12T12:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763394,
+        "legs": [
+        ],
+        "number": 1211,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T08:00:00.000",
+        "dateLocal": "2023-09-12T11:00:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763719,
+        "legs": [
+        ],
+        "number": 2904,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 6,
+        "date": "2023-09-12T07:55:00.000",
+        "dateLocal": "2023-09-12T10:55:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2763729,
+        "legs": [
+        ],
+        "number": 2806,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:55:00.000",
+        "dateLocal": "2023-09-12T10:55:00.000",
+        "destAirportCode": "DLM",
+        "destCity": "Dalaman",
+        "id": 2763677,
+        "legs": [
+        ],
+        "number": 2122,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:55:00.000",
+        "dateLocal": "2023-09-12T10:55:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763775,
+        "legs": [
+        ],
+        "number": 795,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:50:00.000",
+        "dateLocal": "2023-09-12T10:50:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2763493,
+        "legs": [
+        ],
+        "number": 1420,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:45:00.000",
+        "dateLocal": "2023-09-12T10:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763454,
+        "legs": [
+        ],
+        "number": 1321,
+        "originAirportCode": "MMK",
+        "originCity": "Murmansk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:45:00.000",
+        "dateLocal": "2023-09-12T10:45:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763355,
+        "legs": [
+        ],
+        "number": 1122,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:40:00.000",
+        "dateLocal": "2023-09-12T10:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763448,
+        "legs": [
+        ],
+        "number": 1269,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:40:00.000",
+        "dateLocal": "2023-09-12T10:40:00.000",
+        "destAirportCode": "OSW",
+        "destCity": "Orsk",
+        "id": 2763363,
+        "legs": [
+        ],
+        "number": 1060,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:40:00.000",
+        "dateLocal": "2023-09-12T10:40:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763307,
+        "legs": [
+        ],
+        "number": 14,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:35:00.000",
+        "dateLocal": "2023-09-12T10:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763607,
+        "legs": [
+        ],
+        "number": 1669,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:35:00.000",
+        "dateLocal": "2023-09-12T09:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763332,
+        "legs": [
+        ],
+        "number": 1027,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:30:00.000",
+        "dateLocal": "2023-09-12T10:30:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2763715,
+        "legs": [
+        ],
+        "number": 2820,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:30:00.000",
+        "dateLocal": "2023-09-12T10:30:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763701,
+        "legs": [
+        ],
+        "number": 2130,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T07:30:00.000",
+        "dateLocal": "2023-09-12T10:30:00.000",
+        "destAirportCode": "GYD",
+        "destCity": "Baku",
+        "id": 2763636,
+        "legs": [
+        ],
+        "number": 1854,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:30:00.000",
+        "dateLocal": "2023-09-12T12:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763535,
+        "legs": [
+        ],
+        "number": 1497,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:30:00.000",
+        "dateLocal": "2023-09-12T10:30:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763469,
+        "legs": [
+        ],
+        "number": 1312,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:30:00.000",
+        "dateLocal": "2023-09-12T11:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763438,
+        "legs": [
+        ],
+        "number": 1297,
+        "originAirportCode": "IJK",
+        "originCity": "Izhevsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:20:00.000",
+        "dateLocal": "2023-09-12T10:20:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763329,
+        "legs": [
+        ],
+        "number": 1002,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:15:00.000",
+        "dateLocal": "2023-09-12T12:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763446,
+        "legs": [
+        ],
+        "number": 1263,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:15:00.000",
+        "dateLocal": "2023-09-12T10:15:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763387,
+        "legs": [
+        ],
+        "number": 1136,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T07:10:00.000",
+        "dateLocal": "2023-09-12T10:10:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763679,
+        "legs": [
+        ],
+        "number": 2124,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:10:00.000",
+        "dateLocal": "2023-09-12T10:10:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763421,
+        "legs": [
+        ],
+        "number": 1218,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:10:00.000",
+        "dateLocal": "2023-09-12T09:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763328,
+        "legs": [
+        ],
+        "number": 1001,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:05:00.000",
+        "dateLocal": "2023-09-12T10:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763573,
+        "legs": [
+        ],
+        "number": 1593,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 7,
+        "date": "2023-09-12T07:05:00.000",
+        "dateLocal": "2023-09-12T10:05:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763784,
+        "legs": [
+        ],
+        "number": 722,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:00:00.000",
+        "dateLocal": "2023-09-12T10:00:00.000",
+        "destAirportCode": "GOJ",
+        "destCity": "Nizhny Novgorod",
+        "id": 2763740,
+        "legs": [
+        ],
+        "number": 2972,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T07:00:00.000",
+        "dateLocal": "2023-09-12T10:00:00.000",
+        "destAirportCode": "OVB",
+        "destCity": "Novosibirsk",
+        "id": 2763515,
+        "legs": [
+        ],
+        "number": 1460,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T07:00:00.000",
+        "dateLocal": "2023-09-12T10:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763476,
+        "legs": [
+        ],
+        "number": 1391,
+        "originAirportCode": "SCW",
+        "originCity": "Syktyvkar",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:45:00.000",
+        "dateLocal": "2023-09-12T09:45:00.000",
+        "destAirportCode": "ALA",
+        "destCity": "Almaty",
+        "id": 2763681,
+        "legs": [
+        ],
+        "number": 1946,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:45:00.000",
+        "dateLocal": "2023-09-12T09:45:00.000",
+        "destAirportCode": "GOJ",
+        "destCity": "Nizhny Novgorod",
+        "id": 2763423,
+        "legs": [
+        ],
+        "number": 1220,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:45:00.000",
+        "dateLocal": "2023-09-12T09:45:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763771,
+        "legs": [
+        ],
+        "number": 791,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763725,
+        "legs": [
+        ],
+        "number": 2172,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "",
+        "destCity": "",
+        "id": 2763656,
+        "legs": [
+        ],
+        "number": 1892,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:40:00.000",
+        "dateLocal": "2023-09-12T16:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763624,
+        "legs": [
+        ],
+        "number": 1713,
+        "originAirportCode": "KHV",
+        "originCity": "Khabarovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2763549,
+        "legs": [
+        ],
+        "number": 1486,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763305,
+        "legs": [
+        ],
+        "number": 12,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:35:00.000",
+        "dateLocal": "2023-09-12T09:35:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763717,
+        "legs": [
+        ],
+        "number": 2830,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:35:00.000",
+        "dateLocal": "2023-09-12T09:35:00.000",
+        "destAirportCode": "EVN",
+        "destCity": "Yerevan",
+        "id": 2763664,
+        "legs": [
+        ],
+        "number": 1866,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:35:00.000",
+        "dateLocal": "2023-09-12T09:35:00.000",
+        "destAirportCode": "RGK",
+        "destCity": "Gorno-Altaysk",
+        "id": 2763567,
+        "legs": [
+        ],
+        "number": 1518,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:35:00.000",
+        "dateLocal": "2023-09-12T11:35:00.000",
+        "destAirportCode": "EVN",
+        "destCity": "Yerevan",
+        "id": 2763782,
+        "legs": [
+        ],
+        "number": 684,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:30:00.000",
+        "dateLocal": "2023-09-12T09:30:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763743,
+        "legs": [
+        ],
+        "number": 2918,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:30:00.000",
+        "dateLocal": "2023-09-12T09:30:00.000",
+        "destAirportCode": "GSV",
+        "destCity": "Saratov",
+        "id": 2763481,
+        "legs": [
+        ],
+        "number": 1356,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:30:00.000",
+        "dateLocal": "2023-09-12T09:30:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763427,
+        "legs": [
+        ],
+        "number": 1230,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:25:00.000",
+        "dateLocal": "2023-09-12T09:25:00.000",
+        "destAirportCode": "PEZ",
+        "destCity": "Penza",
+        "id": 2763583,
+        "legs": [
+        ],
+        "number": 1544,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:25:00.000",
+        "dateLocal": "2023-09-12T09:25:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763509,
+        "legs": [
+        ],
+        "number": 1416,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:25:00.000",
+        "dateLocal": "2023-09-12T09:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763450,
+        "legs": [
+        ],
+        "number": 1271,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:15:00.000",
+        "dateLocal": "2023-09-12T09:15:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763555,
+        "legs": [
+        ],
+        "number": 1528,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:15:00.000",
+        "dateLocal": "2023-09-12T09:15:00.000",
+        "destAirportCode": "STW",
+        "destCity": "Stavropol",
+        "id": 2763489,
+        "legs": [
+        ],
+        "number": 1366,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:15:00.000",
+        "dateLocal": "2023-09-12T09:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763304,
+        "legs": [
+        ],
+        "number": 7,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:10:00.000",
+        "dateLocal": "2023-09-12T09:10:00.000",
+        "destAirportCode": "MSQ",
+        "destCity": "Minsk",
+        "id": 2763646,
+        "legs": [
+        ],
+        "number": 1830,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:10:00.000",
+        "dateLocal": "2023-09-12T16:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763645,
+        "legs": [
+        ],
+        "number": 1791,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:05:00.000",
+        "dateLocal": "2023-09-12T09:05:00.000",
+        "destAirportCode": "SSH",
+        "destCity": "Sharm el-Sheikh",
+        "id": 2763751,
+        "legs": [
+        ],
+        "number": 426,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:05:00.000",
+        "dateLocal": "2023-09-12T09:05:00.000",
+        "destAirportCode": "CAI",
+        "destCity": "Cairo",
+        "id": 2763762,
+        "legs": [
+        ],
+        "number": 400,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:00:00.000",
+        "dateLocal": "2023-09-12T09:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763710,
+        "legs": [
+        ],
+        "number": 2139,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:00:00.000",
+        "dateLocal": "2023-09-12T09:00:00.000",
+        "destAirportCode": "IST",
+        "destCity": "Istanbul",
+        "id": 2763707,
+        "legs": [
+        ],
+        "number": 2136,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:00:00.000",
+        "dateLocal": "2023-09-12T10:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763575,
+        "legs": [
+        ],
+        "number": 1603,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:00:00.000",
+        "dateLocal": "2023-09-12T09:00:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763401,
+        "legs": [
+        ],
+        "number": 1190,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T06:00:00.000",
+        "dateLocal": "2023-09-12T09:00:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763343,
+        "legs": [
+        ],
+        "number": 1016,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:55:00.000",
+        "dateLocal": "2023-09-12T08:55:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763351,
+        "legs": [
+        ],
+        "number": 1116,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:45:00.000",
+        "dateLocal": "2023-09-12T08:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763698,
+        "legs": [
+        ],
+        "number": 2149,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:45:00.000",
+        "dateLocal": "2023-09-12T15:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763621,
+        "legs": [
+        ],
+        "number": 1707,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:40:00.000",
+        "dateLocal": "2023-09-12T08:40:00.000",
+        "destAirportCode": "VOG",
+        "destCity": "Volgograd",
+        "id": 2763618,
+        "legs": [
+        ],
+        "number": 1758,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:30:00.000",
+        "dateLocal": "2023-09-12T08:30:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2763479,
+        "legs": [
+        ],
+        "number": 1400,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:30:00.000",
+        "dateLocal": "2023-09-12T08:30:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2763409,
+        "legs": [
+        ],
+        "number": 1200,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:25:00.000",
+        "dateLocal": "2023-09-12T08:25:00.000",
+        "destAirportCode": "GRV",
+        "destCity": "Grozny",
+        "id": 2763536,
+        "legs": [
+        ],
+        "number": 1498,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:20:00.000",
+        "dateLocal": "2023-09-12T13:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763589,
+        "legs": [
+        ],
+        "number": 1563,
+        "originAirportCode": "IKT",
+        "originCity": "Irkutsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:20:00.000",
+        "dateLocal": "2023-09-12T08:20:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763393,
+        "legs": [
+        ],
+        "number": 1210,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:15:00.000",
+        "dateLocal": "2023-09-12T08:15:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763447,
+        "legs": [
+        ],
+        "number": 1268,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:15:00.000",
+        "dateLocal": "2023-09-12T08:15:00.000",
+        "destAirportCode": "GOJ",
+        "destCity": "Nizhny Novgorod",
+        "id": 2763791,
+        "legs": [
+        ],
+        "number": 801,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:15:00.000",
+        "dateLocal": "2023-09-12T08:15:00.000",
+        "destAirportCode": "HRG",
+        "destCity": "Hurghada",
+        "id": 2763764,
+        "legs": [
+        ],
+        "number": 422,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:15:00.000",
+        "dateLocal": "2023-09-12T08:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763302,
+        "legs": [
+        ],
+        "number": 3,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:10:00.000",
+        "dateLocal": "2023-09-12T08:10:00.000",
+        "destAirportCode": "EVN",
+        "destCity": "Yerevan",
+        "id": 2763640,
+        "legs": [
+        ],
+        "number": 1860,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:05:00.000",
+        "dateLocal": "2023-09-12T08:05:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763463,
+        "legs": [
+        ],
+        "number": 1304,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:00:00.000",
+        "dateLocal": "2023-09-12T08:00:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763341,
+        "legs": [
+        ],
+        "number": 1014,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 0,
+        "date": "2023-09-12T05:00:00.000",
+        "dateLocal": "2023-09-12T08:00:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763786,
+        "legs": [
+        ],
+        "number": 752,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T05:00:00.000",
+        "dateLocal": "2023-09-12T15:00:00.000",
+        "destAirportCode": "BKK",
+        "destCity": "Bangkok",
+        "id": 2763757,
+        "legs": [
+        ],
+        "number": 644,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:55:00.000",
+        "dateLocal": "2023-09-12T07:55:00.000",
+        "destAirportCode": "ADA",
+        "destCity": "Adana",
+        "id": 2763699,
+        "legs": [
+        ],
+        "number": 2152,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:55:00.000",
+        "dateLocal": "2023-09-12T07:55:00.000",
+        "destAirportCode": "FRU",
+        "destCity": "Bishkek",
+        "id": 2763654,
+        "legs": [
+        ],
+        "number": 1886,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:55:00.000",
+        "dateLocal": "2023-09-12T07:55:00.000",
+        "destAirportCode": "NUX",
+        "destCity": "Novy Urengoy",
+        "id": 2763569,
+        "legs": [
+        ],
+        "number": 1520,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:50:00.000",
+        "dateLocal": "2023-09-12T09:50:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763735,
+        "legs": [
+        ],
+        "number": 2953,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:50:00.000",
+        "dateLocal": "2023-09-12T07:50:00.000",
+        "destAirportCode": "MCX",
+        "destCity": "Makhachkala",
+        "id": 2763337,
+        "legs": [
+        ],
+        "number": 1052,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:50:00.000",
+        "dateLocal": "2023-09-12T07:50:00.000",
+        "destAirportCode": "DXB",
+        "destCity": "Dubai",
+        "id": 2763753,
+        "legs": [
+        ],
+        "number": 520,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:50:00.000",
+        "dateLocal": "2023-09-12T11:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763723,
+        "legs": [
+        ],
+        "number": 273,
+        "originAirportCode": "BKK",
+        "originCity": "Bangkok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:45:00.000",
+        "dateLocal": "2023-09-12T07:45:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763691,
+        "legs": [
+        ],
+        "number": 2142,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:45:00.000",
+        "dateLocal": "2023-09-12T07:45:00.000",
+        "destAirportCode": "ASF",
+        "destCity": "Astrakhan, Astrakhan Oblast",
+        "id": 2763608,
+        "legs": [
+        ],
+        "number": 1678,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:35:00.000",
+        "dateLocal": "2023-09-12T07:35:00.000",
+        "destAirportCode": "BJV",
+        "destCity": "Milas - Bodrum",
+        "id": 2763675,
+        "legs": [
+        ],
+        "number": 2120,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:35:00.000",
+        "dateLocal": "2023-09-12T07:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763452,
+        "legs": [
+        ],
+        "number": 1315,
+        "originAirportCode": "MRV",
+        "originCity": "Mineralnye Vody",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:30:00.000",
+        "dateLocal": "2023-09-12T07:30:00.000",
+        "destAirportCode": "IJK",
+        "destCity": "Izhevsk",
+        "id": 2763437,
+        "legs": [
+        ],
+        "number": 1296,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:20:00.000",
+        "dateLocal": "2023-09-12T10:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763554,
+        "legs": [
+        ],
+        "number": 1525,
+        "originAirportCode": "RGK",
+        "originCity": "Gorno-Altaysk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:20:00.000",
+        "dateLocal": "2023-09-12T07:20:00.000",
+        "destAirportCode": "IKT",
+        "destCity": "Irkutsk",
+        "id": 2763529,
+        "legs": [
+        ],
+        "number": 1444,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:15:00.000",
+        "dateLocal": "2023-09-12T07:15:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763385,
+        "legs": [
+        ],
+        "number": 1134,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:15:00.000",
+        "dateLocal": "2023-09-12T07:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763370,
+        "legs": [
+        ],
+        "number": 1111,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:15:00.000",
+        "dateLocal": "2023-09-12T08:15:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763776,
+        "legs": [
+        ],
+        "number": 796,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:10:00.000",
+        "dateLocal": "2023-09-12T11:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763546,
+        "legs": [
+        ],
+        "number": 1483,
+        "originAirportCode": "KJA",
+        "originCity": "Krasnoyarsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:10:00.000",
+        "dateLocal": "2023-09-12T07:10:00.000",
+        "destAirportCode": "MMK",
+        "destCity": "Murmansk",
+        "id": 2763453,
+        "legs": [
+        ],
+        "number": 1320,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:10:00.000",
+        "dateLocal": "2023-09-12T07:10:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763331,
+        "legs": [
+        ],
+        "number": 1026,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:05:00.000",
+        "dateLocal": "2023-09-12T07:05:00.000",
+        "destAirportCode": "SCW",
+        "destCity": "Syktyvkar",
+        "id": 2763475,
+        "legs": [
+        ],
+        "number": 1390,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:05:00.000",
+        "dateLocal": "2023-09-12T07:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763326,
+        "legs": [
+        ],
+        "number": 47,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:00:00.000",
+        "dateLocal": "2023-09-12T16:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763614,
+        "legs": [
+        ],
+        "number": 1735,
+        "originAirportCode": "PKC",
+        "originCity": "Petropavlovsk-Kamchatsky",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:00:00.000",
+        "dateLocal": "2023-09-12T11:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763582,
+        "legs": [
+        ],
+        "number": 1537,
+        "originAirportCode": "TOF",
+        "originCity": "Tomsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:00:00.000",
+        "dateLocal": "2023-09-12T09:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763552,
+        "legs": [
+        ],
+        "number": 1523,
+        "originAirportCode": "NUX",
+        "originCity": "Novy Urengoy",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:00:00.000",
+        "dateLocal": "2023-09-12T07:00:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2763534,
+        "legs": [
+        ],
+        "number": 1496,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T04:00:00.000",
+        "dateLocal": "2023-09-12T07:00:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763303,
+        "legs": [
+        ],
+        "number": 6,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:55:00.000",
+        "dateLocal": "2023-09-12T06:55:00.000",
+        "destAirportCode": "KZN",
+        "destCity": "Kazan",
+        "id": 2763449,
+        "legs": [
+        ],
+        "number": 1270,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:45:00.000",
+        "dateLocal": "2023-09-12T13:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763626,
+        "legs": [
+        ],
+        "number": 1715,
+        "originAirportCode": "KHV",
+        "originCity": "Khabarovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:45:00.000",
+        "dateLocal": "2023-09-12T06:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763408,
+        "legs": [
+        ],
+        "number": 1199,
+        "originAirportCode": "KZN",
+        "originCity": "Kazan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:45:00.000",
+        "dateLocal": "2023-09-12T06:45:00.000",
+        "destAirportCode": "KGD",
+        "destCity": "Kaliningrad",
+        "id": 2763327,
+        "legs": [
+        ],
+        "number": 1000,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T03:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763659,
+        "legs": [
+        ],
+        "number": 1937,
+        "originAirportCode": "KGF",
+        "originCity": "Karaganda",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:35:00.000",
+        "dateLocal": "2023-09-12T06:35:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2763445,
+        "legs": [
+        ],
+        "number": 1262,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:30:00.000",
+        "dateLocal": "2023-09-12T13:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763597,
+        "legs": [
+        ],
+        "number": 1703,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:25:00.000",
+        "dateLocal": "2023-09-12T08:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763520,
+        "legs": [
+        ],
+        "number": 1473,
+        "originAirportCode": "NJC",
+        "originCity": "Nizhnevartovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:25:00.000",
+        "dateLocal": "2023-09-12T06:25:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763389,
+        "legs": [
+        ],
+        "number": 1138,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:20:00.000",
+        "dateLocal": "2023-09-12T06:20:00.000",
+        "destAirportCode": "OVB",
+        "destCity": "Novosibirsk",
+        "id": 2763517,
+        "legs": [
+        ],
+        "number": 1462,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:20:00.000",
+        "dateLocal": "2023-09-12T08:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763524,
+        "legs": [
+        ],
+        "number": 1437,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:20:00.000",
+        "dateLocal": "2023-09-12T06:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763434,
+        "legs": [
+        ],
+        "number": 1289,
+        "originAirportCode": "ULV",
+        "originCity": "Ulyanovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:20:00.000",
+        "dateLocal": "2023-09-12T06:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763374,
+        "legs": [
+        ],
+        "number": 1173,
+        "originAirportCode": "ASF",
+        "originCity": "Astrakhan, Astrakhan Oblast",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:20:00.000",
+        "dateLocal": "2023-09-12T06:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763372,
+        "legs": [
+        ],
+        "number": 1141,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:15:00.000",
+        "dateLocal": "2023-09-12T08:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763605,
+        "legs": [
+        ],
+        "number": 1657,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:15:00.000",
+        "dateLocal": "2023-09-12T06:15:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2763574,
+        "legs": [
+        ],
+        "number": 1602,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:15:00.000",
+        "dateLocal": "2023-09-12T06:15:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763335,
+        "legs": [
+        ],
+        "number": 1044,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:05:00.000",
+        "dateLocal": "2023-09-12T08:05:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763733,
+        "legs": [
+        ],
+        "number": 2939,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:05:00.000",
+        "dateLocal": "2023-09-12T10:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763542,
+        "legs": [
+        ],
+        "number": 1479,
+        "originAirportCode": "ABA",
+        "originCity": "Abakan, Republic of Khakassia",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:05:00.000",
+        "dateLocal": "2023-09-12T10:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763466,
+        "legs": [
+        ],
+        "number": 1307,
+        "originAirportCode": "OVB",
+        "originCity": "Novosibirsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:00:00.000",
+        "dateLocal": "2023-09-12T08:00:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763739,
+        "legs": [
+        ],
+        "number": 2961,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:00:00.000",
+        "dateLocal": "2023-09-12T06:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763631,
+        "legs": [
+        ],
+        "number": 1835,
+        "originAirportCode": "MSQ",
+        "originCity": "Minsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:00:00.000",
+        "dateLocal": "2023-09-12T08:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763566,
+        "legs": [
+        ],
+        "number": 1513,
+        "originAirportCode": "SGC",
+        "originCity": "Surgut",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:00:00.000",
+        "dateLocal": "2023-09-12T13:00:00.000",
+        "destAirportCode": "HKT",
+        "destCity": "Phuket",
+        "id": 2763758,
+        "legs": [
+        ],
+        "number": 656,
+        "originAirportCode": "KHV",
+        "originCity": "Khabarovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T03:00:00.000",
+        "dateLocal": "2023-09-12T06:00:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763301,
+        "legs": [
+        ],
+        "number": 2,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 7,
+        "date": "2023-09-12T02:55:00.000",
+        "dateLocal": "2023-09-12T05:55:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2763728,
+        "legs": [
+        ],
+        "number": 2805,
+        "originAirportCode": "AER",
+        "originCity": "Sochi, Krasnodar Krai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:55:00.000",
+        "dateLocal": "2023-09-12T08:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763522,
+        "legs": [
+        ],
+        "number": 1431,
+        "originAirportCode": "BAX",
+        "originCity": "Barnaul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:50:00.000",
+        "dateLocal": "2023-09-12T07:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763498,
+        "legs": [
+        ],
+        "number": 1425,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:50:00.000",
+        "dateLocal": "2023-09-12T05:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763299,
+        "legs": [
+        ],
+        "number": 33,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:45:00.000",
+        "dateLocal": "2023-09-12T06:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763689,
+        "legs": [
+        ],
+        "number": 1967,
+        "originAirportCode": "EVN",
+        "originCity": "Yerevan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:45:00.000",
+        "dateLocal": "2023-09-12T05:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763380,
+        "legs": [
+        ],
+        "number": 1185,
+        "originAirportCode": "VOG",
+        "originCity": "Volgograd",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763548,
+        "legs": [
+        ],
+        "number": 1485,
+        "originAirportCode": "KJA",
+        "originCity": "Krasnoyarsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:35:00.000",
+        "dateLocal": "2023-09-12T06:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763400,
+        "legs": [
+        ],
+        "number": 1217,
+        "originAirportCode": "KUF",
+        "originCity": "Samara",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:30:00.000",
+        "dateLocal": "2023-09-12T05:30:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763606,
+        "legs": [
+        ],
+        "number": 1668,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:25:00.000",
+        "dateLocal": "2023-09-12T07:25:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763742,
+        "legs": [
+        ],
+        "number": 2915,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:25:00.000",
+        "dateLocal": "2023-09-12T07:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763562,
+        "legs": [
+        ],
+        "number": 1509,
+        "originAirportCode": "TJM",
+        "originCity": "Tyumen",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:20:00.000",
+        "dateLocal": "2023-09-12T07:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763672,
+        "legs": [
+        ],
+        "number": 1985,
+        "originAirportCode": "SKD",
+        "originCity": "Samarkand",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:20:00.000",
+        "dateLocal": "2023-09-12T07:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763560,
+        "legs": [
+        ],
+        "number": 1533,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:05:00.000",
+        "dateLocal": "2023-09-12T07:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763685,
+        "legs": [
+        ],
+        "number": 1959,
+        "originAirportCode": "GUW",
+        "originCity": "Atyrau",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:05:00.000",
+        "dateLocal": "2023-09-12T12:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763599,
+        "legs": [
+        ],
+        "number": 1705,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:05:00.000",
+        "dateLocal": "2023-09-12T08:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763579,
+        "legs": [
+        ],
+        "number": 1639,
+        "originAirportCode": "OMS",
+        "originCity": "Omsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:00:00.000",
+        "dateLocal": "2023-09-12T07:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763506,
+        "legs": [
+        ],
+        "number": 1407,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T02:00:00.000",
+        "dateLocal": "2023-09-12T05:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763411,
+        "legs": [
+        ],
+        "number": 35,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:55:00.000",
+        "dateLocal": "2023-09-12T04:55:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763572,
+        "legs": [
+        ],
+        "number": 1592,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:55:00.000",
+        "dateLocal": "2023-09-12T06:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763474,
+        "legs": [
+        ],
+        "number": 1383,
+        "originAirportCode": "HMA",
+        "originCity": "Khanty-Mansiysk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:55:00.000",
+        "dateLocal": "2023-09-12T06:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763444,
+        "legs": [
+        ],
+        "number": 1261,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:55:00.000",
+        "dateLocal": "2023-09-12T04:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763531,
+        "legs": [
+        ],
+        "number": 1251,
+        "originAirportCode": "NBC",
+        "originCity": "Nizhnekamsk - Naberezhnye Chelny",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:50:00.000",
+        "dateLocal": "2023-09-12T09:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763528,
+        "legs": [
+        ],
+        "number": 1443,
+        "originAirportCode": "IKT",
+        "originCity": "Irkutsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 3,
+        "date": "2023-09-12T01:40:00.000",
+        "dateLocal": "2023-09-12T08:40:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763792,
+        "legs": [
+        ],
+        "number": 802,
+        "originAirportCode": "OVB",
+        "originCity": "Novosibirsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 6,
+        "date": "2023-09-12T01:25:00.000",
+        "dateLocal": "2023-09-12T06:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763478,
+        "legs": [
+        ],
+        "number": 1395,
+        "originAirportCode": "PEE",
+        "originCity": "Perm",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:25:00.000",
+        "dateLocal": "2023-09-12T04:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763322,
+        "legs": [
+        ],
+        "number": 37,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:20:00.000",
+        "dateLocal": "2023-09-12T06:20:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763770,
+        "legs": [
+        ],
+        "number": 2977,
+        "originAirportCode": "TJM",
+        "originCity": "Tyumen",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:20:00.000",
+        "dateLocal": "2023-09-12T07:20:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763746,
+        "legs": [
+        ],
+        "number": 2929,
+        "originAirportCode": "OMS",
+        "originCity": "Omsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:20:00.000",
+        "dateLocal": "2023-09-12T11:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763630,
+        "legs": [
+        ],
+        "number": 1719,
+        "originAirportCode": "KHV",
+        "originCity": "Khabarovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:20:00.000",
+        "dateLocal": "2023-09-12T08:20:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763558,
+        "legs": [
+        ],
+        "number": 1531,
+        "originAirportCode": "TOF",
+        "originCity": "Tomsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:15:00.000",
+        "dateLocal": "2023-09-12T06:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763571,
+        "legs": [
+        ],
+        "number": 1569,
+        "originAirportCode": "TJM",
+        "originCity": "Tyumen",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:15:00.000",
+        "dateLocal": "2023-09-12T06:15:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763772,
+        "legs": [
+        ],
+        "number": 792,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:10:00.000",
+        "dateLocal": "2023-09-12T08:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763512,
+        "legs": [
+        ],
+        "number": 1451,
+        "originAirportCode": "KEJ",
+        "originCity": "Kemerovo",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:05:00.000",
+        "dateLocal": "2023-09-12T07:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763674,
+        "legs": [
+        ],
+        "number": 1987,
+        "originAirportCode": "NQZ",
+        "originCity": "Nur-Sultan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:00:00.000",
+        "dateLocal": "2023-09-12T04:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763704,
+        "legs": [
+        ],
+        "number": 2133,
+        "originAirportCode": "IST",
+        "originCity": "Istanbul",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T01:00:00.000",
+        "dateLocal": "2023-09-12T03:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763316,
+        "legs": [
+        ],
+        "number": 1009,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:55:00.000",
+        "dateLocal": "2023-09-12T07:55:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763533,
+        "legs": [
+        ],
+        "number": 1495,
+        "originAirportCode": "KJA",
+        "originCity": "Krasnoyarsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:50:00.000",
+        "dateLocal": "2023-09-12T05:50:00.000",
+        "destAirportCode": "MRV",
+        "destCity": "Mineralnye Vody",
+        "id": 2763714,
+        "legs": [
+        ],
+        "number": 2817,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:50:00.000",
+        "dateLocal": "2023-09-12T07:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763514,
+        "legs": [
+        ],
+        "number": 1459,
+        "originAirportCode": "NOZ",
+        "originCity": "Novokuznetsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:50:00.000",
+        "dateLocal": "2023-09-12T05:50:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2763778,
+        "legs": [
+        ],
+        "number": 798,
+        "originAirportCode": "UFA",
+        "originCity": "Ufa",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:45:00.000",
+        "dateLocal": "2023-09-12T05:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763417,
+        "legs": [
+        ],
+        "number": 1245,
+        "originAirportCode": "REN",
+        "originCity": "Orenburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:40:00.000",
+        "dateLocal": "2023-09-12T12:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763612,
+        "legs": [
+        ],
+        "number": 1731,
+        "originAirportCode": "PKC",
+        "originCity": "Petropavlovsk-Kamchatsky",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:30:00.000",
+        "dateLocal": "2023-09-12T05:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763368,
+        "legs": [
+        ],
+        "number": 1093,
+        "originAirportCode": "CEK",
+        "originCity": "Chelyabinsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:25:00.000",
+        "dateLocal": "2023-09-12T05:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763603,
+        "legs": [
+        ],
+        "number": 1647,
+        "originAirportCode": "NJC",
+        "originCity": "Nizhnevartovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:25:00.000",
+        "dateLocal": "2023-09-12T05:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763651,
+        "legs": [
+        ],
+        "number": 1503,
+        "originAirportCode": "TJM",
+        "originCity": "Tyumen",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:15:00.000",
+        "dateLocal": "2023-09-12T10:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763617,
+        "legs": [
+        ],
+        "number": 1757,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:10:00.000",
+        "dateLocal": "2023-09-12T07:10:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2763731,
+        "legs": [
+        ],
+        "number": 2937,
+        "originAirportCode": "OVB",
+        "originCity": "Novosibirsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:05:00.000",
+        "dateLocal": "2023-09-12T06:05:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2763653,
+        "legs": [
+        ],
+        "number": 1883,
+        "originAirportCode": "FRU",
+        "originCity": "Bishkek",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-12T00:05:00.000",
+        "dateLocal": "2023-09-12T07:05:00.000",
+        "destAirportCode": "HKT",
+        "destCity": "Phuket",
+        "id": 2763795,
+        "legs": [
+        ],
+        "number": 824,
+        "originAirportCode": "OVB",
+        "originCity": "Novosibirsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:50:00.000",
+        "dateLocal": "2023-09-12T05:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740070,
+        "legs": [
+        ],
+        "number": 1763,
+        "originAirportCode": "OMS",
+        "originCity": "Omsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:45:00.000",
+        "dateLocal": "2023-09-12T04:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2739983,
+        "legs": [
+        ],
+        "number": 1511,
+        "originAirportCode": "SGC",
+        "originCity": "Surgut",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:40:00.000",
+        "dateLocal": "2023-09-12T09:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740051,
+        "legs": [
+        ],
+        "number": 1711,
+        "originAirportCode": "KHV",
+        "originCity": "Khabarovsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:35:00.000",
+        "dateLocal": "2023-09-12T02:35:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2740113,
+        "legs": [
+        ],
+        "number": 2148,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:35:00.000",
+        "dateLocal": "2023-09-12T05:35:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740078,
+        "legs": [
+        ],
+        "number": 1943,
+        "originAirportCode": "ALA",
+        "originCity": "Almaty",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:30:00.000",
+        "dateLocal": "2023-09-12T05:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740075,
+        "legs": [
+        ],
+        "number": 1899,
+        "originAirportCode": "OSS",
+        "originCity": "Osh",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:30:00.000",
+        "dateLocal": "2023-09-12T02:30:00.000",
+        "destAirportCode": "NUX",
+        "destCity": "Novy Urengoy",
+        "id": 2739973,
+        "legs": [
+        ],
+        "number": 1522,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:30:00.000",
+        "dateLocal": "2023-09-12T02:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2739877,
+        "legs": [
+        ],
+        "number": 1327,
+        "originAirportCode": "MMK",
+        "originCity": "Murmansk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:30:00.000",
+        "dateLocal": "2023-09-12T01:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2739783,
+        "legs": [
+        ],
+        "number": 1073,
+        "originAirportCode": "KGD",
+        "originCity": "Kaliningrad",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:30:00.000",
+        "dateLocal": "2023-09-12T05:00:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740140,
+        "legs": [
+        ],
+        "number": 233,
+        "originAirportCode": "DEL",
+        "originCity": "Delhi",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:10:00.000",
+        "dateLocal": "2023-09-12T06:10:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2739963,
+        "legs": [
+        ],
+        "number": 1481,
+        "originAirportCode": "KJA",
+        "originCity": "Krasnoyarsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:10:00.000",
+        "dateLocal": "2023-09-12T02:10:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2739786,
+        "legs": [
+        ],
+        "number": 1110,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:05:00.000",
+        "dateLocal": "2023-09-12T02:05:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2739942,
+        "legs": [
+        ],
+        "number": 1436,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T23:00:00.000",
+        "dateLocal": "2023-09-12T02:00:00.000",
+        "destAirportCode": "KGF",
+        "destCity": "Karaganda",
+        "id": 2740076,
+        "legs": [
+        ],
+        "number": 1936,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:50:00.000",
+        "dateLocal": "2023-09-12T02:50:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740052,
+        "legs": [
+        ],
+        "number": 1851,
+        "originAirportCode": "GYD",
+        "originCity": "Baku",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:50:00.000",
+        "dateLocal": "2023-09-12T01:50:00.000",
+        "destAirportCode": "PEE",
+        "destCity": "Perm",
+        "id": 2740019,
+        "legs": [
+        ],
+        "number": 1656,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:50:00.000",
+        "dateLocal": "2023-09-12T01:50:00.000",
+        "destAirportCode": "TOF",
+        "destCity": "Tomsk",
+        "id": 2740000,
+        "legs": [
+        ],
+        "number": 1536,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:50:00.000",
+        "dateLocal": "2023-09-12T01:50:00.000",
+        "destAirportCode": "NJC",
+        "destCity": "Nizhnevartovsk",
+        "id": 2739971,
+        "legs": [
+        ],
+        "number": 1472,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:45:00.000",
+        "dateLocal": "2023-09-12T03:45:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740083,
+        "legs": [
+        ],
+        "number": 1871,
+        "originAirportCode": "TAS",
+        "originCity": "Tashkent",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:40:00.000",
+        "dateLocal": "2023-09-12T08:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740013,
+        "legs": [
+        ],
+        "number": 1701,
+        "originAirportCode": "VVO",
+        "originCity": "Vladivostok",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:35:00.000",
+        "dateLocal": "2023-09-12T01:35:00.000",
+        "destAirportCode": "GUW",
+        "destCity": "Atyrau",
+        "id": 2740110,
+        "legs": [
+        ],
+        "number": 1958,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:35:00.000",
+        "dateLocal": "2023-09-12T01:35:00.000",
+        "destAirportCode": "SGC",
+        "destCity": "Surgut",
+        "id": 2739984,
+        "legs": [
+        ],
+        "number": 1512,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:30:00.000",
+        "dateLocal": "2023-09-12T01:30:00.000",
+        "destAirportCode": "TJM",
+        "destCity": "Tyumen",
+        "id": 2739980,
+        "legs": [
+        ],
+        "number": 1508,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:30:00.000",
+        "dateLocal": "2023-09-12T01:30:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2739749,
+        "legs": [
+        ],
+        "number": 36,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:25:00.000",
+        "dateLocal": "2023-09-12T01:25:00.000",
+        "destAirportCode": "IKT",
+        "destCity": "Irkutsk",
+        "id": 2740005,
+        "legs": [
+        ],
+        "number": 1562,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:25:00.000",
+        "dateLocal": "2023-09-12T01:25:00.000",
+        "destAirportCode": "KUF",
+        "destCity": "Samara",
+        "id": 2740189,
+        "legs": [
+        ],
+        "number": 797,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:25:00.000",
+        "dateLocal": "2023-09-12T02:25:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740174,
+        "legs": [
+        ],
+        "number": 525,
+        "originAirportCode": "DXB",
+        "originCity": "Dubai",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:10:00.000",
+        "dateLocal": "2023-09-12T01:10:00.000",
+        "destAirportCode": "AYT",
+        "destCity": "Antalya",
+        "id": 2740202,
+        "legs": [
+        ],
+        "number": 790,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:05:00.000",
+        "dateLocal": "2023-09-12T01:05:00.000",
+        "destAirportCode": "OVB",
+        "destCity": "Novosibirsk",
+        "id": 2739883,
+        "legs": [
+        ],
+        "number": 1306,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:00:00.000",
+        "dateLocal": "2023-09-12T01:00:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2739964,
+        "legs": [
+        ],
+        "number": 1482,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T22:00:00.000",
+        "dateLocal": "2023-09-12T01:00:00.000",
+        "destAirportCode": "HMA",
+        "destCity": "Khanty-Mansiysk",
+        "id": 2739894,
+        "legs": [
+        ],
+        "number": 1382,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:55:00.000",
+        "dateLocal": "2023-09-12T00:55:00.000",
+        "destAirportCode": "EVN",
+        "destCity": "Yerevan",
+        "id": 2740102,
+        "legs": [
+        ],
+        "number": 1966,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:50:00.000",
+        "dateLocal": "2023-09-12T00:50:00.000",
+        "destAirportCode": "LED",
+        "destCity": "Saint Petersburg",
+        "id": 2739740,
+        "legs": [
+        ],
+        "number": 46,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:45:00.000",
+        "dateLocal": "2023-09-12T00:45:00.000",
+        "destAirportCode": "UFA",
+        "destCity": "Ufa",
+        "id": 2739950,
+        "legs": [
+        ],
+        "number": 1424,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:40:00.000",
+        "dateLocal": "2023-09-12T00:40:00.000",
+        "destAirportCode": "OMS",
+        "destCity": "Omsk",
+        "id": 2739998,
+        "legs": [
+        ],
+        "number": 1638,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:35:00.000",
+        "dateLocal": "2023-09-12T00:35:00.000",
+        "destAirportCode": "REN",
+        "destCity": "Orenburg",
+        "id": 2739837,
+        "legs": [
+        ],
+        "number": 1244,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:30:00.000",
+        "dateLocal": "2023-09-12T05:30:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2739945,
+        "legs": [
+        ],
+        "number": 1441,
+        "originAirportCode": "IKT",
+        "originCity": "Irkutsk",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:30:00.000",
+        "dateLocal": "2023-09-12T00:30:00.000",
+        "destAirportCode": "BAX",
+        "destCity": "Barnaul",
+        "id": 2739940,
+        "legs": [
+        ],
+        "number": 1430,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:30:00.000",
+        "dateLocal": "2023-09-12T00:30:00.000",
+        "destAirportCode": "SVX",
+        "destCity": "Yekaterinburg",
+        "id": 2740205,
+        "legs": [
+        ],
+        "number": 793,
+        "originAirportCode": "AYT",
+        "originCity": "Antalya",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:25:00.000",
+        "dateLocal": "2023-09-12T00:25:00.000",
+        "destAirportCode": "TJM",
+        "destCity": "Tyumen",
+        "id": 2740007,
+        "legs": [
+        ],
+        "number": 1568,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 7,
+        "date": "2023-09-11T21:20:00.000",
+        "dateLocal": "2023-09-12T00:20:00.000",
+        "destAirportCode": "AER",
+        "destCity": "Sochi, Krasnodar Krai",
+        "id": 2740144,
+        "legs": [
+        ],
+        "number": 2804,
+        "originAirportCode": "LED",
+        "originCity": "Saint Petersburg",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:15:00.000",
+        "dateLocal": "2023-09-12T00:15:00.000",
+        "destAirportCode": "SKD",
+        "destCity": "Samarkand",
+        "id": 2740105,
+        "legs": [
+        ],
+        "number": 1984,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:15:00.000",
+        "dateLocal": "2023-09-12T00:15:00.000",
+        "destAirportCode": "ABA",
+        "destCity": "Abakan, Republic of Khakassia",
+        "id": 2739960,
+        "legs": [
+        ],
+        "number": 1478,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:10:00.000",
+        "dateLocal": "2023-09-12T00:10:00.000",
+        "destAirportCode": "RGK",
+        "destCity": "Gorno-Altaysk",
+        "id": 2739975,
+        "legs": [
+        ],
+        "number": 1524,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T21:05:00.000",
+        "dateLocal": "2023-09-12T00:05:00.000",
+        "destAirportCode": "CEK",
+        "destCity": "Chelyabinsk",
+        "id": 2739784,
+        "legs": [
+        ],
+        "number": 1092,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T20:15:00.000",
+        "dateLocal": "2023-09-12T00:15:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2740081,
+        "legs": [
+        ],
+        "number": 1869,
+        "originAirportCode": "EVN",
+        "originCity": "Yerevan",
+        "passengersCount": 0
+    },
+    {
+        "crewCount": 2,
+        "date": "2023-09-11T19:40:00.000",
+        "dateLocal": "2023-09-12T00:40:00.000",
+        "destAirportCode": "SVO",
+        "destCity": "Moscow",
+        "id": 2739914,
+        "legs": [
+        ],
+        "number": 1419,
+        "originAirportCode": "SVX",
+        "originCity": "Yekaterinburg",
+        "passengersCount": 0
+    }
+]

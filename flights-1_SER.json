@@ -1,0 +1,61 @@
+{
+    "crewCount": 0,
+    "date": "2023-09-09T20:55:11.000",
+    "dateLocal": null,
+    "destAirportCode": "",
+    "destCity": "",
+    "id": 0,
+    "items": [
+        "1111",
+        "22",
+        "333"
+    ],
+    "legs": [
+        {
+            "date": "2023-09-09T09:09:09.000",
+            "gate": "A-B",
+            "passCount": 5,
+            "tail": {
+                "name": "Airbus-123",
+                "number": 1946,
+                "persons": [
+                    {
+                        "id": 12,
+                        "name": "IVAN",
+                        "tabelNumber": 123456
+                    },
+                    {
+                        "id": 132,
+                        "name": "VASIL",
+                        "tabelNumber": 2222
+                    },
+                    {
+                        "id": 12,
+                        "name": "TOLYAN",
+                        "tabelNumber": 333
+                    }
+                ]
+            }
+        },
+        {
+            "date": "2023-11-11T23:23:23.000",
+            "gate": "B-D",
+            "passCount": 13,
+            "tail": {
+                "name": "Boeng-733",
+                "number": 1947,
+                "persons": [
+                    {
+                        "id": 21,
+                        "name": "OLEG",
+                        "tabelNumber": 777
+                    }
+                ]
+            }
+        }
+    ],
+    "number": 0,
+    "originAirportCode": "",
+    "originCity": "Moscow",
+    "passengersCount": 0
+}

@@ -1,0 +1,65 @@
+[
+	{
+		"id": 2682379,
+		"number": 1834,
+		"date": "2023-09-09T20:55:00",
+		"dateLocal": "2023-09-09T23:55:00",
+		"actualDate": "2023-09-09T20:55:00",
+		"originAirportCode": "SVO",
+		"originCity": "Moscow",
+		"destAirportCode": "MSQ",
+		"destCity": "Minsk",
+		"crewCount": 6,
+		"passengersCount": 66,
+		"isValid": true,
+		"isPassengerFlight": true,
+		"receivedPassengerFiles": null,
+		"receivedMenuFiles": [],
+		"ldmPassengersCount": 0,
+		"flightApi": "push/api/flights/AFL/2023-09-09/1834",
+		"legs": [
+			{
+				
+				"passCount": 5,
+				"date": "2023-09-09T09:09:09",
+				"gate": "A-B"
+			},
+			{
+				"passCount": 13,
+				"date": "2023-11-11T23:23:23",
+				"gate": "B-D"
+			}
+		]
+	},
+	{
+		"id": 2682279,
+		"number": 1484,
+		"date": "2023-09-09T20:55:00",
+		"dateLocal": "2023-09-09T23:55:00",
+		"actualDate": "2023-09-09T20:55:00",
+		"originAirportCode": "SVO",
+		"originCity": "Moscow",
+		"destAirportCode": "KJA",
+		"destCity": "Krasnoyarsk",
+		"crewCount": 4,
+		"passengersCount": 44,
+		"isValid": true,
+		"isPassengerFlight": true,
+		"receivedPassengerFiles": null,
+		"receivedMenuFiles": [],
+		"ldmPassengersCount": 0,
+		"flightApi": "push/api/flights/AFL/2023-09-09/1484",
+		"legs": [
+			{
+				"passCount": 77,
+				"date": "2023-09-09T09:09:09",
+				"gate": "QWE"
+			},
+			{
+				"passCount": 103,
+				"date": "2023-11-11T23:23:23",
+				"gate": "ZXC"
+			}
+		]
+	}
+]

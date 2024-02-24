@@ -1,0 +1,58 @@
+[
+    {
+        "crewCount": 6,
+        "date": "2023-09-09T20:55:00.000",
+        "dateLocal": "2023-09-09T23:55:00.000",
+        "destAirportCode": "MSQ",
+        "destCity": "Minsk",
+        "id": 2682379,
+        "items": [
+        ],
+        "legs": [
+            {
+                "date": "2023-09-09T09:09:09.000",
+                "gate": "A-B",
+                "passCount": 5,
+                "tail": null
+            },
+            {
+                "date": "2023-11-11T23:23:23.000",
+                "gate": "B-D",
+                "passCount": 13,
+                "tail": null
+            }
+        ],
+        "number": 1834,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 66
+    },
+    {
+        "crewCount": 4,
+        "date": "2023-09-09T20:55:00.000",
+        "dateLocal": "2023-09-09T23:55:00.000",
+        "destAirportCode": "KJA",
+        "destCity": "Krasnoyarsk",
+        "id": 2682279,
+        "items": [
+        ],
+        "legs": [
+            {
+                "date": "2023-09-09T09:09:09.000",
+                "gate": "QWE",
+                "passCount": 77,
+                "tail": null
+            },
+            {
+                "date": "2023-11-11T23:23:23.000",
+                "gate": "ZXC",
+                "passCount": 103,
+                "tail": null
+            }
+        ],
+        "number": 1484,
+        "originAirportCode": "SVO",
+        "originCity": "Moscow",
+        "passengersCount": 44
+    }
+]
