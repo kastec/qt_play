@@ -43,9 +43,6 @@ class AirplaneDrawer : public QQuickPaintedItem
     bool onPositionChanging(QPoint newPos);
     bool onZoomChanging(qreal newZoom);
     
-    Q_INVOKABLE void testAsync();
-    QString heavyFunction(int val, QString sVal);
-    void loadDataUrl(QString apiUrl);
     
   private:
 //    bool zoomInternal(qreal zoomFactor, qreal centerX, qreal centerY);

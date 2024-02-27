@@ -5,6 +5,7 @@
 #include "Classes/booklist.h"
 #include "Components/PersonList/person.h"
 #include "Components/PersonList/personlistmodel.h"
+#include "Components/PlaneMap/PaintedItem/paintArea.h"
 #include "Components/Test/jsonlistmodel.h"
 #include "Components/Flights/flightslistmodel.h"
 #include "Components/PlaneMap/liveimageprovider.h"
@@ -157,20 +158,6 @@ void RegisterTypes()
     qmlRegisterType<AirplaneDrawer>("AppQtTest12", 1, 0, "AirplaneDrawer");
     qmlRegisterType<AirplaneNavDrawer>("AppQtTest12", 1, 0, "AirplaneNavDrawer");
     
-    
-    
-//    qRegisterMetaType<Flight *>();
-//    qRegisterMetaType<FlightLeg *>();
-//    qRegisterMetaType<FlightTail *>();
-//    qRegisterMetaType<FlightPerson *>();
+    qmlRegisterType<PaintArea>("AppQtTest12", 1, 0, "PaintArea");
 
-//    qRegisterMetaType<QList<FlightLeg *>>("QList<FlightLeg*>");
-//    qRegisterMetaType<QList<FlightLeg *> *>("QList<FlightLeg*>*");
-
-    //       qmlRegisterType<Flight>("AppQtTest12",1,0, "Flight");
-    //    qRegisterMetaType<Flight>("QObject");
-    //    qRegisterMetaType<Flight*>("QVariant");
-    //     qRegisterMetaType<Flight>("QVariant");
-
-    //    qRegisterMetaType<Flight *>("QObject*");
 }

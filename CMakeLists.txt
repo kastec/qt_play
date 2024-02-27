@@ -49,6 +49,7 @@ qt_add_qml_module(appQtTest1
         Utils/JsonHelper/FileHelper.h
         Utils/JsonHelper/qqmlhelper.h
         Utils/JsonHelper/JsonSerialization.h
+        Components/Test/testAsyncCall.h
         
         Components/Flights/flight.h 
         
@@ -67,6 +68,7 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/colorImageProvider.h        
         Components/PlaneMap/OpGlItem/glitem.h Components/PlaneMap/OpGlItem/glitem.cpp
         
+        Components/PlaneMap/PaintedItem/paintArea.h
         Components/PlaneMap/PaintedItem/airplaneDrawer.h Components/PlaneMap/PaintedItem/airplaneDrawer.cpp
         Components/PlaneMap/PaintedItem/src/planeItemBase.h Components/PlaneMap/PaintedItem/src/planeItemBase.cpp
         Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
@@ -82,6 +84,7 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/PaintedItem/src/planePassengers.h
         Components/PlaneMap/PaintedItem/src/cardServiceType.h
         Components/PlaneMap/PaintedItem/airplaneNavDrawer.h Components/PlaneMap/PaintedItem/airplaneNavDrawer.cpp
+        
         
         Utils/JsonHelper/serializationBinder.h
         Components/Test/derivedDeserializeTest.h

@@ -43,13 +43,13 @@ Item {
             Layout.fillWidth: true
 
             onPositionChanged: {
-//                console.log(pos)
-				airplaneNavControl.setMapPosition(pos);
+                //                console.log(pos)
+                airplaneNavControl.setMapPosition(pos)
             }
         }
 
         AirPlaneNavControl {
-			id: airplaneNavControl
+            id: airplaneNavControl
             planeMap: airplaneViewModel.planeMap
             Layout.fillHeight: true
             width: 190
