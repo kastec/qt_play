@@ -179,9 +179,11 @@ void AirplaneViewModel::moveBy(qreal xOff, qreal yOff) {
 
 bool AirplaneViewModel::zoomBy(qreal zoomFactor, qreal centerX, qreal centerY)
 {
-   auto newZoom = zoom + zoom * zoomFactor;
-   if(newZoom>maxZoom || newZoom<minZoom) return false;
-   zoom = newZoom;
+    auto newZoom = zoom + zoom * zoomFactor;
+    if(newZoom>maxZoom || newZoom<minZoom)
+       return false;
+    
+    zoom = newZoom;
    
    position -= QPoint( (centerX-position.x())*zoomFactor , (centerY-position.y())*zoomFactor);
    

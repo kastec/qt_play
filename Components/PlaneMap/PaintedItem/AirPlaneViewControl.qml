@@ -19,43 +19,64 @@ Item {
 
     signal itemClicked(var id)
 
-    signal positionChanged(var pos)
-
     Component.onCompleted: {
-
         //        airplaneDrawer.changeVisibleSize(dimensions)
         viewModel.addPainter("airplane", planeMapArea)
     }
+    function scrollTo(scrollToId) {
+        var vm = rootControl.viewModel
 
-//    function scrollTo(scrollToId) {
-//        var z = airplaneDrawer.zoom
-//        if (z < 1.1)
-//            z = 1.1
-//        if (z > 2.2)
-//            z = 2.2
-//        airplaneDrawer.zoom = z
-//        airplaneDrawer.position = airplaneDrawer.getMoveToCenterAt(scrollToId, z)
-//    }
-
-	function scrollTo(scrollToId) {
-		var vm = rootControl.viewModel
         var z = vm.zoom
         if (z < 1.1)
             z = 1.1
         if (z > 2.2)
             z = 2.2
-        vm.zoom = z
-        vm.position = vm.getMoveToCenterAt(scrollToId, z)
+
+        animateZoom.from = vm.zoom
+        animateZoom.to = z
+
+        var pos = vm.getMoveToCenterAt(scrollToId, z)
+        animatePos.from = viewModel.position
+        animatePos.to = pos
+
+        animateZoom.start()
+        animatePos.start()
     }
 
-	
+    PropertyAnimation {
+        id: animateZoom
+        target: rootControl.viewModel
+        properties: "zoom"
+        from: 1.0
+        to: 2.5
+        duration: 300
+    }
+    PropertyAnimation {
+        id: animatePos
+        target: rootControl.viewModel
+        properties: "position"
+        from: Qt.point(0, 0)
+        to: Qt.point(500, 500)
+        duration: 300
+    }
+
     Column {
 
         z: 100
 
         Button {
-            text: "FUTURE"
-            onClicked: airplaneDrawer.testAsync()
+            text: viewModel.position.x
+            onClicked: {
+                animatePos.from = rootControl.viewModel.position
+                animatePos.start()
+            }
+        }
+
+        Button {
+            text: "zoom:" + rootControl.viewModel.zoom
+            onClicked: {
+                animateZoom.start()
+            }
         }
 
         Button {
@@ -92,15 +113,15 @@ Item {
 
         Button {
             text: "zoom 0.5"
-            onClicked: airplaneDrawer.zoom = 0.5
+            onClicked: rootControl.viewModel.zoom = 0.5
         }
         Button {
             text: "zoom 1"
-            onClicked: airplaneDrawer.zoom = 1.0
+            onClicked: rootControl.viewModel.zoom = 1.0
         }
         Button {
-            text: "zoom 4"
-            onClicked: airplaneDrawer.zoom = 4.0
+            text: "zoom 2"
+            onClicked: rootControl.viewModel.zoom = 2.0
         }
         Button {
             text: "zoom 1, pos -500,-500"
@@ -156,7 +177,7 @@ Item {
             var zoomFactor = (pinch.scale - pinch.previousScale) / pinch.previousScale
             airplaneDrawer.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
             //2nd
-             rootControl.viewModel.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
+            rootControl.viewModel.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
         }
 
         MouseArea {

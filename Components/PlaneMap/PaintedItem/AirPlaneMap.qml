@@ -44,10 +44,9 @@ Item {
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-            onPositionChanged: function (pos) {
-                //                console.log(pos)
-                airplaneNavControl.setMapPosition(pos)
-            }
+            //            onPositionChanged: function (pos) {
+            //                airplaneNavControl.setMapPosition(pos)
+            //            }
         }
 
         AirPlaneNavControl {
