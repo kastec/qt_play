@@ -23,8 +23,10 @@ class PlaneMap
     int rows, chairsInRow;
     
     void createLayout(QList<QString> lines);
-    
+    // obsolete
     void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
+    
+    void draw(QPainter *painter, QPoint posOffset, qreal zoom);
     
     void drawNavMap(QPainter *painter, int xOff, int yOff, qreal zoom);
     

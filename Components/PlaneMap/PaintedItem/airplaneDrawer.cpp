@@ -33,15 +33,15 @@ AirplaneDrawer::AirplaneDrawer(QQuickItem *parent) : QQuickPaintedItem(parent), 
 void AirplaneDrawer::changeVisibleSize(QSize size){
     screenSize = size;
     
-    if(planeMap!=nullptr)
-        planeMap->setScreenSize(screenSize);
+//    if(planeMap!=nullptr)
+//        planeMap->setScreenSize(screenSize);
         
     auto screenWidth = screenSize.width();
 
     auto chairWidth = PlaneLayoutParser::CHAIR_SIZE;
     maxZoom = screenWidth / (qreal)(3*chairWidth); // кол-во кресел * 100
     
-    auto planeWidth =(12 *chairWidth); // ширина борта в пикселях (кол-во кресел * 100)
+    auto planeWidth = (12 *chairWidth); // ширина борта в пикселях (кол-во кресел * 100)
     minZoom = screenWidth / (qreal)(4*planeWidth); // 2 ширины борта  убирается на экране
 }
 

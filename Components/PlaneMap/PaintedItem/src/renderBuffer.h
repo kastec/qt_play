@@ -11,19 +11,19 @@ class RenderBuffer{
     const qreal incSize = 1.3;
     const QColor fillColor = Qt::white;
     QPixmap * buffer;
-    QSize screenSize;
+    QSize bufferSize;
     QRect viewPort;
     qreal zoom;
     
-    RenderBuffer():buffer(nullptr){}
+    RenderBuffer():buffer(nullptr), bufferSize(0,0){}
     
-    void setSize(QSize screenSize)
+    void setSize(QSize size)
     {       
         if(buffer!=nullptr)
             delete buffer;
         
-        buffer = new QPixmap(screenSize*incSize);
-        this->screenSize = screenSize;
+        buffer = new QPixmap(size*incSize);
+        this->bufferSize = size;
     }
     
     bool isInBuffer(QRect &rect){
@@ -52,7 +52,7 @@ class RenderBuffer{
     void draw(QPainter *p, QRect &rect)
     {
         auto topLeftBuff = (rect.topLeft()-viewPort.topLeft())*zoom;
-        auto bufrect = QRect(topLeftBuff, screenSize);
+        auto bufrect = QRect(topLeftBuff, bufferSize);
 
 //        qDebug() << "draw buf:" << bufrect;
         p->drawPixmap(QPoint(0,0),*buffer, bufrect);         

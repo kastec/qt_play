@@ -5,9 +5,12 @@
 
 #include "airplaneViewModel.h"
 #include "./src/cardServiceType.h"
+#include "./src/planeLayoutParser.h"
+
 //#include "qdebug.h"
 
-AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent)
+AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent),
+                                                        airplanePainter(nullptr), navigationPainter(nullptr), zoom(1.0)
 {
 //    qDebug() << "AirplaneViewModel ctor";
     this->set_planeMap(new PlaneMap());
@@ -148,9 +151,16 @@ void AirplaneViewModel::addPainter(QString name, PaintArea *paintArea)
    qDebug() <<"painter:" << name << paintArea;
    qDebug() <<"painter:" <<  paintArea->objectName();
    this->airplanePainter = paintArea;
-   paintArea->onPaint = [this](QPainter *p){this->drawAirplaneLayout(p);};
    
-//   paintArea->update();
+   if(name=="airplane")
+       paintArea->onPaint = [this](QPainter *p){this->drawAirplaneLayout(p);};
+   
+//   if(name=="airplane")
+//       paintArea->onPaint = [this](QPainter *p){planeMap->draw(p, position, zoom);};
+  
+  
+    if(name=="navigation")
+       paintArea->onPaint = [this](QPainter *p){this->drawNavigation(p);};
 }
 
 
@@ -162,40 +172,112 @@ void AirplaneViewModel::moveBy(qreal xOff, qreal yOff) {
    oy = position.y() - yOff;
    //    if (ox < 0) ox = 0;
    //    if (oy < 0) oy = 0;
-   
-//   this->set_position(QPoint(ox,oy));
-   position = QPoint(ox,oy);
-   updatePaintArea();
+ 
+    this->set_position(QPoint(ox,oy));  
+//   updatePaintArea();
 }
 
 bool AirplaneViewModel::zoomBy(qreal zoomFactor, qreal centerX, qreal centerY)
 {
-//   auto newZoom = zoom + zoom * zoomFactor;
-//   if(newZoom>maxZoom || newZoom<minZoom) return false;
-//   zoom = newZoom;
+   auto newZoom = zoom + zoom * zoomFactor;
+   if(newZoom>maxZoom || newZoom<minZoom) return false;
+   zoom = newZoom;
    
-//   position -= QPoint( (centerX-position.x())*zoomFactor , (centerY-position.y())*zoomFactor);
+   position -= QPoint( (centerX-position.x())*zoomFactor , (centerY-position.y())*zoomFactor);
    
-//   update();
+   updatePaintArea();
    return true;
 }
 
+
+// --- Props
+bool AirplaneViewModel::onPositionChanging(QPoint newPos){
+   position = newPos;   
+   updatePaintArea();
+   return true;
+}
+
+bool AirplaneViewModel::onZoomChanging(qreal newZoom){        
+   auto zoomFactor = (newZoom-zoom)/zoom;
+   bool res = zoomBy(zoomFactor,screenSize.width()/2, screenSize.height()/2);
+   return res; 
+}
+
+//---------
 
 void AirplaneViewModel::updatePaintArea()
 {
    if(airplanePainter != nullptr)
        airplanePainter->update();
+   
+   if(navigationPainter != nullptr)
+       navigationPainter->update();
 }
+
+
+void AirplaneViewModel::changeVisibleSize(QSize size){
+   this->screenSize = size;
     
+   auto screenWidth = screenSize.width();
+   
+   auto chairWidth = PlaneLayoutParser::CHAIR_SIZE;
+   maxZoom = screenWidth / (qreal)(3*chairWidth); // кол-во кресел * 100
+   
+   auto planeWidth = (12 *chairWidth); // ширина борта в пикселях (кол-во кресел * 100)
+   minZoom = screenWidth / (qreal)(4*planeWidth); // 2 ширины борта  убирается на экране
+}
+
+
 void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
 {
-   qDebug() <<"called DrawAirplaneLayout():" << painter;
+//   auto painterSize = painter->window().size();
+//   if(painterSize != this->screenSize)
+//       setScreenSize(painter->window().size());
+ 
+//   qDebug() <<"called DrawAirplaneLayout():" << painter;
    // PLANE RENDER
-   int xpos = position.x(), ypos=position.y();
    if(planeMap!=nullptr)
-       planeMap->draw(painter, xpos, ypos, 1.0);
-   
+       planeMap->draw(painter, position, zoom);
 }
+
+void AirplaneViewModel::drawNavigation(QPainter *painter)
+{
+   //   qDebug() <<"called DrawAirplaneLayout():" << painter;
+   // PLANE RENDER
+//   int xpos = position.x(), ypos=position.y();
+//   if(planeMap!=nullptr)
+//       planeMap->draw(painter, xpos, ypos, 1.0);   
+}
+
+QPoint AirplaneViewModel::getMoveToCenterAt(QString id, qreal viewZoom)
+{
+   if(planeMap==nullptr) return QPoint(0,0);
+   
+   //    auto item = planeMap->findItem(id);
+   auto item = planeMap->findChair(id);
+   if(item == nullptr)
+       return position;
+   
+   if(viewZoom==0.0) viewZoom=this->zoom;
+   
+   auto itemCenter = item->location.center();
+   //    qDebug() << "zoom:" << viewZoom;
+   auto itemOnScr = (itemCenter* viewZoom);
+   
+   QPoint center(screenSize.width()/2,screenSize.height()/2);
+   auto tlWin = itemOnScr - center;
+   auto newPosition = -tlWin;
+   
+   return newPosition;
+} 
+
+QString AirplaneViewModel::getIdAt(int x, int y){
+   QPoint p( (x - position.x())/ zoom, (y-position.y())/ zoom );
+   auto item = planeMap->findItem(p);
+   return (item!=nullptr)? item->id : "";
+}
+
+
 AirplaneViewModel::~AirplaneViewModel()
 {
     if(planeMap!=nullptr)

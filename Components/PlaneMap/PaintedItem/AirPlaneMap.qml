@@ -12,8 +12,7 @@ Item {
 
     id: airplaneMapControl
 
-    signal itemClicked(var id)
-
+    //    signal itemClicked(var id)
     AirplaneViewModel {
         id: airplaneViewModel
     }
@@ -35,15 +34,17 @@ Item {
 
         AirPlaneViewControl {
             id: airplaneViewControl
-			viewModel: airplaneViewModel
+            viewModel: airplaneViewModel
             planeMap: airplaneViewModel.planeMap
 
-            onItemClicked: airplaneMapControl.itemClicked(id)
+            onItemClicked: function (id) {
+                console.log("clicked on" + id)
+            }
 
             Layout.fillHeight: true
             Layout.fillWidth: true
 
-            onPositionChanged: {
+            onPositionChanged: function (pos) {
                 //                console.log(pos)
                 airplaneNavControl.setMapPosition(pos)
             }

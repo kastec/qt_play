@@ -21,6 +21,7 @@ class PaintArea: public QQuickPaintedItem
     
     void paint(QPainter *painter)
     {
+        
         if(onPaint!=nullptr)
             onPaint(painter);
         //        painter->device()->width();

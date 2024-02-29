@@ -8,11 +8,6 @@ PlaneMap::PlaneMap()
 {
 }
 
-void PlaneMap::setScreenSize(QSize screenSize)
-{
-    this->screenSize = screenSize;
-    buffer.setSize(screenSize);
-}
 
 void PlaneMap::createLayout(QList<QString> lines)
 {
@@ -26,23 +21,36 @@ void PlaneMap::createLayout(QList<QString> lines)
     //    planeSearcher.print(); 
 }
 
+// obsolete
 void PlaneMap::draw(QPainter *painter, int xOff, int yOff, qreal zoom)
 {
     QPoint offset(xOff, yOff);
-    QRect scrViewPort (-offset / zoom, screenSize / zoom);
+    this->draw(painter, QPoint(xOff, yOff), zoom);
+}
+
+void PlaneMap::draw(QPainter *painter, QPoint posOffset, qreal zoom)
+{
+    QSize screenSize = QSize(painter->device()->width(),painter->device()->height());
+    
+    QRect scrViewPort (-posOffset / zoom, screenSize / zoom);
         
     bool useBuffer=false;
     if(useBuffer)
-        drawBuffer(painter, offset, zoom, scrViewPort);
+        drawBuffer(painter, posOffset, zoom, scrViewPort);
     else
-        drawItems(painter, offset,  zoom, scrViewPort);
+        drawItems(painter, posOffset,  zoom, scrViewPort);
 }
 
 
 void PlaneMap::drawBuffer(QPainter *painter, QPoint offset, qreal zoom, QRect scrViewPort)
 {
-    auto canUseBuffer = buffer.isInBuffer(scrViewPort) && buffer.zoom==zoom;
+    QSize painterSize(painter->device()->width(),painter->device()->height());
     
+    if(painterSize != buffer.bufferSize)
+        buffer.setSize(painterSize);
+    
+    auto canUseBuffer = buffer.zoom==zoom && buffer.isInBuffer(scrViewPort);
+ 
     if(!canUseBuffer)
     {
         qDebug()<< "==[ REDRAW buffer]==";
