@@ -2,6 +2,7 @@
 #include <QObject>
 #include <QPainter>
 
+
 #include "airplaneViewModel.h"
 #include "./src/cardServiceType.h"
 //#include "qdebug.h"
@@ -16,6 +17,20 @@ AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent)
 //void AirplaneViewModel::changeRenderSize(QSize size){
 //    planeMap->setScreenSize(size);
 //}
+
+
+/*
+void PlaneMap::draw(QPainter *painter, int xOff, int yOff, qreal zoom)
+{
+    QPoint offset(xOff, yOff);
+    QRect scrViewPort (-offset / zoom, screenSize / zoom);
+    
+    bool useBuffer=false;
+    if(useBuffer)
+        drawBuffer(painter, offset, zoom, scrViewPort);
+    else
+        drawItems(painter, offset,  zoom, scrViewPort);
+}*/
 
 
 void AirplaneViewModel::loadLayout()
@@ -128,8 +143,59 @@ void AirplaneViewModel::setSelections(const QList<QString> &selectedSeats){
    planeMap->planeSearcher.setSelections(selectedSeats);
 }
 
+void AirplaneViewModel::addPainter(QString name, PaintArea *paintArea)
+{   
+   qDebug() <<"painter:" << name << paintArea;
+   qDebug() <<"painter:" <<  paintArea->objectName();
+   this->airplanePainter = paintArea;
+   paintArea->onPaint = [this](QPainter *p){this->drawAirplaneLayout(p);};
+   
+//   paintArea->update();
+}
 
 
+void AirplaneViewModel::moveBy(qreal xOff, qreal yOff) {
+   qreal ox, oy;
+  //qDebug() << xOff <<","<<yOff;
+   
+   ox = position.x() - xOff;
+   oy = position.y() - yOff;
+   //    if (ox < 0) ox = 0;
+   //    if (oy < 0) oy = 0;
+   
+//   this->set_position(QPoint(ox,oy));
+   position = QPoint(ox,oy);
+   updatePaintArea();
+}
+
+bool AirplaneViewModel::zoomBy(qreal zoomFactor, qreal centerX, qreal centerY)
+{
+//   auto newZoom = zoom + zoom * zoomFactor;
+//   if(newZoom>maxZoom || newZoom<minZoom) return false;
+//   zoom = newZoom;
+   
+//   position -= QPoint( (centerX-position.x())*zoomFactor , (centerY-position.y())*zoomFactor);
+   
+//   update();
+   return true;
+}
+
+
+void AirplaneViewModel::updatePaintArea()
+{
+   if(airplanePainter != nullptr)
+       airplanePainter->update();
+}
+    
+void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
+{
+   qDebug() <<"called DrawAirplaneLayout():" << painter;
+   // PLANE RENDER
+   int xpos = position.x(), ypos=position.y();
+   if(planeMap!=nullptr)
+       planeMap->draw(painter, xpos, ypos, 1.0);
+   
+}
 AirplaneViewModel::~AirplaneViewModel()
 {
     if(planeMap!=nullptr)

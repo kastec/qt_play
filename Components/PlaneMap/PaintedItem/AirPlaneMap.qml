@@ -35,6 +35,7 @@ Item {
 
         AirPlaneViewControl {
             id: airplaneViewControl
+			viewModel: airplaneViewModel
             planeMap: airplaneViewModel.planeMap
 
             onItemClicked: airplaneMapControl.itemClicked(id)

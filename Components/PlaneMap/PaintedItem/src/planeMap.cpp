@@ -30,9 +30,8 @@ void PlaneMap::draw(QPainter *painter, int xOff, int yOff, qreal zoom)
 {
     QPoint offset(xOff, yOff);
     QRect scrViewPort (-offset / zoom, screenSize / zoom);
-    
-    
-    bool useBuffer=true;
+        
+    bool useBuffer=false;
     if(useBuffer)
         drawBuffer(painter, offset, zoom, scrViewPort);
     else

@@ -11,6 +11,8 @@ import AppQtTest12 1.0
 Item {
     id: airplaneControl
 
+    property var viewModel
+
     property alias planeMap: airplaneDrawer.planeMap
 
     property size dimensions: Qt.size(width, height)
@@ -21,13 +23,10 @@ Item {
 
     Component.onCompleted: {
         airplaneDrawer.changeVisibleSize(dimensions)
+
+        viewModel.addPainter("airplane", planeMapArea)
     }
 
-    //    Text {
-    //        id: log
-    //        anchors.fill: parent
-    //        anchors.margins: 10
-    //    }
     function scrollTo(scrollToId) {
         var z = airplaneDrawer.zoom
         if (z < 1.1)
@@ -39,6 +38,7 @@ Item {
     }
 
     Column {
+
         z: 100
 
         Button {
@@ -99,11 +99,19 @@ Item {
         }
     }
 
+    PaintArea {
+        id: planeMapArea
+        objectName: "12345qwert"
+        anchors.fill: parent
+    }
+
     onDimensionsChanged: airplaneDrawer.changeVisibleSize(dimensions)
 
     AirplaneDrawer {
         id: airplaneDrawer
 
+        anchors.leftMargin: 300
+        anchors.topMargin: 300
         // planeMap: airplaneViewModel.planeMap
         anchors.fill: parent
 
@@ -122,88 +130,6 @@ Item {
         }
     } // AirplaneDrawer
 
-
-    /*
-    PinchArea {
-        id: pa
-        anchors.fill: parent
-
-        property bool isDragging: false
-        onPinchFinished: {
-            //            log.text += "PinchArea onPinchFinished" + "\n"
-            pa.isDragging = false
-        }
-        onPinchStarted: {
-            //            log.text += "PinchArea onPinchStarted" + "\n"
-            pa.isDragging = true
-        }
-        onPinchUpdated: {
-            //			Qt.point(pinch.startCenter.x, pinch.startCenter.y)
-            //            log.text += "PinchArea onPinchUpdated======= " + pinch.scale + "\n"
-            var zoomFactor = (pinch.scale - pinch.previousScale) / pinch.previousScale
-            airplaneDrawer.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
-        }
-    } // PinchArea
-
-    MouseArea {
-        anchors.fill: parent
-
-        property real ix
-        property real iy
-
-        property date pressTime
-        property var heldTimeMsec
-        property real pressX
-        property real pressY
-        property real moveDistance
-
-        enabled: !pa.isDragging
-        onCanceled: {
-
-            //            log.text += "MouseArea onCanceled" + "\n"
-        }
-
-        onPositionChanged: {
-            //            log.text += "MouseArea onPositionChanged" + "\n"
-            if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
-
-                airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
-                //airplaneDrawer.position = Qt.point(airplaneDrawer.position.x - (ix - mouseX), airplaneDrawer.position.y - (iy - mouseY))
-                ix = mouseX
-                iy = mouseY
-            }
-        }
-
-        onPressed: {
-            //            log.text += "MouseArea onPressed" + "\n"
-            ix = mouseX
-            iy = mouseY
-
-            pressTime = new Date()
-            pressX = mouseX
-            pressY = mouseY
-        }
-
-        onReleased: {
-            heldTimeMsec = new Date().getTime() - pressTime.getTime()
-            //            console.log("onReleased:   " + mouseX + " x " + mouseY)
-            moveDistance = Math.sqrt(Math.pow((mouseX - pressX), 2) + Math.pow((mouseY - pressY), 2))
-        }
-
-        onClicked: {
-            if (heldTimeMsec > 600 || moveDistance > 10) {
-                //console.log("held:   " + heldTimeMsec + "  dist:" + moveDistance)
-                return
-            }
-            var id = airplaneDrawer.getIdAt(mouseX, mouseY)
-        }
-
-        onWheel: {
-            var valZoom = wheel.angleDelta.y / 120.0 / 10.0
-            airplaneDrawer.zoomBy(valZoom, wheel.x, wheel.y)
-        }
-    } // MouseArea
-    */
     PinchArea {
         id: pa
         anchors.fill: parent
@@ -233,6 +159,7 @@ Item {
             onPositionChanged: {
                 if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
                     airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
+					airplaneControl.viewModel.moveBy(ix - mouseX, iy - mouseY)
                     ix = mouseX
                     iy = mouseY
 
