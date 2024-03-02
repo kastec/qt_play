@@ -15,6 +15,9 @@ class PlaneMap
     QSize screenSize;  
     QList<PlaneItemBase*> planeItems;
     
+    // для правильного расчета размеров на Windows
+    qreal devicePixelRatio;
+    
   public:
     PlaneLayoutSearcher planeSearcher;
     

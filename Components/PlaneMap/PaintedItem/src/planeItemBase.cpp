@@ -133,12 +133,11 @@ QRect PlaneItemBase::drawSymbols(QPainter *painter, const QPoint &position,
 
 
 
-void PlaneItemBase::drawRect(QPainter &p, QRectF &rect, int width, int height, const QColor &fillColor, QColor &borderColor, int radius)
+void PlaneItemBase::drawRect(QPainter &p, QRectF &r, int width, int height, const QColor &fillColor, QColor &borderColor, int radius)
 {    
     QPainterPath path;
-    
-    auto pr = rect;
-    QRect drawRect( pr.x()*width,  pr.y()*height, pr.width() * width, pr.height() * height);
+
+    QRect drawRect( r.x()*width,  r.y()*height, r.width() * width, r.height() * height);
     
     auto radius1 = (radius*width)/100;
     

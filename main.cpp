@@ -126,7 +126,11 @@ int main(int argc, char *argv[])
     
   // auto jsonPers = DataSamples::LoadJsonData();
   //  qDebug() << &jsonPers;
-
+    
+    auto q = app.devicePixelRatio();
+    qDebug() << "ratio" <<q;
+   
+    
     const QUrl url(u"qrc:/QtTest1/main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {

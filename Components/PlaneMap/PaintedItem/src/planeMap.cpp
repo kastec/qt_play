@@ -1,11 +1,16 @@
 
+
+#include <QObject>
 #include "planeMap.h"
 #include "Components/PlaneMap/PaintedItem/src/spriteCache.h"
 //#include "qdatetime.h"
 #include "planeLayoutParser.h"
+#include "qguiapplication.h"
+
 
 PlaneMap::PlaneMap()
 {
+  this->devicePixelRatio = qApp->devicePixelRatio();
 }
 
 
@@ -27,21 +32,21 @@ void PlaneMap::createLayout(QList<QString> lines)
 
 void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom)
 {
-    this->screenSize = painter->window().size();
+    this->screenSize = painter->viewport().size() / this->devicePixelRatio;
   
     QRect scrViewPort (-posOffset / zoom, screenSize / zoom);
     
-    qDebug()<<"scr:" << this->screenSize << "layout:"<<airplaneSize;
-    qDebug()<<"zoom" << zoom;
-    qDebug()<<"scrViewPort" << scrViewPort;
-   qDebug()<<"----";
+//    qDebug()<<"scr:" << this->screenSize << "layout:"<<airplaneSize;
+//    qDebug()<<"zoom" << zoom;
+//    qDebug()<<"scrViewPort" << scrViewPort;
+//    qDebug()<<"----";
     
     bool useBuffer=false;
     if(useBuffer)
         drawLayoutBuffer(painter, posOffset, zoom, scrViewPort);
     else
         drawItems(painter, posOffset,  zoom, scrViewPort);
-    qDebug()<<"map draw";
+
 }
 
 
@@ -69,8 +74,9 @@ void PlaneMap::drawLayoutBuffer(QPainter *painter, QPoint offset, qreal zoom, QR
 
 void PlaneMap::drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QRect viewPort)
 {
+//    auto ratio = painter->device()->devicePixelRatio();
     auto vpItems = planeSearcher.findItems(viewPort);
-    qDebug()<<"items to draw:"<< vpItems.length();
+//    qDebug()<<"items to draw:"<< vpItems.length() << " viewPort:"<<viewPort;
     
     for (const auto item : vpItems) {
         
@@ -78,10 +84,13 @@ void PlaneMap::drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QR
         auto pos = painterOffset + l.topLeft() * zoom;
         auto size = l.size() * zoom;
         
-        QRect vpItemRect(pos, size);       
-        
+        QRect vpItemRect(pos, size);
+                
         item->draw(painter, vpItemRect);
-        qDebug()<<"item "<< item->title << "loc:"<<item->location << "r:"<<vpItemRect;
+//        if(item->type=="seat"){
+//            auto s = (PlaneItemChair*)item;
+//            qDebug()<<"item "<< s->rowNumber <<s->letter << "loc:"<<item->location << "r:"<<vpItemRect;
+//        }
         
     }     
 }
@@ -89,7 +98,7 @@ void PlaneMap::drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QR
 
 void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom)
 {
-    auto painterSize = painter->window().size();
+    auto painterSize = painter->viewport().size() / this->devicePixelRatio;
     auto scale = airplaneSize.height()/(qreal)painterSize.height();
     
     QRect scrViewPort (posOffset / zoom, this->screenSize / zoom);
