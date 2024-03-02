@@ -4,6 +4,7 @@
 
 #include <QObject>
 #include <QQuickPaintedItem>
+#include "./src/frameRateCalc.h"
 #include "Utils/JsonHelper/qqmlhelper.h"
 #include "./src/planeMap.h"
 #include "paintArea.h"
@@ -32,6 +33,8 @@ class AirplaneViewModel: public QObject
     
     PaintArea *airplanePainter;
     PaintArea *navigationPainter;
+    
+    FrameRateCalc framerate;
     
   public:
     explicit AirplaneViewModel(QObject *parent = nullptr);

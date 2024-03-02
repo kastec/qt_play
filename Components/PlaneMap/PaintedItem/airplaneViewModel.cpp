@@ -148,19 +148,21 @@ void AirplaneViewModel::setSelections(const QList<QString> &selectedSeats){
 
 void AirplaneViewModel::addPainter(QString name, PaintArea *paintArea)
 {   
-   qDebug() <<"painter:" << name << paintArea;
-   qDebug() <<"painter:" <<  paintArea->objectName();
-   this->airplanePainter = paintArea;
-   
-   if(name=="airplane")
+//   qDebug() <<"painter:" << name << paintArea;
+   if(paintArea == nullptr){
+       qDebug() <<"ERROR: paint area" << name << "is NULL";
+       return;       
+   }
+       
+   if(name == "airplane"){
+       this->airplanePainter = paintArea;
        paintArea->onPaint = [this](QPainter *p){this->drawAirplaneLayout(p);};
+   }
    
-//   if(name=="airplane")
-//       paintArea->onPaint = [this](QPainter *p){planeMap->draw(p, position, zoom);};
-  
-  
-    if(name=="navigation")
+   if(name == "navigation"){
+       this->navigationPainter = paintArea;
        paintArea->onPaint = [this](QPainter *p){this->drawNavigation(p);};
+   }
 }
 
 
@@ -184,11 +186,11 @@ bool AirplaneViewModel::zoomBy(qreal zoomFactor, qreal centerX, qreal centerY)
        return false;
     
     zoom = newZoom;
-   
-   position -= QPoint( (centerX-position.x())*zoomFactor , (centerY-position.y())*zoomFactor);
-   
-   updatePaintArea();
-   return true;
+    
+    position -= QPoint( (centerX-position.x())*zoomFactor , (centerY-position.y())*zoomFactor);
+    
+    updatePaintArea();
+    return true;
 }
 
 
@@ -207,16 +209,6 @@ bool AirplaneViewModel::onZoomChanging(qreal newZoom){
 
 //---------
 
-void AirplaneViewModel::updatePaintArea()
-{
-   if(airplanePainter != nullptr)
-       airplanePainter->update();
-   
-   if(navigationPainter != nullptr)
-       navigationPainter->update();
-}
-
-
 void AirplaneViewModel::changeVisibleSize(QSize size){
    this->screenSize = size;
     
@@ -229,27 +221,6 @@ void AirplaneViewModel::changeVisibleSize(QSize size){
    minZoom = screenWidth / (qreal)(4*planeWidth); // 2 ширины борта  убирается на экране
 }
 
-
-void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
-{
-//   auto painterSize = painter->window().size();
-//   if(painterSize != this->screenSize)
-//       setScreenSize(painter->window().size());
- 
-//   qDebug() <<"called DrawAirplaneLayout():" << painter;
-   // PLANE RENDER
-   if(planeMap!=nullptr)
-       planeMap->draw(painter, position, zoom);
-}
-
-void AirplaneViewModel::drawNavigation(QPainter *painter)
-{
-   //   qDebug() <<"called DrawAirplaneLayout():" << painter;
-   // PLANE RENDER
-//   int xpos = position.x(), ypos=position.y();
-//   if(planeMap!=nullptr)
-//       planeMap->draw(painter, xpos, ypos, 1.0);   
-}
 
 QPoint AirplaneViewModel::getMoveToCenterAt(QString id, qreal viewZoom)
 {
@@ -279,6 +250,37 @@ QString AirplaneViewModel::getIdAt(int x, int y){
    return (item!=nullptr)? item->id : "";
 }
 
+/// ============================================
+///  DRAWING AIRPLANE AND NAVIGATION
+/// ============================================
+
+void AirplaneViewModel::updatePaintArea()
+{
+   if(airplanePainter != nullptr)
+       airplanePainter->update();
+   
+   if(navigationPainter != nullptr)
+       navigationPainter->update();
+}
+void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
+{
+   framerate.start();
+   
+   // PLANE RENDER
+//    qDebug() <<"called MAP-Layout():" << position;
+   planeMap->drawLayout(painter, position, zoom);
+   
+   framerate.stop();
+   
+   this->set_avgRenderTime(framerate.avgFrameMsec);
+   this->set_renderTime(framerate.frameMsec);
+}
+
+void AirplaneViewModel::drawNavigation(QPainter *painter)
+{
+//   qDebug() <<"called NAV-Layout():" << position;
+   planeMap->drawNavMap(painter, position, zoom);   
+}
 
 AirplaneViewModel::~AirplaneViewModel()
 {

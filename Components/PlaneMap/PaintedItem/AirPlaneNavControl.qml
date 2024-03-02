@@ -10,27 +10,23 @@ import AppQtTest12 1.0
 
 Item {
 
-	property alias planeMap: airplaneNavDrawer.planeMap
-	
-	
-	function setMapPosition(pos)
-	{
-		airplaneNavDrawer.setMapPosition(pos)
-	}
-	
+    property var viewModel
+
+    Component.onCompleted: {
+        viewModel.addPainter("navigation", planeNavArea)
+    }
+
+    //    function setMapPosition(pos) {
+    //        planeNavArea.setMapPosition(pos)
+    //    }
     Rectangle {
         color: "#D9E6ED"
         anchors.fill: parent
         radius: 32
-		
-		AirplaneNavDrawer {
-			id: airplaneNavDrawer
-			planeMap: airplaneViewModel.planeMap
-	
-			anchors.fill: parent
-	
-			
-		} // AirplaneDrawer
-		
+
+        PaintArea {
+            id: planeNavArea
+            anchors.fill: parent
+        }
     }
 }

@@ -21,16 +21,15 @@ class PlaneMap
   public:
     PlaneMap();
     int rows, chairsInRow;
+    QSize airplaneSize;
     
     void createLayout(QList<QString> lines);
     // obsolete
-    void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
+//    void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
     
-    void draw(QPainter *painter, QPoint posOffset, qreal zoom);
-    
-    void drawNavMap(QPainter *painter, int xOff, int yOff, qreal zoom);
-    
-    
+    void drawLayout(QPainter *painter, QPoint posOffset, qreal zoom);    
+    void drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom);
+        
     void setScreenSize(QSize screenSize);
     
     PlaneItemChair* findChair(const QString &seatNumber);    
@@ -44,7 +43,7 @@ class PlaneMap
     
     RenderBuffer buffer;
      
-    void drawBuffer(QPainter *painter, QPoint offset, qreal zoom, QRect scrViewPort);
+     void drawLayoutBuffer(QPainter *painter, QPoint offset, qreal zoom, QRect scrViewPort);
     void drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QRect viewPort);
     
   public:

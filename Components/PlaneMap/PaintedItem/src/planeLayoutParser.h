@@ -17,7 +17,12 @@ class PlaneLayoutParser{
    static const int CHAIR_ROW_OFFSET=CHAIR_SIZE*0.2;
    static const int CHAIR_WALKWAY=CHAIR_SIZE*0.5;
    const QChar NONE_CHAIR='0';
-        
+   
+   
+ public:
+   int maxChairsInRow; // максимальное кол-во сидений в ряду
+   int rows; // кол-во рядов
+   
   public :
     PlaneLayoutParser(): posX(0), posY(0), rows(0), maxChairsInRow(0){
     }
@@ -28,10 +33,12 @@ class PlaneLayoutParser{
         return planeItems;
     }
     
-  public:
-    int maxChairsInRow; // максимальное кол-во сидений в ряду 
-    int rows; // кол-во рядов
-        
+    QSize getPlaneSize()
+    {
+        int height = getPlaneHeigth();
+        return QSize(airplaneWidth, height);
+    }
+
   private:
     QList<PlaneItemBase*> planeItems;
     int airplaneWidth;
@@ -412,7 +419,19 @@ class PlaneLayoutParser{
         if(commentPos>=0) line.truncate(commentPos);
         auto res  = line.replace(regClear, "\\1").trimmed();        
         return res;
-    }    
+    }
+    
+    int getPlaneHeigth()
+    {
+        // найдем последнее сидение и возьмем его Y-координату
+        for(int i=planeItems.length()-1;i>=0;i--)
+        {
+            auto item = planeItems[i];
+            if(item->type=="seat")
+                return item->location.bottom();
+        }
+        return 0;
+    }
 };
 
 #endif // PLANELAYOUTPARSER_H

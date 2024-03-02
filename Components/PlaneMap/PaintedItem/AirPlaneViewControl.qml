@@ -13,8 +13,7 @@ Item {
 
     property var viewModel
 
-    property alias planeMap: airplaneDrawer.planeMap
-
+    //    property alias planeMap: airplaneDrawer.planeMap
     property size dimensions: Qt.size(width, height)
 
     signal itemClicked(var id)
@@ -98,17 +97,17 @@ Item {
         }
 
         Button {
-            text: airplaneDrawer.avgRenderTime + " / " + airplaneDrawer.renderTime
+            text: viewModel.avgRenderTime + " / " + viewModel.renderTime
             //            onClicked: log.text = ""
         }
 
         Button {
             text: "move 0,0"
-            onClicked: airplaneDrawer.position = Qt.point(0, 0)
+            //            onClicked: airplaneDrawer.position = Qt.point(0, 0)
         }
         Button {
             text: "move 300,300"
-            onClicked: airplaneDrawer.position = Qt.point(300, 300)
+            //            onClicked: airplaneDrawer.position = Qt.point(300, 300)
         }
 
         Button {
@@ -123,26 +122,20 @@ Item {
             text: "zoom 2"
             onClicked: rootControl.viewModel.zoom = 2.0
         }
-        Button {
-            text: "zoom 1, pos -500,-500"
-            onClicked: {
-                airplaneDrawer.zoom = 1.0
-                airplaneDrawer.position = Qt.point(-500, -500)
-            }
-        }
     }
 
     onDimensionsChanged: {
-        airplaneDrawer.changeVisibleSize(dimensions)
+        //        airplaneDrawer.changeVisibleSize(dimensions)
         rootControl.viewModel.changeVisibleSize(dimensions)
     }
 
     PaintArea {
         id: planeMapArea
-        objectName: "12345qwert"
         anchors.fill: parent
     }
 
+
+    /*
     AirplaneDrawer {
         id: airplaneDrawer
 
@@ -165,7 +158,7 @@ Item {
             }
         }
     } // AirplaneDrawer
-
+*/
     PinchArea {
         id: pa
         anchors.fill: parent
@@ -175,7 +168,7 @@ Item {
 
         onPinchUpdated: {
             var zoomFactor = (pinch.scale - pinch.previousScale) / pinch.previousScale
-            airplaneDrawer.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
+            //            airplaneDrawer.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
             //2nd
             rootControl.viewModel.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
         }
@@ -196,8 +189,7 @@ Item {
 
             onPositionChanged: {
                 if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
-                    airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
-                    //2nd
+                    //                    airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
                     rootControl.viewModel.moveBy(ix - mouseX, iy - mouseY)
                     ix = mouseX
                     iy = mouseY
@@ -237,9 +229,7 @@ Item {
 
             onWheel: {
                 var valZoom = wheel.angleDelta.y / 120.0 / 10.0
-                airplaneDrawer.zoomBy(valZoom, wheel.x, wheel.y)
-
-                //2nd
+                //                airplaneDrawer.zoomBy(valZoom, wheel.x, wheel.y)
                 rootControl.viewModel.zoomBy(valZoom, wheel.x, wheel.y)
             }
         } // MouseArea ( inside PinchArea)

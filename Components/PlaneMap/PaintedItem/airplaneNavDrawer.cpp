@@ -33,8 +33,8 @@ void AirplaneNavDrawer::paint(QPainter *painter)
     
    
     // PLANE RENDER
-    if(planeMap!=nullptr)
-        planeMap->drawNavMap(painter,xpos, ypos, 1.0);
+//    if(planeMap!=nullptr)
+//        planeMap->drawNavMap(painter,xpos, ypos, 1.0);
    
     return; 
 }

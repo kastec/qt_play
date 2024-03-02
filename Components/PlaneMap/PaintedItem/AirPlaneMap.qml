@@ -35,10 +35,10 @@ Item {
         AirPlaneViewControl {
             id: airplaneViewControl
             viewModel: airplaneViewModel
-            planeMap: airplaneViewModel.planeMap
 
+            //            planeMap: airplaneViewModel.planeMap
             onItemClicked: function (id) {
-                console.log("clicked on" + id)
+                console.log("clicked seat on: " + id)
             }
 
             Layout.fillHeight: true
@@ -51,7 +51,7 @@ Item {
 
         AirPlaneNavControl {
             id: airplaneNavControl
-            planeMap: airplaneViewModel.planeMap
+			viewModel: airplaneViewModel           
             Layout.fillHeight: true
             width: 190
         }

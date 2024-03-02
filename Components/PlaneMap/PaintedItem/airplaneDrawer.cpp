@@ -1,9 +1,6 @@
 #include "QDebug"
 
-#include "Utils/HttpRequester/httpRequester.h"
 #include "airplaneDrawer.h"
-#include "qfuture.h"
-#include "qfuturewatcher.h"
 #include <QImageReader>
 #include <QPainterPath>
 #include <QPainter>
@@ -69,8 +66,8 @@ void AirplaneDrawer::paint(QPainter *painter)
      framerate.start();
      
      // PLANE RENDER
-     if(planeMap!=nullptr)
-        planeMap->draw(painter,xpos, ypos, zoom);
+//     if(planeMap!=nullptr)
+//        planeMap->draw(painter,xpos, ypos, zoom);
      
      framerate.stop();
      
