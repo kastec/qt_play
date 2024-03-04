@@ -5,14 +5,13 @@
 #include "Classes/booklist.h"
 #include "Components/PersonList/person.h"
 #include "Components/PersonList/personlistmodel.h"
+#include "Components/PlaneMap/PaintedItem/airplaneDrawer.h"
 #include "Components/PlaneMap/PaintedItem/paintArea.h"
 #include "Components/Test/jsonlistmodel.h"
 #include "Components/Flights/flightslistmodel.h"
 #include "Components/PlaneMap/liveimageprovider.h"
 #include "Components/PlaneMap/colorImageProvider.h"
 
-#include "Components/PlaneMap/PaintedItem/airplaneDrawer.h"
-#include "Components/PlaneMap/PaintedItem/airplaneNavDrawer.h"
 #include "Components/PlaneMap/OpGlItem/glitem.h"
 #include "Components/PlaneMap/PaintedItem/airplaneViewModel.h"
 #include "Utils/JsonHelper/FileHelper.h"
@@ -160,7 +159,6 @@ void RegisterTypes()
     qmlRegisterType<AirplaneViewModel>("AppQtTest12",1,0, "AirplaneViewModel");
     qmlRegisterType<FlightsListModel>("AppQtTest12",1,0, "FlightsListModel");
     qmlRegisterType<AirplaneDrawer>("AppQtTest12", 1, 0, "AirplaneDrawer");
-    qmlRegisterType<AirplaneNavDrawer>("AppQtTest12", 1, 0, "AirplaneNavDrawer");
     
     qmlRegisterType<PaintArea>("AppQtTest12", 1, 0, "PaintArea");
 

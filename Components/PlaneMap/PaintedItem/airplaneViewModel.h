@@ -26,7 +26,7 @@ class AirplaneViewModel: public QObject
     
   private:    
  
-    QRect scrViewPort;
+//    QRect scrViewPort;
     qreal maxZoom, minZoom;
     
     QSize screenSize;
@@ -35,6 +35,9 @@ class AirplaneViewModel: public QObject
     PaintArea *navigationPainter;
     
     FrameRateCalc framerate;
+    
+    // для правильного расчета размеров на Windows
+    qreal devicePixelRatio;
     
   public:
     explicit AirplaneViewModel(QObject *parent = nullptr);
@@ -51,15 +54,17 @@ class AirplaneViewModel: public QObject
     Q_INVOKABLE void moveBy(qreal xOff, qreal yOff);
     Q_INVOKABLE bool zoomBy(qreal z, qreal centerX, qreal centerY);
     
-    
     Q_INVOKABLE QPoint getMoveToCenterAt(QString id, qreal zoom=0.0);
     Q_INVOKABLE QString getIdAt(int x, int y);
+    
+    Q_INVOKABLE void moveNavBy(qreal xOff, qreal yOff);
     
   private:
     bool onPositionChanging(QPoint newPos);
     bool onZoomChanging(qreal newZoom);
     
-       
+    
+    QRect getSrcViewPort();
     void drawAirplaneLayout(QPainter *painter);
     void drawNavigation(QPainter *painter);
     void updatePaintArea();

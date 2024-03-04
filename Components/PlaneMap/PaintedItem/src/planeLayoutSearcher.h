@@ -66,7 +66,7 @@ class PlaneLayoutSearcher{
         this->chairsInRow = chairsInRow;
         
         root = makeItemGroupsTree(planeItems);
-        
+  
         seats.clear();
         seats.resize((rows+1) * chairsInRow);
 //      qDebug()<< "seats allow:" << seats.length() << "rows:"<< rows<<"chairsInRow:"<<chairsInRow;
@@ -79,7 +79,7 @@ class PlaneLayoutSearcher{
         }
     }
     
-    void print(){ print(root,0); }
+    void dump(){ dump(root,0); }
     
     
     void setSelections(const QList<QString> &selectedSeats){
@@ -132,12 +132,13 @@ class PlaneLayoutSearcher{
     PlaneTreeItem makeItemGroupsTree(const QList<PlaneItemBase*> &planeItems)
     {
         PlaneTreeItem root;
-        PlaneTreeItem currGroup;
-        PlaneTreeItem currRow;
         PlaneTreeItem otherItemsGroup;
         
+        PlaneTreeItem currGroup;
+        PlaneTreeItem currRow;
         int currGroupId=-1;
         int currRowNum=-1;
+                
         
         for(auto &i:planeItems)
         {
@@ -148,6 +149,8 @@ class PlaneLayoutSearcher{
             
             //-- seat --
             auto chair = (PlaneItemChair*) i;
+//            if(chair->rowNumber>=49)
+//                qDebug()<<"searcher-gr:"<< chair->rowNumber<< chair->letter;
             if(chair->rowNumber!=currRowNum && currRowNum!=-1)
             {
                 currGroup.add(currRow);
@@ -170,15 +173,16 @@ class PlaneLayoutSearcher{
             currGroupId = chair->groupId;
         }
         currGroup.add(currRow);
+        root.add(currGroup);
         currGroup = PlaneTreeItem();
         root.add(otherItemsGroup);
-        
+               
         return root;
     }
     
-    void print(const PlaneTreeItem &treeItem, int level){        
+    void dump(const PlaneTreeItem &treeItem, int level){        
         auto offset = QString("[l:%1]").arg(level)+QString("    ").repeated(level);
-        auto info = QString("%1 (%3,%4: %5x%6) subGroups: %7  items:%8")
+        auto info = QString("%1 (%3,%4: %5x%6) subGroups: %7  items: %8 ")
                         .arg(offset)
                         .arg(treeItem.rect.x()).arg(treeItem.rect.y()).arg(treeItem.rect.width()).arg(treeItem.rect.height())
                         .arg(treeItem.treeItems.length())
@@ -187,7 +191,7 @@ class PlaneLayoutSearcher{
         qDebug() << info;
         
         for(auto &ti:treeItem.treeItems)
-            print(ti, level+1);
+            dump(ti, level+1);
         
         if(treeItem.planeItems.length()==0) return;
         

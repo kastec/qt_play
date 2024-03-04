@@ -6,12 +6,13 @@
 #include "airplaneViewModel.h"
 #include "./src/cardServiceType.h"
 #include "./src/planeLayoutParser.h"
-
+#include "qguiapplication.h"
 //#include "qdebug.h"
 
 AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent),
                                                         airplanePainter(nullptr), navigationPainter(nullptr), zoom(1.0)
 {
+     this->devicePixelRatio = qApp->devicePixelRatio();
 //    qDebug() << "AirplaneViewModel ctor";
     this->set_planeMap(new PlaneMap());
 //    qDebug() << "AirplaneViewModel ctor - ex";
@@ -250,6 +251,22 @@ QString AirplaneViewModel::getIdAt(int x, int y){
    return (item!=nullptr)? item->id : "";
 }
 
+
+void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff) {
+   qreal ox, oy;
+   //qDebug() << xOff <<","<<yOff;
+   
+   ox = position.x() - xOff;
+   oy = position.y() - yOff;
+   //    if (ox < 0) ox = 0;
+   //    if (oy < 0) oy = 0;
+   
+//   navigationPainter
+   
+   this->set_position(QPoint(ox,oy));  
+   //   updatePaintArea();
+}
+
 /// ============================================
 ///  DRAWING AIRPLANE AND NAVIGATION
 /// ============================================
@@ -262,15 +279,35 @@ void AirplaneViewModel::updatePaintArea()
    if(navigationPainter != nullptr)
        navigationPainter->update();
 }
+
+QRect AirplaneViewModel::getSrcViewPort()
+{
+   QSize srcRenderSize = airplanePainter->size().toSize();// / this->devicePixelRatio;
+   QRect scrViewPort (-position / zoom, srcRenderSize / zoom);
+   return scrViewPort;
+}
+
 void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
 {
+   auto srcViewPort = getSrcViewPort();
+   
    framerate.start();
    
+//   this->screenSize = painter->viewport().size() / this->devicePixelRatio;
+//   QRect srcViewPort (-position / zoom, screenSize / zoom);
+   
+//   qDebug()<<"2. drawAirplaneLayout()------";
+//   qDebug()<<"airRect:"<<painter->viewport().size();
+//   qDebug()<<"srcRenderSize:"<<this->screenSize;
+//   qDebug()<<"scrViewPort:"<<srcViewPort;
+   
    // PLANE RENDER
-//    qDebug() <<"called MAP-Layout():" << position;
-   planeMap->drawLayout(painter, position, zoom);
+//   qDebug() <<"called MAP-Layout():" << scrViewPort << "pos:"<< position;
+   
+   planeMap->drawLayout(painter, position, zoom, srcViewPort);
    
    framerate.stop();
+   
    
    this->set_avgRenderTime(framerate.avgFrameMsec);
    this->set_renderTime(framerate.frameMsec);
@@ -278,9 +315,15 @@ void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
 
 void AirplaneViewModel::drawNavigation(QPainter *painter)
 {
+   auto srcViewPort = getSrcViewPort();
+//   this->screenSize = painter->viewport().size() / this->devicePixelRatio;
+//   QRect scrViewPort (-position / zoom, screenSize / zoom);
+   
 //   qDebug() <<"called NAV-Layout():" << position;
-   planeMap->drawNavMap(painter, position, zoom);   
+   planeMap->drawNavMap(painter, position, zoom, srcViewPort);   
 }
+
+
 
 AirplaneViewModel::~AirplaneViewModel()
 {

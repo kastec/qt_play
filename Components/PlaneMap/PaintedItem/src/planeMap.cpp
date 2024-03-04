@@ -30,11 +30,10 @@ void PlaneMap::createLayout(QList<QString> lines)
 }
 
 
-void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom)
+void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort)
 {
-    this->screenSize = painter->viewport().size() / this->devicePixelRatio;
-  
-    QRect scrViewPort (-posOffset / zoom, screenSize / zoom);
+//   this->screenSize = painter->viewport().size() / this->devicePixelRatio;
+//    QRect scrViewPort0 (-posOffset / zoom, screenSize / zoom);
     
 //    qDebug()<<"scr:" << this->screenSize << "layout:"<<airplaneSize;
 //    qDebug()<<"zoom" << zoom;
@@ -45,8 +44,9 @@ void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom)
     if(useBuffer)
         drawLayoutBuffer(painter, posOffset, zoom, scrViewPort);
     else
-        drawItems(painter, posOffset,  zoom, scrViewPort);
-
+        drawItems(painter, zoom, scrViewPort);
+    
+//    planeSearcher.dump();
 }
 
 
@@ -65,17 +65,19 @@ void PlaneMap::drawLayoutBuffer(QPainter *painter, QPoint offset, qreal zoom, QR
         buffer.zoom = zoom;
         auto bufPainter = buffer.makePainter(scrViewPort);        
         auto offs = offset - (buffer.viewPort.topLeft() - scrViewPort.topLeft()) *zoom;
-        drawItems(bufPainter.data(), offs,  zoom, buffer.viewPort);
+        drawItems(bufPainter.data(),  zoom, buffer.viewPort);
     }
     
     buffer.draw(painter, scrViewPort);
     return;
 }
 
-void PlaneMap::drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QRect viewPort)
+void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 {
 //    auto ratio = painter->device()->devicePixelRatio();
     auto vpItems = planeSearcher.findItems(viewPort);
+    
+  auto painterOffset = -viewPort.topLeft() * zoom;
 //    qDebug()<<"items to draw:"<< vpItems.length() << " viewPort:"<<viewPort;
     
     for (const auto item : vpItems) {
@@ -96,21 +98,42 @@ void PlaneMap::drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QR
 }
 
 
-void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom)
+void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort)
 {
     auto painterSize = painter->viewport().size() / this->devicePixelRatio;
-    auto scale = airplaneSize.height()/(qreal)painterSize.height();
     
-    QRect scrViewPort (posOffset / zoom, this->screenSize / zoom);
 
-    QRect rect = QRect( -scrViewPort.topLeft() /scale, scrViewPort.size()/scale);
-//    qDebug()<<"nav:" << painterSize<< "scr:" << this->screenSize << "layout:"<<airplaneSize;
-//    qDebug()<<"scale" << scale;
-//    qDebug()<<"scrViewPort" << scrViewPort;
-//    qDebug()<<"rect" << rect;
-//    qDebug()<<"----";
-
+    auto scaleH = airplaneSize.height()/(qreal)painterSize.height();
+    
+    auto paintWidth =  airplaneSize.width()/scaleH;
+//    qDebug()<< "nav H:" <<  painterSize.height() <<"airplaneSize"<< airplaneSize << "scale:"<<scaleW<<"x"<<scaleH;
+//    QRect scrViewPort (posOffset / zoom, this->screenSize / zoom);
+    
+    // границы борта
+    painter->drawRect(0,0,paintWidth,painterSize.height());
+    
+    // зона просмотра, выделение
+    QRect rect = QRect( scrViewPort.topLeft() /scaleH, scrViewPort.size() / (scaleH));
     painter->fillRect(rect, QBrush(Qt::white));
+    
+    //    qDebug()<<"nav:" << painterSize<< "scr:" << this->screenSize << "layout:"<<airplaneSize;
+    //    qDebug()<<"scale" << scale;
+    //    qDebug()<<"scrViewPort" << scrViewPort;
+    //    qDebug()<<"rect" << rect;
+    //    qDebug()<<"----";
+    
+     
+    for(auto &i:planeItems)
+    {
+        if(i->type!="seat") continue;
+        auto seat = (PlaneItemChair*)i;
+        auto sLoc = seat->location.topLeft() / scaleH;
+        auto sSize =  seat->location.size() / (scaleH *1.2);
+
+        QRect seatNav(sLoc, sSize);
+        painter->fillRect(seatNav, QBrush(Qt::blue));
+        
+    }
 
 }
 

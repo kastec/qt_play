@@ -15,7 +15,7 @@ class PlaneMap
     QSize screenSize;  
     QList<PlaneItemBase*> planeItems;
     
-    // для правильного расчета размеров на Windows
+    //OBSOLETE - DELTE  для правильного расчета размеров на Windows
     qreal devicePixelRatio;
     
   public:
@@ -30,8 +30,8 @@ class PlaneMap
     // obsolete
 //    void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
     
-    void drawLayout(QPainter *painter, QPoint posOffset, qreal zoom);    
-    void drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom);
+    void drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort);    
+    void drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort);
         
     void setScreenSize(QSize screenSize);
     
@@ -47,7 +47,7 @@ class PlaneMap
     RenderBuffer buffer;
      
      void drawLayoutBuffer(QPainter *painter, QPoint offset, qreal zoom, QRect scrViewPort);
-    void drawItems(QPainter *painter, QPoint painterOffset, qreal zoom, QRect viewPort);
+    void drawItems(QPainter *painter, qreal zoom, QRect viewPort);
     
   public:
     ~PlaneMap();

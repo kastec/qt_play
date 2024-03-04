@@ -35,8 +35,7 @@ class PlaneLayoutParser{
     
     QSize getPlaneSize()
     {
-        int height = getPlaneHeigth();
-        return QSize(airplaneWidth, height);
+        return getPlaneDimensions();
     }
 
   private:
@@ -214,7 +213,7 @@ class PlaneLayoutParser{
         {            
             posX=0;
             this->rows=r;
-            
+//            qDebug()<< r;
             addRowNumber(r, posY);
                         
             for(int g=0; g<rowInfo.groups.length(); g++){
@@ -236,6 +235,8 @@ class PlaneLayoutParser{
                         chair->location = QRect(posX + gr.xOffset, posY + gr.yOffset, chMetric.width, chMetric.height);
                         
                         this->planeItems.append(chair);
+//                        if(r>=49)
+//                            qDebug()<< chair->rowNumber<< chair->letter<<chair->location;
                     }
                     posX += chMetric.width + chMetric.offset;
                 }                
@@ -421,16 +422,18 @@ class PlaneLayoutParser{
         return res;
     }
     
-    int getPlaneHeigth()
+    QSize getPlaneDimensions()
     {
-        // найдем последнее сидение и возьмем его Y-координату
-        for(int i=planeItems.length()-1;i>=0;i--)
+        int maxW=0, maxH=0;
+        for(int i=0; i< planeItems.length();i++)
         {
             auto item = planeItems[i];
-            if(item->type=="seat")
-                return item->location.bottom();
+            if(item->type!="seat") continue;
+            auto seat = (PlaneItemChair*)item;
+            maxW = __max(seat->location.right(), maxW);
+            maxH = __max(seat->location.bottom(), maxH);
         }
-        return 0;
+        return QSize(maxW,maxH);
     }
 };
 
