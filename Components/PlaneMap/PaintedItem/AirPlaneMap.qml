@@ -51,9 +51,9 @@ Item {
 
         AirPlaneNavControl {
             id: airplaneNavControl
-			viewModel: airplaneViewModel           
+            viewModel: airplaneViewModel
             Layout.fillHeight: true
-            width: 190
+            width: 150
         }
     }
 }

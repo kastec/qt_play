@@ -28,6 +28,7 @@ Item {
         PaintArea {
             id: planeNavArea
             anchors.fill: parent
+			anchors.margins: 20
         }
     }
 

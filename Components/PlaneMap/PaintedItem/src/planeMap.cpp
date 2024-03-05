@@ -102,39 +102,41 @@ void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect
 {
     auto painterSize = painter->viewport().size() / this->devicePixelRatio;
     
-
     auto scaleH = airplaneSize.height()/(qreal)painterSize.height();
     
     auto paintWidth =  airplaneSize.width()/scaleH;
-//    qDebug()<< "nav H:" <<  painterSize.height() <<"airplaneSize"<< airplaneSize << "scale:"<<scaleW<<"x"<<scaleH;
-//    QRect scrViewPort (posOffset / zoom, this->screenSize / zoom);
+    
+    auto centerOffset = (painterSize.width()-paintWidth)/2;
     
     // границы борта
-    painter->drawRect(0,0,paintWidth,painterSize.height());
-    
-    // зона просмотра, выделение
-    QRect rect = QRect( scrViewPort.topLeft() /scaleH, scrViewPort.size() / (scaleH));
-    painter->fillRect(rect, QBrush(Qt::white));
-    
-    //    qDebug()<<"nav:" << painterSize<< "scr:" << this->screenSize << "layout:"<<airplaneSize;
-    //    qDebug()<<"scale" << scale;
-    //    qDebug()<<"scrViewPort" << scrViewPort;
-    //    qDebug()<<"rect" << rect;
-    //    qDebug()<<"----";
-    
-     
+    QRect paintAircraft(0+centerOffset,0,paintWidth,painterSize.height());
+//    painter->drawRect(paintAircraft); // todo: remove - blact rect
+        
+    auto selectedColor = QBrush(Qt::black);
+    auto defaultColor = QBrush(Qt::white);
     for(auto &i:planeItems)
     {
         if(i->type!="seat") continue;
         auto seat = (PlaneItemChair*)i;
-        auto sLoc = seat->location.topLeft() / scaleH;
+        auto sLoc = seat->location.topLeft() / scaleH + QPoint(centerOffset,0);
+        
         auto sSize =  seat->location.size() / (scaleH *1.2);
 
         QRect seatNav(sLoc, sSize);
-        painter->fillRect(seatNav, QBrush(Qt::blue));
-        
+  
+        painter->fillRect(seatNav, seat->isSelected?selectedColor:defaultColor);        
     }
-
+    
+    // зона просмотра, выделение
+    
+    QRect rect = QRect( scrViewPort.topLeft() /scaleH, scrViewPort.size() / (scaleH));
+    rect = rect.intersected(paintAircraft);
+    
+    QPen pen(QColor(0, 132, 255), 2.5);
+    painter->setPen(pen);
+    painter->fillRect(rect, QBrush(QColor(169, 212, 251, 75)));
+    painter->drawRect(rect);
+    
 }
 
 
