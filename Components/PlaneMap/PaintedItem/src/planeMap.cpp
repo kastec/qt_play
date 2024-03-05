@@ -30,7 +30,7 @@ void PlaneMap::createLayout(QList<QString> lines)
 }
 
 
-void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort)
+void PlaneMap::drawLayout(QPainter *painter, qreal zoom, QRect scrViewPort)
 {
 //   this->screenSize = painter->viewport().size() / this->devicePixelRatio;
 //    QRect scrViewPort0 (-posOffset / zoom, screenSize / zoom);
@@ -42,7 +42,7 @@ void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect
     
     bool useBuffer=false;
     if(useBuffer)
-        drawLayoutBuffer(painter, posOffset, zoom, scrViewPort);
+        drawLayoutBuffer(painter, zoom, scrViewPort);
     else
         drawItems(painter, zoom, scrViewPort);
     
@@ -50,25 +50,26 @@ void PlaneMap::drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect
 }
 
 
-void PlaneMap::drawLayoutBuffer(QPainter *painter, QPoint offset, qreal zoom, QRect scrViewPort)
+void PlaneMap::drawLayoutBuffer(QPainter *painter, qreal zoom, QRect viewPort)
 {
     QSize painterSize = painter->window().size();
     
     if(painterSize != buffer.bufferSize)
         buffer.setSize(painterSize);
     
-    auto canUseBuffer = buffer.zoom==zoom && buffer.isInBuffer(scrViewPort);
+    auto canUseBuffer = buffer.zoom==zoom && buffer.isInBuffer(viewPort);
  
     if(!canUseBuffer)
     {
         qDebug()<< "==[ REDRAW buffer]==";
         buffer.zoom = zoom;
-        auto bufPainter = buffer.makePainter(scrViewPort);        
-        auto offs = offset - (buffer.viewPort.topLeft() - scrViewPort.topLeft()) *zoom;
+        auto bufPainter = buffer.makePainter(viewPort);
+        
+        auto offs = - buffer.viewPort.topLeft()* zoom;
         drawItems(bufPainter.data(),  zoom, buffer.viewPort);
     }
     
-    buffer.draw(painter, scrViewPort);
+    buffer.draw(painter, viewPort);
     return;
 }
 
@@ -77,7 +78,7 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 //    auto ratio = painter->device()->devicePixelRatio();
     auto vpItems = planeSearcher.findItems(viewPort);
     
-  auto painterOffset = -viewPort.topLeft() * zoom;
+    auto painterOffset = -viewPort.topLeft() * zoom;
 //    qDebug()<<"items to draw:"<< vpItems.length() << " viewPort:"<<viewPort;
     
     for (const auto item : vpItems) {
@@ -99,7 +100,7 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 
 
 
-void PlaneMap::drawNavMap(QPainter *painter,  qreal zoom, QRect scrViewPort)
+void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
 {
     auto painterSize = painter->viewport().size() / this->devicePixelRatio;
     

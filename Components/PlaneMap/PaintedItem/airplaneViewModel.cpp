@@ -309,7 +309,7 @@ void AirplaneViewModel::drawAirplaneLayout(QPainter *painter)
    // PLANE RENDER
 //   qDebug() <<"called MAP-Layout():" << scrViewPort << "pos:"<< position;
    
-   planeMap->drawLayout(painter, position, zoom, srcViewPort);
+   planeMap->drawLayout(painter, zoom, srcViewPort);
    
    framerate.stop();
    
@@ -325,7 +325,7 @@ void AirplaneViewModel::drawNavigation(QPainter *painter)
 //   QRect scrViewPort (-position / zoom, screenSize / zoom);
    
 //   qDebug() <<"called NAV-Layout():" << position;
-   planeMap->drawNavMap(painter, zoom, srcViewPort);   
+   planeMap->drawNavMap(painter, srcViewPort);   
 }
 
 

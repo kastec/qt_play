@@ -30,8 +30,8 @@ class PlaneMap
     // obsolete
 //    void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
     
-    void drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort);    
-    void drawNavMap(QPainter *painter, qreal zoom, QRect scrViewPort);
+    void drawLayout(QPainter *painter, qreal zoom, QRect scrViewPort);    
+    void drawNavMap(QPainter *painter, QRect scrViewPort);
         
     void setScreenSize(QSize screenSize);
     
@@ -46,7 +46,7 @@ class PlaneMap
     
     RenderBuffer buffer;
      
-     void drawLayoutBuffer(QPainter *painter, QPoint offset, qreal zoom, QRect scrViewPort);
+    void drawLayoutBuffer(QPainter *painter, qreal zoom, QRect scrViewPort);
     void drawItems(QPainter *painter, qreal zoom, QRect viewPort);
     
   public:
