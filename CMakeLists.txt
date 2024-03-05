@@ -69,8 +69,7 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/OpGlItem/glitem.h Components/PlaneMap/OpGlItem/glitem.cpp
         
         Components/PlaneMap/PaintedItem/paintArea.h
-        Components/PlaneMap/PaintedItem/airplaneDrawer.h Components/PlaneMap/PaintedItem/airplaneDrawer.cpp
-        Components/PlaneMap/PaintedItem/src/planeItemBase.h Components/PlaneMap/PaintedItem/src/planeItemBase.cpp
+       Components/PlaneMap/PaintedItem/src/planeItemBase.h Components/PlaneMap/PaintedItem/src/planeItemBase.cpp
         Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
         Components/PlaneMap/PaintedItem/src/planeItemChair.h Components/PlaneMap/PaintedItem/src/planeItemChair.cpp
         Components/PlaneMap/PaintedItem/src/planeItemExit.h Components/PlaneMap/PaintedItem/src/planeItemExit.cpp

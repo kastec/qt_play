@@ -5,7 +5,6 @@
 #include "Classes/booklist.h"
 #include "Components/PersonList/person.h"
 #include "Components/PersonList/personlistmodel.h"
-#include "Components/PlaneMap/PaintedItem/airplaneDrawer.h"
 #include "Components/PlaneMap/PaintedItem/paintArea.h"
 #include "Components/Test/jsonlistmodel.h"
 #include "Components/Flights/flightslistmodel.h"
@@ -156,7 +155,6 @@ void RegisterTypes()
     
     qmlRegisterType<AirplaneViewModel>("AppQtTest12",1,0, "AirplaneViewModel");
     qmlRegisterType<FlightsListModel>("AppQtTest12",1,0, "FlightsListModel");
-    qmlRegisterType<AirplaneDrawer>("AppQtTest12", 1, 0, "AirplaneDrawer");
     
     qmlRegisterType<PaintArea>("AppQtTest12", 1, 0, "PaintArea");
 
