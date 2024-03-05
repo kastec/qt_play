@@ -64,9 +64,8 @@ void PlaneMap::drawLayoutBuffer(QPainter *painter, qreal zoom, QRect viewPort)
         qDebug()<< "==[ REDRAW buffer]==";
         buffer.zoom = zoom;
         auto bufPainter = buffer.makePainter(viewPort);
-        
-        auto offs = - buffer.viewPort.topLeft()* zoom;
-        drawItems(bufPainter.data(),  zoom, buffer.viewPort);
+
+        drawItems(bufPainter.data(), zoom, buffer.viewPort);
     }
     
     buffer.draw(painter, viewPort);
@@ -103,10 +102,9 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
 {
     auto painterSize = painter->viewport().size() / this->devicePixelRatio;
-    
-    auto scaleW = airplaneSize.width()/(qreal)painterSize.width();
-    auto scaleH = airplaneSize.height()/(qreal)painterSize.height();
-    auto scale = __max(scaleW, scaleH);
+
+    auto scale = __max(airplaneSize.width()/(qreal)painterSize.width(),
+                       airplaneSize.height()/(qreal)painterSize.height());
     
     auto paintAreaSize = airplaneSize / scale;
     
@@ -131,8 +129,7 @@ void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
         painter->fillRect(seatNav, seat->isSelected?selectedColor:defaultColor);        
     }
     
-    // зона просмотра, выделение
-    
+    // зона просмотра, выделение    
     QRect rect = QRect( scrViewPort.topLeft() /scale, scrViewPort.size() / (scale));
     rect = rect.intersected(paintArea);
     

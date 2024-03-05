@@ -50,7 +50,7 @@ Item {
             onPositionChanged: {
                 if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
                     //                    airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
-                    //                viewModel.moveNavBy(ix - mouseX, iy - mouseY)
+                    viewModel.moveNavBy(ix - mouseX, iy - mouseY)
                     ix = mouseX
                     iy = mouseY
                 }
@@ -64,7 +64,7 @@ Item {
                 pressX = mouseX
                 pressY = mouseY
 
-                viewModel.setNavPos(ix - x, iy - y)
+                //                viewModel.setNavPos(ix - x, iy - y)
             }
 
             onReleased: {

@@ -66,6 +66,7 @@ class AirplaneViewModel: public QObject
     
     
     QRect getSrcViewPort();
+    qreal getNavMapScale();
     void drawAirplaneLayout(QPainter *painter);
     void drawNavigation(QPainter *painter);
     void updatePaintArea();

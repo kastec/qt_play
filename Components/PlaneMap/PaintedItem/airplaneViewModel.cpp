@@ -220,6 +220,8 @@ void AirplaneViewModel::changeVisibleSize(QSize size){
    
    auto planeWidth = (12 *chairWidth); // ширина борта в пикселях (кол-во кресел * 100)
    minZoom = screenWidth / (qreal)(4*planeWidth); // 2 ширины борта  убирается на экране
+   
+   
 }
 
 
@@ -252,25 +254,35 @@ QString AirplaneViewModel::getIdAt(int x, int y){
 }
 
 
-void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff) {
-   qreal ox, oy;
-   //qDebug() << xOff <<","<<yOff;
-   
-   ox = position.x() - xOff;
-   oy = position.y() - yOff;
-   //    if (ox < 0) ox = 0;
-   //    if (oy < 0) oy = 0;
-   
-//   navigationPainter
-   
-   this->set_position(QPoint(ox,oy));  
-   //   updatePaintArea();
+
+qreal AirplaneViewModel::getNavMapScale(){
+   QSize srcRenderSize = navigationPainter->size().toSize();
+   auto navMapScale = __max(planeMap->airplaneSize.width()/(qreal)srcRenderSize.width(),
+                            planeMap->airplaneSize.height()/(qreal)srcRenderSize.height());
+   return navMapScale;
 }
+
 void AirplaneViewModel::setNavPos(qreal x, qreal y) {
-   qreal ox, oy;
-   qDebug() << "nav:" << x <<","<<y;
-  
+   qDebug()<< "setNavPos" << x<<y;
+   
+   auto scale = getNavMapScale();  
+   auto scrSize = airplanePainter->size().toSize();
+   QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);
+   
+   QPoint mapPoint = +centerOffs  -QPoint(x,y) * scale *zoom;  
+   
+   this->set_position(mapPoint);
 }
+
+void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff) {
+   auto scale = getNavMapScale();
+   QPointF move = QPointF(xOff,yOff)* scale* zoom;
+   qDebug()<< "   move:" << move;
+   QPointF newPos = position + move;
+   this->set_position(newPos.toPoint());
+   
+}
+
 
 /// ============================================
 ///  DRAWING AIRPLANE AND NAVIGATION
