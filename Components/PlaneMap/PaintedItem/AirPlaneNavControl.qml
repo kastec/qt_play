@@ -64,7 +64,7 @@ Item {
                 pressX = mouseX
                 pressY = mouseY
 
-                //                viewModel.setNavPos(ix - x, iy - y)
+                viewModel.setNavPos(ix - x, iy - y)
             }
 
             onReleased: {

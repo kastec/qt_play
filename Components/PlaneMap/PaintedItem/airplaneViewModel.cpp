@@ -263,8 +263,10 @@ qreal AirplaneViewModel::getNavMapScale(){
 }
 
 void AirplaneViewModel::setNavPos(qreal x, qreal y) {
-   qDebug()<< "setNavPos" << x<<y;
+//   qDebug()<< "setNavPos" << x<<y;
    
+   if(planeMap->navViewRect.contains(x,y)) return;
+
    auto scale = getNavMapScale();  
    auto scrSize = airplanePainter->size().toSize();
    QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);
@@ -277,7 +279,7 @@ void AirplaneViewModel::setNavPos(qreal x, qreal y) {
 void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff) {
    auto scale = getNavMapScale();
    QPointF move = QPointF(xOff,yOff)* scale* zoom;
-   qDebug()<< "   move:" << move;
+//   qDebug()<< "   move:" << move;
    QPointF newPos = position + move;
    this->set_position(newPos.toPoint());
    

@@ -99,10 +99,11 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 
 
 
+
 void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
 {
     auto painterSize = painter->viewport().size() / this->devicePixelRatio;
-
+    
     auto scale = __max(airplaneSize.width()/(qreal)painterSize.width(),
                        airplaneSize.height()/(qreal)painterSize.height());
     
@@ -111,7 +112,7 @@ void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
     auto centerOffset = (painterSize.width()-paintAreaSize.width())/2;
     
     // границы борта
-    QRect paintArea(QPoint(centerOffset,0),paintAreaSize);
+    auto painterArea = QRect(QPoint(centerOffset,0),paintAreaSize);
 //    painter->drawRect(paintAircraft); // todo: remove - blact rect
         
     auto selectedColor = QBrush(Qt::black);
@@ -131,13 +132,12 @@ void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
     
     // зона просмотра, выделение    
     QRect rect = QRect( scrViewPort.topLeft() /scale, scrViewPort.size() / (scale));
-    rect = rect.intersected(paintArea);
+    this->navViewRect = rect.intersected(painterArea);
     
     QPen pen(QColor(0, 132, 255), 2.5);
     painter->setPen(pen);
-    painter->fillRect(rect, QBrush(QColor(169, 212, 251, 75)));
-    painter->drawRect(rect);
-    
+    painter->fillRect(this->navViewRect, QBrush(QColor(169, 212, 251, 75)));
+    painter->drawRect(this->navViewRect );    
 }
 
 

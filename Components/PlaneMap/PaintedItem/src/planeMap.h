@@ -25,6 +25,7 @@ class PlaneMap
     PlaneMap();
     int rows, chairsInRow;
     QSize airplaneSize;
+    QRect navViewRect;
     
     void createLayout(QList<QString> lines);
     // obsolete
