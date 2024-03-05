@@ -98,18 +98,21 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 }
 
 
-void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort)
+
+void PlaneMap::drawNavMap(QPainter *painter,  qreal zoom, QRect scrViewPort)
 {
     auto painterSize = painter->viewport().size() / this->devicePixelRatio;
     
+    auto scaleW = airplaneSize.width()/(qreal)painterSize.width();
     auto scaleH = airplaneSize.height()/(qreal)painterSize.height();
+    auto scale = __max(scaleW, scaleH);
     
-    auto paintWidth =  airplaneSize.width()/scaleH;
+    auto paintAreaSize = airplaneSize / scale;
     
-    auto centerOffset = (painterSize.width()-paintWidth)/2;
+    auto centerOffset = (painterSize.width()-paintAreaSize.width())/2;
     
     // границы борта
-    QRect paintAircraft(0+centerOffset,0,paintWidth,painterSize.height());
+    QRect paintArea(QPoint(centerOffset,0),paintAreaSize);
 //    painter->drawRect(paintAircraft); // todo: remove - blact rect
         
     auto selectedColor = QBrush(Qt::black);
@@ -118,9 +121,9 @@ void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect
     {
         if(i->type!="seat") continue;
         auto seat = (PlaneItemChair*)i;
-        auto sLoc = seat->location.topLeft() / scaleH + QPoint(centerOffset,0);
+        auto sLoc = seat->location.topLeft() / scale + QPoint(centerOffset,0);
         
-        auto sSize =  seat->location.size() / (scaleH *1.2);
+        auto sSize =  seat->location.size() / (scale *1.2);
 
         QRect seatNav(sLoc, sSize);
   
@@ -129,8 +132,8 @@ void PlaneMap::drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect
     
     // зона просмотра, выделение
     
-    QRect rect = QRect( scrViewPort.topLeft() /scaleH, scrViewPort.size() / (scaleH));
-    rect = rect.intersected(paintAircraft);
+    QRect rect = QRect( scrViewPort.topLeft() /scale, scrViewPort.size() / (scale));
+    rect = rect.intersected(paintArea);
     
     QPen pen(QColor(0, 132, 255), 2.5);
     painter->setPen(pen);

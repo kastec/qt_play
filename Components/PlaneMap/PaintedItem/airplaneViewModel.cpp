@@ -266,6 +266,11 @@ void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff) {
    this->set_position(QPoint(ox,oy));  
    //   updatePaintArea();
 }
+void AirplaneViewModel::setNavPos(qreal x, qreal y) {
+   qreal ox, oy;
+   qDebug() << "nav:" << x <<","<<y;
+  
+}
 
 /// ============================================
 ///  DRAWING AIRPLANE AND NAVIGATION
@@ -320,7 +325,7 @@ void AirplaneViewModel::drawNavigation(QPainter *painter)
 //   QRect scrViewPort (-position / zoom, screenSize / zoom);
    
 //   qDebug() <<"called NAV-Layout():" << position;
-   planeMap->drawNavMap(painter, position, zoom, srcViewPort);   
+   planeMap->drawNavMap(painter, zoom, srcViewPort);   
 }
 
 

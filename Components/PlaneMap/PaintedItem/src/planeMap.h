@@ -31,7 +31,7 @@ class PlaneMap
 //    void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
     
     void drawLayout(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort);    
-    void drawNavMap(QPainter *painter, QPoint posOffset, qreal zoom, QRect scrViewPort);
+    void drawNavMap(QPainter *painter, qreal zoom, QRect scrViewPort);
         
     void setScreenSize(QSize screenSize);
     

@@ -10,7 +10,7 @@ import AppQtTest12 1.0
 
 Item {
     id: rootControl
-	
+
     property var viewModel
 
     Component.onCompleted: {
@@ -24,57 +24,59 @@ Item {
         color: "#D9E6ED"
         anchors.fill: parent
         radius: 32
+    }
+    Item {
+        anchors.fill: parent
+        anchors.margins: 20
 
         PaintArea {
             id: planeNavArea
             anchors.fill: parent
-			anchors.margins: 20
         }
-    }
 
-    MouseArea {
-        anchors.fill: parent
+        MouseArea {
+            anchors.fill: parent
 
-        property real ix
-        property real iy
+            property real ix
+            property real iy
 
-        property date pressTime
-        property var heldTimeMsec
-        property real pressX
-        property real pressY
-        property real moveDistance
+            property date pressTime
+            property var heldTimeMsec
+            property real pressX
+            property real pressY
+            property real moveDistance
 
-        enabled: !pa.isDragging
+            //        enabled: !pa.isDragging
+            onPositionChanged: {
+                if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
+                    //                    airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
+                    //                viewModel.moveNavBy(ix - mouseX, iy - mouseY)
+                    ix = mouseX
+                    iy = mouseY
+                }
+            }
 
-        onPositionChanged: {
-            if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
-                //                    airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
-                rootControl.viewModel.moveNavBy(ix - mouseX, iy - mouseY)
+            onPressed: {
                 ix = mouseX
                 iy = mouseY
 
-                // airplaneControl.positionChanged(airplaneDrawer.position)
+                pressTime = new Date()
+                pressX = mouseX
+                pressY = mouseY
+
+                viewModel.setNavPos(ix - x, iy - y)
             }
-        }
 
-        onPressed: {
-            ix = mouseX
-            iy = mouseY
-
-            pressTime = new Date()
-            pressX = mouseX
-            pressY = mouseY
-        }
-
-        onReleased: {
-            heldTimeMsec = new Date().getTime() - pressTime.getTime()
-            moveDistance = Math.sqrt(Math.pow((mouseX - pressX), 2) + Math.pow((mouseY - pressY), 2))
-        }
-
-        onClicked: {
-            if (heldTimeMsec > 600 || moveDistance > 10) {
-                return
+            onReleased: {
+                heldTimeMsec = new Date().getTime() - pressTime.getTime()
+                moveDistance = Math.sqrt(Math.pow((mouseX - pressX), 2) + Math.pow((mouseY - pressY), 2))
             }
-        }
-    } // MouseArea ( inside PinchArea)
+
+            onClicked: {
+                if (heldTimeMsec > 600 || moveDistance > 10) {
+                    return
+                }
+            }
+        } // MouseArea ( inside PinchArea)
+    }
 }
