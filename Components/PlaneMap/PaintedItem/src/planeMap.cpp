@@ -10,7 +10,8 @@
 
 PlaneMap::PlaneMap()
 {
-  this->devicePixelRatio = qApp->devicePixelRatio();
+    this->devicePixelRatio = qApp->devicePixelRatio();
+    airplaneSize = QSize(0,0);
 }
 
 

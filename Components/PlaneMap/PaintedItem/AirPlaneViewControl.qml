@@ -26,14 +26,11 @@ Item {
         var vm = rootControl.viewModel
 
         var z = vm.zoom
-        if (z < 1.1)
-            z = 1.1
-        if (z > 2.2)
-            z = 2.2
 
-        animateZoom.from = vm.zoom
-        animateZoom.to = z
-
+        //        if (z < 1.1) z = 1.1
+        //        if (z > 2.2) z = 2.2
+        //        animateZoom.from = vm.zoom
+        //        animateZoom.to = z
         var pos = vm.getMoveToCenterAt(scrollToId, z)
         animatePos.from = viewModel.position
         animatePos.to = pos
@@ -134,31 +131,6 @@ Item {
         anchors.fill: parent
     }
 
-
-    /*
-    AirplaneDrawer {
-        id: airplaneDrawer
-
-        anchors.leftMargin: 300
-        anchors.topMargin: 300
-        // planeMap: airplaneViewModel.planeMap
-        anchors.fill: parent
-
-        Behavior on zoom {
-            NumberAnimation {
-                duration: 500
-                easing.type: Easing.InOutCubic
-            }
-        }
-
-        Behavior on position {
-            PropertyAnimation {
-                duration: 500
-                easing.type: Easing.InOutCubic
-            }
-        }
-    } // AirplaneDrawer
-*/
     PinchArea {
         id: pa
         anchors.fill: parent

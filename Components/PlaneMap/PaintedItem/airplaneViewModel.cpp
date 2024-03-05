@@ -5,36 +5,18 @@
 
 #include "airplaneViewModel.h"
 #include "./src/cardServiceType.h"
-#include "./src/planeLayoutParser.h"
 #include "qguiapplication.h"
 //#include "qdebug.h"
 
 AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent),
                                                         airplanePainter(nullptr), navigationPainter(nullptr), zoom(1.0)
 {
-     this->devicePixelRatio = qApp->devicePixelRatio();
-//    qDebug() << "AirplaneViewModel ctor";
+    this->isFixedZoom = true;
+    this->devicePixelRatio = qApp->devicePixelRatio();
+    
     this->set_planeMap(new PlaneMap());
-//    qDebug() << "AirplaneViewModel ctor - ex";
 }
 
-//void AirplaneViewModel::changeRenderSize(QSize size){
-//    planeMap->setScreenSize(size);
-//}
-
-
-/*
-void PlaneMap::draw(QPainter *painter, int xOff, int yOff, qreal zoom)
-{
-    QPoint offset(xOff, yOff);
-    QRect scrViewPort (-offset / zoom, screenSize / zoom);
-    
-    bool useBuffer=false;
-    if(useBuffer)
-        drawBuffer(painter, offset, zoom, scrViewPort);
-    else
-        drawItems(painter, offset,  zoom, scrViewPort);
-}*/
 
 
 void AirplaneViewModel::loadLayout()
@@ -88,13 +70,13 @@ void AirplaneViewModel::loadLayout()
                          "",""};
     
     planeMap->createLayout(lines);
+    this->changeZoomLimits();
     
     QList<int> paxs;
-    setPassengers(paxs);
+    setPassengers(paxs);    
 }
 
 void AirplaneViewModel::setPassengers(const QList<int> &passengers)
-//void AirplaneViewModel::setPassengers(QList<Passenger> &passengers)
 {
     auto searcher = planeMap->planeSearcher;
     
@@ -149,7 +131,6 @@ void AirplaneViewModel::setSelections(const QList<QString> &selectedSeats){
 
 void AirplaneViewModel::addPainter(QString name, PaintArea *paintArea)
 {   
-//   qDebug() <<"painter:" << name << paintArea;
    if(paintArea == nullptr){
        qDebug() <<"ERROR: paint area" << name << "is NULL";
        return;       
@@ -170,9 +151,12 @@ void AirplaneViewModel::addPainter(QString name, PaintArea *paintArea)
 void AirplaneViewModel::moveBy(qreal xOff, qreal yOff) {
    qreal ox, oy;
   //qDebug() << xOff <<","<<yOff;
+   if( this->isFixedZoom) xOff=0;
    
-   ox = position.x() - xOff;
+   ox = position.x() - xOff;   
    oy = position.y() - yOff;
+   
+  
    //    if (ox < 0) ox = 0;
    //    if (oy < 0) oy = 0;
  
@@ -210,18 +194,33 @@ bool AirplaneViewModel::onZoomChanging(qreal newZoom){
 
 //---------
 
-void AirplaneViewModel::changeVisibleSize(QSize size){
+void AirplaneViewModel::changeVisibleSize(QSize size)
+{
    this->screenSize = size;
-    
-   auto screenWidth = screenSize.width();
+   this->changeZoomLimits();  
+}
+
+
+void AirplaneViewModel::changeZoomLimits()
+{
+   auto planeWidth = planeMap->airplaneSize.width();
+   auto screenWidth = this->screenSize.width();
    
-   auto chairWidth = PlaneLayoutParser::CHAIR_SIZE;
-   maxZoom = screenWidth / (qreal)(3*chairWidth); // кол-во кресел * 100
+   if(!isFixedZoom){
+       maxZoom = screenWidth / (qreal)(planeWidth/4);
+       minZoom = screenWidth / (qreal)(4*planeWidth);       
+   }
    
-   auto planeWidth = (12 *chairWidth); // ширина борта в пикселях (кол-во кресел * 100)
-   minZoom = screenWidth / (qreal)(4*planeWidth); // 2 ширины борта  убирается на экране
-   
-   
+   else{
+       auto oldZoom = zoom;
+       maxZoom = screenWidth / (qreal)(planeWidth*1.1); 
+       minZoom = maxZoom;  
+       zoom = minZoom;
+       // center
+       
+       auto p = QPoint(planeWidth*0.1*zoom, position.y()* (zoom/oldZoom));
+       this->set_position(p);
+   }
 }
 
 
@@ -237,12 +236,16 @@ QPoint AirplaneViewModel::getMoveToCenterAt(QString id, qreal viewZoom)
    if(viewZoom==0.0) viewZoom=this->zoom;
    
    auto itemCenter = item->location.center();
-   //    qDebug() << "zoom:" << viewZoom;
-   auto itemOnScr = (itemCenter* viewZoom);
+
+   auto itemOnScr = (itemCenter * viewZoom);
+   
    
    QPoint center(screenSize.width()/2,screenSize.height()/2);
    auto tlWin = itemOnScr - center;
    auto newPosition = -tlWin;
+   
+   if(this->isFixedZoom)
+       newPosition.setX(this->position.x());
    
    return newPosition;
 } 
@@ -263,20 +266,27 @@ qreal AirplaneViewModel::getNavMapScale(){
 }
 
 void AirplaneViewModel::setNavPos(qreal x, qreal y) {
-//   qDebug()<< "setNavPos" << x<<y;
-   
+
    if(planeMap->navViewRect.contains(x,y)) return;
 
    auto scale = getNavMapScale();  
    auto scrSize = airplanePainter->size().toSize();
+
+   
    QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);
    
-   QPoint mapPoint = +centerOffs  -QPoint(x,y) * scale *zoom;  
+   QPoint mapPoint = +centerOffs  -QPoint(x,y) * scale *zoom;
    
+   if(this->isFixedZoom)
+       mapPoint.setX(position.x());
+
    this->set_position(mapPoint);
 }
 
-void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff) {
+void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff)
+{
+   if(this->isFixedZoom) xOff=0;
+   
    auto scale = getNavMapScale();
    QPointF move = QPointF(xOff,yOff)* scale* zoom;
 //   qDebug()<< "   move:" << move;
@@ -301,6 +311,7 @@ void AirplaneViewModel::updatePaintArea()
 
 QRect AirplaneViewModel::getSrcViewPort()
 {
+   if(airplanePainter==nullptr) return QRect();
    QSize srcRenderSize = airplanePainter->size().toSize();// / this->devicePixelRatio;
    QRect scrViewPort (-position / zoom, srcRenderSize / zoom);
    return scrViewPort;

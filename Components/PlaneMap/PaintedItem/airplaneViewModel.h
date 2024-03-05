@@ -27,6 +27,7 @@ class AirplaneViewModel: public QObject
   private:    
  
 //    QRect scrViewPort;
+    bool isFixedZoom;
     qreal maxZoom, minZoom;
     
     QSize screenSize;
@@ -63,6 +64,8 @@ class AirplaneViewModel: public QObject
   private:
     bool onPositionChanging(QPoint newPos);
     bool onZoomChanging(qreal newZoom);
+    
+    void changeZoomLimits();
     
     
     QRect getSrcViewPort();
