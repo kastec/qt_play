@@ -178,6 +178,13 @@ bool AirplaneViewModel::zoomBy(qreal zoomFactor, qreal centerX, qreal centerY)
     return true;
 }
 
+void AirplaneViewModel::wheelBy(qreal wheelFactor, qreal centerX, qreal centerY)
+{
+    if(!this->isFixedZoom)
+       zoomBy(wheelFactor / 120.0 / 10.0, centerX, centerY);
+    else
+       moveBy(0,-wheelFactor/1.5);
+}
 
 // --- Props
 bool AirplaneViewModel::onPositionChanging(QPoint newPos){

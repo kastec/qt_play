@@ -140,8 +140,6 @@ Item {
 
         onPinchUpdated: {
             var zoomFactor = (pinch.scale - pinch.previousScale) / pinch.previousScale
-            //            airplaneDrawer.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
-            //2nd
             rootControl.viewModel.zoomBy(zoomFactor, pinch.startCenter.x, pinch.startCenter.y)
         }
 
@@ -200,9 +198,7 @@ Item {
             }
 
             onWheel: {
-                var valZoom = wheel.angleDelta.y / 120.0 / 10.0
-                //                airplaneDrawer.zoomBy(valZoom, wheel.x, wheel.y)
-                rootControl.viewModel.zoomBy(valZoom, wheel.x, wheel.y)
+                rootControl.viewModel.wheelBy(wheel.angleDelta.y, wheel.x, wheel.y)
             }
         } // MouseArea ( inside PinchArea)
     } // PinchArea
