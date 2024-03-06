@@ -11,7 +11,7 @@
 AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent),
                                                         airplanePainter(nullptr), navigationPainter(nullptr), zoom(1.0)
 {
-    this->isFixedZoom = true;
+//    this->isFixedZoom = true;
     this->devicePixelRatio = qApp->devicePixelRatio();
     
     this->set_planeMap(new PlaneMap());
@@ -165,7 +165,7 @@ void AirplaneViewModel::moveBy(qreal xOff, qreal yOff) {
 }
 
 bool AirplaneViewModel::zoomBy(qreal zoomFactor, qreal centerX, qreal centerY)
-{
+{    
     auto newZoom = zoom + zoom * zoomFactor;
     if(newZoom>maxZoom || newZoom<minZoom)
        return false;
@@ -203,7 +203,7 @@ void AirplaneViewModel::changeVisibleSize(QSize size)
 
 void AirplaneViewModel::changeZoomLimits()
 {
-   auto planeWidth = planeMap->airplaneSize.width();
+   auto planeWidth = planeMap->layoutSize.width();
    auto screenWidth = this->screenSize.width();
    
    if(!isFixedZoom){
@@ -260,8 +260,8 @@ QString AirplaneViewModel::getIdAt(int x, int y){
 
 qreal AirplaneViewModel::getNavMapScale(){
    QSize srcRenderSize = navigationPainter->size().toSize();
-   auto navMapScale = __max(planeMap->airplaneSize.width()/(qreal)srcRenderSize.width(),
-                            planeMap->airplaneSize.height()/(qreal)srcRenderSize.height());
+   auto navMapScale = __max(planeMap->layoutSize.width()/(qreal)srcRenderSize.width(),
+                            planeMap->layoutSize.height()/(qreal)srcRenderSize.height());
    return navMapScale;
 }
 

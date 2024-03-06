@@ -7,11 +7,13 @@
 #include "planeLayoutParser.h"
 #include "qguiapplication.h"
 
+#include "planeNavDrawer.h"
 
 PlaneMap::PlaneMap()
 {
     this->devicePixelRatio = qApp->devicePixelRatio();
-    airplaneSize = QSize(0,0);
+    layoutSize = QSize(0,0);
+    this->navDrawer = new PlaneNavDrawer(this);
 }
 
 
@@ -22,12 +24,12 @@ void PlaneMap::createLayout(QList<QString> lines)
     planeItems = items;
     rows = layoutParser.rows;
     chairsInRow = layoutParser.maxChairsInRow;
-    airplaneSize = layoutParser.getPlaneSize();
+    layoutSize = layoutParser.getPlaneSize();
 //    qDebug()<< "plane-layout-Size:" << airplaneSize ;
     
     planeSearcher.addItems(items, rows, chairsInRow);
     //    planeSearcher.print();
-    
+
 }
 
 
@@ -99,48 +101,11 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 }
 
 
-
-
 void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
 {
-    auto painterSize = painter->viewport().size() / this->devicePixelRatio;
-    
-    auto scale = __max(airplaneSize.width()/(qreal)painterSize.width(),
-                       airplaneSize.height()/(qreal)painterSize.height());
-    
-    auto paintAreaSize = airplaneSize / scale;
-    
-    auto centerOffset = (painterSize.width()-paintAreaSize.width())/2;
-    
-    // границы борта
-    auto painterArea = QRect(QPoint(centerOffset,0),paintAreaSize);
-//    painter->drawRect(paintAircraft); // todo: remove - blact rect
-        
-    auto selectedColor = QBrush(Qt::black);
-    auto defaultColor = QBrush(Qt::white);
-    for(auto &i:planeItems)
-    {
-        if(i->type!="seat") continue;
-        auto seat = (PlaneItemChair*)i;
-        auto sLoc = seat->location.topLeft() / scale + QPoint(centerOffset,0);
-        
-        auto sSize =  seat->location.size() / (scale *1.2);
-
-        QRect seatNav(sLoc, sSize);
-  
-        painter->fillRect(seatNav, seat->isSelected?selectedColor:defaultColor);        
-    }
-    
-    // зона просмотра, выделение    
-    QRect rect = QRect( scrViewPort.topLeft() /scale + QPoint(centerOffset,0), scrViewPort.size() / (scale));
-    this->navViewRect = rect.intersected(painterArea);
-    
-    QPen pen(QColor(0, 132, 255), 2.5);
-    painter->setPen(pen);
-
-    painter->fillRect(this->navViewRect, QBrush(QColor(169, 212, 251, 75)));
-    painter->drawRect(this->navViewRect.marginsAdded(QMargins(-1,0,-1,0)));    
-}
+    // просто вынесл логику отрисовки в отдельный класс, чтобы не было простыни
+    this->navDrawer->drawNavMap(painter, scrViewPort);
+ }
 
 
 PlaneItemChair* PlaneMap::findChair(const QString &seatNumber)
@@ -158,6 +123,9 @@ PlaneMap::~PlaneMap(){
     for(auto &pi : planeItems)
         delete pi;
     planeItems.clear();
+    
+    if(this->navDrawer!=nullptr)
+        delete this->navDrawer;
 }
 
 

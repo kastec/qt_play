@@ -24,10 +24,10 @@ class AirplaneViewModel: public QObject
     QML_WRITABLE_PROPERTY_CB(qreal, zoom, onZoomChanging);
  
     
-  private:    
- 
-//    QRect scrViewPort;
-    bool isFixedZoom;
+  private:
+    
+    // разрешим произвольный ZOOM, или зафиксируем его по ширине борта
+    bool isFixedZoom = true;
     qreal maxZoom, minZoom;
     
     QSize screenSize;

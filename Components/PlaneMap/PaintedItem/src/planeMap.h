@@ -3,13 +3,15 @@
 #define PLANEMAP_H
 
 #include "planeItemBase.h"
-//#include "planeItemChair.h"
 #include "planeLayoutSearcher.h"
 #include "renderBuffer.h"
+//#include "planeNavDrawer.h"
 
+class PlaneNavDrawer;
 
 class PlaneMap
 {
+  friend class PlaneNavDrawer;
     
   private:
     QSize screenSize;  
@@ -17,6 +19,7 @@ class PlaneMap
     
     //OBSOLETE - DELTE  для правильного расчета размеров на Windows
     qreal devicePixelRatio;
+    PlaneNavDrawer *navDrawer;
     
   public:
     PlaneLayoutSearcher planeSearcher;
@@ -24,7 +27,7 @@ class PlaneMap
   public:
     PlaneMap();
     int rows, chairsInRow;
-    QSize airplaneSize;
+    QSize layoutSize;
     QRect navViewRect;
     
     void createLayout(QList<QString> lines);

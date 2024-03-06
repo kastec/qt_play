@@ -82,6 +82,7 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/PaintedItem/src/renderBuffer.h
         Components/PlaneMap/PaintedItem/src/planePassengers.h
         Components/PlaneMap/PaintedItem/src/cardServiceType.h
+        Components/PlaneMap/PaintedItem/src/planeNavDrawer.h 
          
         
         Utils/JsonHelper/serializationBinder.h
