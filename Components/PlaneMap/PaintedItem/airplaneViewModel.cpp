@@ -51,7 +51,7 @@ void AirplaneViewModel::loadLayout()
                          "row Y 24-36 ABC, DEFG (-50), HJK",
                          "row Y 37 000,DEFG(-50),000",
                          
-                         "exit (margin:-70,30)",
+                         "exit (margin:-70,50)",
 //                          "exit",
 //                         "space 200",                         
 //                         "obj WC  \"WC 5\" (36A:130,0) 250x150",

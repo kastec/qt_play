@@ -2,6 +2,7 @@
 
 #include "qdebug.h"
 
+#include "drawHelper.h"
 #include "spriteCache.h"
 #include "PlaneItemChair.h"
 #include "planeColors.h"
@@ -134,13 +135,13 @@ void PlaneItemChair::drawSpriteCommon(QPainter &p, int width, int height, ChairC
 {
     
     // место для ног
-    drawRect(p, parts[0], width,  height, QColorConstants::White, chairColor.border, 7);
+    DrawHelper::drawRect(p, parts[0], width,  height, QColorConstants::White, chairColor.border, 7);
     
     // сиденье
-    drawRect(p, parts[1], width,  height, chairColor.color, chairColor.border, 11);
+    DrawHelper::drawRect(p, parts[1], width,  height, chairColor.color, chairColor.border, 11);
     
     // фиксированная спинка
-    drawRect(p, parts[2], width,  height, chairColor.font);
+    DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
     
     // подлокотники
 //    drawRect(p, parts[3], width,  height, chairColor.font);
@@ -159,7 +160,7 @@ void PlaneItemChair::drawChairInfoCommon(QPainter *painter, const QRect &rect, C
     QPoint pos(rect.left() + w*0.48, rect.top() + w*0.32);
     
     SymbolRenderStyle style{fontSize, chairColor.font, chairColor.color, QFont::DemiBold,1.0};
-    drawSymbols(painter, pos, this->letter, style, symbolCacheKey, true);
+    DrawHelper::drawSymbols(painter, pos, this->letter, style, symbolCacheKey, true);
     
     if(this->cardType != CardTypeEnum::Empty && this->cardType>0)
         drawCardTypeInfo(painter, rect, chairColor, this->cardType, 0.68);
@@ -171,7 +172,7 @@ void PlaneItemChair::drawChairInfoCommon(QPainter *painter, const QRect &rect, C
 void PlaneItemChair::drawSpriteBuss(QPainter &p, int width, int height, ChairColor &chairColor, QList<QRectF> parts)
 {
     // сиденье
-    drawRect(p, parts[0], width,  height, chairColor.color, chairColor.border, 11);
+    DrawHelper::drawRect(p, parts[0], width,  height, chairColor.color, chairColor.border, 11);
 }
 
 void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, ChairColor &chairColor)
@@ -186,7 +187,7 @@ void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, Cha
     auto letterCacheKey = "sl" + QString(this->seatType) + QString::number(chairColor.type);
     QPoint letterPos(rect.left() + w*0.48, rect.top() + w*0.22);
     SymbolRenderStyle letterStyle{letterFontSize, chairColor.font, chairColor.color, QFont::DemiBold, 1.0};
-    drawSymbols(painter, letterPos, this->letter, letterStyle, letterCacheKey, true);
+    DrawHelper::drawSymbols(painter, letterPos, this->letter, letterStyle, letterCacheKey, true);
     
 
     if(this->cardType != CardTypeEnum::Empty && this->cardType>0)
@@ -211,7 +212,7 @@ void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, Chai
     QPoint cardTxtPos(rect.left() + w*0.48 + starW/2, rect.top() + w * topMargin);
     SymbolRenderStyle cardStyle{ cardFontSize, chairColor.font, chairColor.color, QFont::DemiBold, 1.0};
     
-    auto cardRect = drawSymbols(painter, cardTxtPos, cardText, cardStyle, cardCacheKey, true);
+    auto cardRect = DrawHelper::drawSymbols(painter, cardTxtPos, cardText, cardStyle, cardCacheKey, true);
     
     //    QPoint starPos = cardTxtRect.topLeft()- QPoint(starW,0);
     QRect starRect(cardRect.x() - starW*1.05, cardRect.y() + starW*0.1, starW, starW);

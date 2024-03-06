@@ -5,14 +5,6 @@
 #include <QObject>
 #include <QPainter>
 
-struct SymbolRenderStyle{
-  public:
-    int fontSize;
-    QColor color, backColor;
-    QFont::Weight weignt;
-    qreal opacity = 1.0;
-};
-
 class PlaneItemBase 
 {
   public:
@@ -34,15 +26,8 @@ class PlaneItemBase
     static QList<QRectF> rescale(QList<QRect> &rects, qreal width, qreal height);
     static QList<QLineF> rescale(QList<QLine> &lines, qreal width, qreal height);
     
+    
     qreal getOpacity(qreal value, qreal min, qreal max);
-    
-    
-    QPixmap* getSymbolPixmap(QChar symbol, const SymbolRenderStyle &style);
-    QRect drawSymbols(QPainter *painter, const QPoint &position, QString stringValue,
-                     const SymbolRenderStyle &style, QString symbolCacheKey, bool isCenterPoint=false);
-    
-    void drawRect(QPainter &p, QRectF &rect, int width, int height, const QColor &fillColor, QColor &borderColor, int radius);
-    void drawRect(QPainter &p, QRectF &rect, int width, int height, const QColor &fillColor);
 };
 
 

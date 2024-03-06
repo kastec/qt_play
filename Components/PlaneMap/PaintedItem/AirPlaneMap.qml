@@ -43,7 +43,7 @@ Item {
 
             Layout.fillHeight: true
             Layout.fillWidth: true
-
+            Layout.preferredWidth: 10
             //            onPositionChanged: function (pos) {
             //                airplaneNavControl.setMapPosition(pos)
             //            }
@@ -53,7 +53,9 @@ Item {
             id: airplaneNavControl
             viewModel: airplaneViewModel
             Layout.fillHeight: true
-            width: 150
+            Layout.fillWidth: true
+            Layout.preferredWidth: 2
+            //            width: 150
         }
     }
 }

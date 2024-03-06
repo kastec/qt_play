@@ -1,6 +1,7 @@
 
 #include "planeItemExit.h"
 #include <QMargins>
+#include "spriteCache.h"
 #include "qdebug.h"
 
 
@@ -32,7 +33,7 @@ void PlaneItemExit::draw(QPainter *painter, QRect &rect)
     auto w = rect.width(), h = rect.height();
     auto x = rect.x(), y = rect.y();
     
-    auto door = makePixmapDoor(h, true);
+    auto door = makePixmapDoor(h, this->isLeft);
     
     auto exW = w*0.8, exH = h*0.8;
     
@@ -55,6 +56,11 @@ void PlaneItemExit::draw(QPainter *painter, QRect &rect)
 
 QPixmap* PlaneItemExit::makePixmapDoor(int height, bool isLeft)
 {
+    auto spriteKey = isLeft?"exit-[":"ext-]";
+    auto spite = SpriteCache().get(spriteKey, height);
+    if(spite)
+        return spite;
+    
     int width = height *0.1;
     QPixmap* pixmap = new QPixmap(width, height);
     pixmap->fill();
@@ -64,11 +70,10 @@ QPixmap* PlaneItemExit::makePixmapDoor(int height, bool isLeft)
     //     p.setRenderHint(QPainter::Antialiasing);
     QPen lineColor(Qt::black, height*0.04);
     p.setPen(lineColor);
-    
-   
+      
     
     QList<QPoint> points;
-    if(this->isLeft)
+    if(isLeft)
     {
         points.append(QPoint{width,2});
         points.append(QPoint{2,2});
@@ -87,11 +92,18 @@ QPixmap* PlaneItemExit::makePixmapDoor(int height, bool isLeft)
     //p.drawPolyline(points,4);
   
     p.end();
+    
+    SpriteCache().push(spriteKey, pixmap, height);
     return pixmap;
 }
 
 QPixmap* PlaneItemExit::makePixmapExit(int width, int height)
 {
+    QString spriteKey("exit-text");
+    auto spite = SpriteCache().get(spriteKey, height);
+    if(spite)
+        return spite;
+    
 //    qDebug()<< "exit: " <<width<<height;
     QPixmap* pixmap = new QPixmap(width, height);
     pixmap->fill();
@@ -113,6 +125,7 @@ QPixmap* PlaneItemExit::makePixmapExit(int width, int height)
     p.drawLines(scaledLines);
 
     p.end();
- 
+    
+    SpriteCache().push(spriteKey, pixmap, height);
     return pixmap;
 }
