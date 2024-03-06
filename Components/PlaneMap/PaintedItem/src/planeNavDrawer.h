@@ -27,29 +27,16 @@ class PlaneNavDrawer
         auto paintAreaSize = loyoutSize / scale;
         
         // смещение для выравнивания по центру
-        auto centerOffset = (painterSize.width()-paintAreaSize.width())/2;
+        auto centerOffset = QPoint( (painterSize.width()-paintAreaSize.width())/2 , 0);
         
         // границы борта
-        auto painterArea = QRect(QPoint(centerOffset,0),paintAreaSize);
-        //    painter->drawRect(paintAircraft); // todo: remove - blact rect
+        auto painterArea = QRect(centerOffset, paintAreaSize);
         
-        auto selectedColor = QBrush(Qt::black);
-        auto defaultColor = QBrush(Qt::white);
-        for(auto &i:planeMap->planeItems)
-        {
-            if(i->type!="seat") continue;
-            auto seat = (PlaneItemChair*)i;
-            auto sLoc = seat->location.topLeft() / scale + QPoint(centerOffset,0);
-            
-            auto sSize =  seat->location.size() / (scale *1.2);
-            
-            QRect seatNav(sLoc, sSize);
-            
-            painter->fillRect(seatNav, seat->isSelected?selectedColor:defaultColor);        
-        }
+        // отрисовка сидений
+        drawItems(painter, scale, centerOffset);
         
         // зона просмотра, выделение
-        QRect rect = QRect( scrViewPort.topLeft() /scale + QPoint(centerOffset,0), scrViewPort.size() / (scale));
+        QRect rect = QRect( scrViewPort.topLeft() /scale + centerOffset, scrViewPort.size() / (scale));
         auto navViewRect = rect.intersected(painterArea);
         
         QPen pen(QColor(0, 132, 255), 2.5);
@@ -59,8 +46,26 @@ class PlaneNavDrawer
         painter->drawRect(navViewRect.marginsAdded(QMargins(-1,0,-1,0))); // margin добавляем из-за толшины линии обводки
         
         return navViewRect;
-    }    
-
+    }
+    
+    void drawItems(QPainter *painter,  qreal scale, QPoint centerOffset)
+    {
+        auto selectedColor = QBrush(Qt::black);
+        auto defaultColor = QBrush(Qt::white);
+        for(auto &i:planeMap->planeItems)
+        {
+//            if(i->type!="exit") continue;
+            if(i->type!="seat") continue;
+            
+            auto seat = (PlaneItemChair*)i;
+            auto sLoc = seat->location.topLeft() / scale + centerOffset;
+            
+            // уменьшим масштаб на 1.2, чтобы лучше отделить сиденья друг от друга
+            auto sSize =  seat->location.size() / (scale *1.2);            
+            QRect seatNav(sLoc, sSize);            
+            painter->fillRect(seatNav, seat->isSelected?selectedColor:defaultColor);        
+        }
+    }
 };
 
 #endif // PLANENAVDRAWER_H
