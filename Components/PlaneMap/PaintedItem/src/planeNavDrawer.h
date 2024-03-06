@@ -4,41 +4,61 @@
 
 #include <QObject>
 #include "planeItemExit.h"
+#include "spriteCache.h"
 #include "qpainter.h"
-#include "drawHelper.h"
 #include "planeMap.h"
-#include "drawHelper.h"
 
 class PlaneNavDrawer
-{
-
+{    
   private:
     PlaneMap  *planeMap;
     
   public:
-    PlaneNavDrawer(PlaneMap *planeMap):planeMap(planeMap){}
+    PlaneNavDrawer(PlaneMap *planeMap):planeMap(planeMap){}    
     
-    QRect drawNavMap(QPainter *painter, QRect scrViewPort)
+    void drawNavMap(QPainter *painter, QRect scrViewPort)
     {
         auto painterSize = painter->viewport().size() / planeMap->devicePixelRatio;
         
-        auto loyoutSize = planeMap->layoutSize;
-        auto scale = __max(loyoutSize.width()/(qreal)painterSize.width(),
-                           loyoutSize.height()/(qreal)painterSize.height());
+        auto layoutSize = planeMap->layoutSize;
+        auto scale = __max(layoutSize.width()/(qreal)painterSize.width(),
+                           layoutSize.height()/(qreal)painterSize.height());
         
-        auto paintAreaSize = loyoutSize / scale;
+        auto paintAreaSize = layoutSize / scale;
         
         // смещение для выравнивания по центру
         auto centerOffset = QPoint( (painterSize.width()-paintAreaSize.width())/2 , 0);
         
+        static QString spriteKey("nav-map");
+        auto cacheCriteria = paintAreaSize.width()*paintAreaSize.height();
+        
+        auto navPixmap = SpriteCache().get(spriteKey,cacheCriteria);
+        if(!navPixmap){
+            // кеш отрисованной карты навигации - перерисовка при изменении размеров
+            navPixmap = new QPixmap(paintAreaSize);
+            navPixmap->fill(QColor::fromRgb(217,230,237));
+            QPainter pNavItems(navPixmap);
+            
+            // отрисовка сидений, выходов
+            drawItems(&pNavItems, scale, QPoint(0,0) /*centerOffset*/);
+            
+            SpriteCache().push(spriteKey, navPixmap, cacheCriteria);            
+        }
+        
+        painter->drawPixmap(centerOffset, *navPixmap);
+        
+        // зона просмотра, выделение
+        drawViewPortArea(painter, scrViewPort,  centerOffset,  paintAreaSize, scale);
+    }
+    
+    
+    void drawViewPortArea(QPainter *painter, QRect scrViewPort, QPoint centerOffset, QSize paintAreaSize, qreal scale)
+    {
         // границы борта
         auto painterArea = QRect(centerOffset, paintAreaSize);
         
-        // отрисовка сидений
-        drawItems(painter, scale, centerOffset);
-        
-        // зона просмотра, выделение
         QRect rect = QRect( scrViewPort.topLeft() /scale + centerOffset, scrViewPort.size() / (scale));
+        
         auto navViewRect = rect.intersected(painterArea);
         
         QPen pen(QColor(0, 132, 255), 2.5);
@@ -46,8 +66,6 @@ class PlaneNavDrawer
         
         painter->fillRect(navViewRect, QBrush(QColor(169, 212, 251, 75)));
         painter->drawRect(navViewRect.marginsAdded(QMargins(-1,0,-1,0))); // margin добавляем из-за толшины линии обводки
-        
-        return navViewRect;
     }
     
     void drawItems(QPainter *painter,  qreal scale, QPoint centerOffset)
@@ -76,7 +94,7 @@ class PlaneNavDrawer
     {
         auto sLoc = exit->location.topLeft() / scale + centerOffset;
         auto sSize =  exit->location.size() / (scale);   
-          
+        
         auto w = sSize.width();
         auto h = sSize.height();
         QPen lineColor(Qt::red, h*0.2);

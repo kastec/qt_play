@@ -103,7 +103,7 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
 
 void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
 {
-    // просто вынесл логику отрисовки в отдельный класс, чтобы не было простыни
+    // просто вынес логику отрисовки в отдельный класс, чтобы не было простыни
     this->navDrawer->drawNavMap(painter, scrViewPort);
  }
 
