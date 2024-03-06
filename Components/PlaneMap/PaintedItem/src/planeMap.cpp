@@ -132,13 +132,14 @@ void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
     }
     
     // зона просмотра, выделение    
-    QRect rect = QRect( scrViewPort.topLeft() /scale, scrViewPort.size() / (scale));
+    QRect rect = QRect( scrViewPort.topLeft() /scale + QPoint(centerOffset,0), scrViewPort.size() / (scale));
     this->navViewRect = rect.intersected(painterArea);
     
     QPen pen(QColor(0, 132, 255), 2.5);
     painter->setPen(pen);
+
     painter->fillRect(this->navViewRect, QBrush(QColor(169, 212, 251, 75)));
-    painter->drawRect(this->navViewRect );    
+    painter->drawRect(this->navViewRect.marginsAdded(QMargins(-1,0,-1,0)));    
 }
 
 
