@@ -199,8 +199,7 @@ void PlaneItemChair::drawSpriteBuss(QPainter &p, int width, int height, ChairCol
 void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, ChairColor &chairColor)
 {
     auto w = rect.width();
-    
-    
+
     // --- seat letter ----
     // размер фонта 38 увеличиваем согласно Zoom
     auto letterFontSize = zoom(28, rect);
@@ -212,7 +211,12 @@ void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, Cha
     
     if(this->cardType != CardTypeEnum::Empty && this->cardType>0)
         drawCardTypeInfo(painter, rect, chairColor, this->cardType, 0.44);
-
+    
+//    painter->drawRect(rect);
+    auto textH = rect.height() * 0.35;
+    QRect textRect(rect.x(),rect.y()+ rect.height() - textH, rect.width(), textH);
+//    painter->fillRect(textRect, Qt::red);
+    DrawHelper::drawText(painter, textRect, "Kozlov Alexander Sergeevich");
 }
 
 void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, ChairColor &chairColor,

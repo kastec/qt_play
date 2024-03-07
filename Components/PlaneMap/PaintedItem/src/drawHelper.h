@@ -93,25 +93,31 @@ namespace DrawHelper
             painter->drawPixmap(posX,posY, *pm);
             posX += pm->width();
         }    
-        
-        //    for(auto &symbol:stringValue){
-        
-        //        auto symbolKey = symbol + symbolCacheKey; 
-        //        auto pixmap = SpriteCache().get(symbolKey, style.fontSize);
-        
-        //        if(pixmap == nullptr){
-        //            // qDebug() << "r: " << symbolKey << fontSize;                
-        //            pixmap = getSymbolPixmap(symbol, style);
-        //            SpriteCache().push(symbolKey, pixmap, style.fontSize);
-        //        }
-        //        painter->drawPixmap(posX,posY, *pixmap);
-        //        posX += pixmap->width();
-        //    }
+
         QPoint bottomRight(posX, posY+pmSymbols[0]->height());
         return QRect(topLeft, bottomRight);
     }
     
-    
+    static void drawText(QPainter *painter, QRect rect,
+                             QString stringValue)
+//, const SymbolRenderStyle &style,
+//                             QString symbolCacheKey,
+//                             bool isCenterPoint)
+        {
+        QTextOption op;
+//        font.setStyleStrategy(QFont::PreferAntialias);
+        painter->setRenderHint(QPainter::Antialiasing);
+        painter->setFont(QFont("Inter", 16));
+        
+//        QFont f = painter->font();
+//        f.setPointSizeF(f.pointSizeF()*0.5);
+        
+        painter->setPen(Qt::black);
+        
+        op.setWrapMode(QTextOption::WordWrap);
+        op.setAlignment(Qt::AlignTop|Qt::AlignHCenter);
+        painter->drawText(rect,stringValue, op);
+    }
     
     
     static void drawRect(QPainter &p, QRectF &r, int width, int height, const QColor &fillColor, QColor &borderColor, int radius)
