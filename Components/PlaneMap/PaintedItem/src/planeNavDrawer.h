@@ -93,7 +93,10 @@ class PlaneNavDrawer
     void drawExit(QPainter *painter, PlaneItemExit *exit,  qreal scale, QPoint centerOffset)
     {
         auto sLoc = exit->location.topLeft() / scale + centerOffset;
-        auto sSize =  exit->location.size() / (scale);   
+        auto sSize =  exit->location.size() / (scale);
+        
+        auto offset = sSize.height()*0.2;
+        sLoc = sLoc + QPoint((exit->isLeft)?offset:-offset,0);
         
         auto w = sSize.width();
         auto h = sSize.height();
