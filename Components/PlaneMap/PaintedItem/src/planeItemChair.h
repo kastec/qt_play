@@ -8,6 +8,20 @@
 #include "planeColors.h"
 #include "cardServiceType.h"
 
+namespace ChairSettingsEnum
+{
+enum
+{
+    None = 0,
+    SpacePlus = 1<<1,
+    FixedBack = 1<<2,
+    LeftArmrest= 1<<3,
+    RightArmrest= 1<<4
+};
+typedef long Flags;
+};
+
+
 class PlaneItemChair  : public PlaneItemBase
 {
   public:
@@ -16,6 +30,7 @@ class PlaneItemChair  : public PlaneItemBase
     
     int rowNumber;
     QChar letter;
+    ChairSettingsEnum::Flags settings;
     
     int index; // номер кресла в линейном массве; max(letter) * rowNumber
     

@@ -15,9 +15,11 @@ QMap<QString, QList<QRectF>> PlaneItemChair::fillChairParts()
     QMap<QString, QList<QRectF>>  chairParts;
     
     auto partSizes = QList<QRect>{
-        QRect(18,2, 63, 7 * 2), // доп. расстояние для ног
         QRect(4,9, 93, 90), // сиденье
+        
+        QRect(18,2, 63, 7 * 2), // доп. расстояние для ног        
         QRect(25, 87, 50, 6), // фиксир. спинка
+        
         QRect(9,24, 6,56), // левый подлокотник
         QRect(84, 24, 6,56) // правый подлокотник
     } ;
@@ -29,10 +31,12 @@ QMap<QString, QList<QRectF>> PlaneItemChair::fillChairParts()
     
     // ==== Business ====
     auto partBusSizes = QList<QRect>{
-        QRect(18,2, 63, 7 * 2), // доп. расстояние для ног
         QRect(2, 3, 97, 60), // сиденье
+        
+        QRect(18,2, 63, 7 * 2), // доп. расстояние для ног        
         QRect(25, 54, 50, 4), // фиксир. спинка
-        QRect(7,13, 4,36), // левый подлокотник
+        
+        QRect(7,13, 4,36), // левый подлокотник        
         QRect(88,13, 4,36) // правый подлокотник        
     } ;
     
@@ -95,7 +99,7 @@ void PlaneItemChair::drawChairProcess(QPainter *painter, QRect &rect,
     
     auto chairDrawColor =  this->getChairDrawColor();
     
-    auto key = "seat" + QString(this->seatType) + QString::number(chairDrawColor->type);
+    auto key = "seat" + QString(this->seatType) + QString::number(chairDrawColor->type)+ QString::number(this->settings);
     auto sprite = SpriteCache().get(key, w);
     if(sprite==nullptr){
         auto pmChair = makePixmap(w, h, *chairDrawColor, drawSpriteFunc);
@@ -137,19 +141,22 @@ QPixmap* PlaneItemChair::makePixmap(int width, int height, ChairColor &chairColo
 
 void PlaneItemChair::drawSpriteCommon(QPainter &p, int width, int height, ChairColor &chairColor, QList<QRectF> parts)
 {
-    
     // место для ног
-//    DrawHelper::drawRect(p, parts[0], width,  height, QColorConstants::White, chairColor.border, 7);
+    if(settings & ChairSettingsEnum::SpacePlus)
+        DrawHelper::drawRect(p, parts[1], width,  height, QColorConstants::White, chairColor.border, 7);
     
     // сиденье
-    DrawHelper::drawRect(p, parts[1], width,  height, chairColor.color, chairColor.border, 11);
+    DrawHelper::drawRect(p, parts[0], width,  height, chairColor.color, chairColor.border, 11);
     
     // фиксированная спинка
-    DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
+    if(settings & ChairSettingsEnum::FixedBack)
+        DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
     
-    // подлокотники    
-    DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
-    DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
+    // подлокотники
+    if(settings & ChairSettingsEnum::LeftArmrest)
+        DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
+    if(settings & ChairSettingsEnum::RightArmrest)
+        DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
     
 }
 
@@ -174,16 +181,19 @@ void PlaneItemChair::drawChairInfoCommon(QPainter *painter, const QRect &rect, C
 //====  DRAW BUSSINESS SEAT ==========================================
 
 void PlaneItemChair::drawSpriteBuss(QPainter &p, int width, int height, ChairColor &chairColor, QList<QRectF> parts)
-{
+{    
     // сиденье
-    DrawHelper::drawRect(p, parts[1], width,  height, chairColor.color, chairColor.border, 11);
-    
-    // фиксированная спинка
-    DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
+    DrawHelper::drawRect(p, parts[0], width,  height, chairColor.color, chairColor.border, 11);
         
-    // подлокотники    
-    DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
-    DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
+    // фиксированная спинка
+    if(settings & ChairSettingsEnum::FixedBack)
+        DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
+        
+    // подлокотники
+    if(settings & ChairSettingsEnum::LeftArmrest)
+        DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
+    if(settings & ChairSettingsEnum::RightArmrest)
+        DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
 }
 
 void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, ChairColor &chairColor)

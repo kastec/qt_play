@@ -69,8 +69,15 @@ class PlaneLayoutParser{
         NamedParams():name(""), param1(0),param2(0){}
     };
     
+    struct SeatDeclare{
+        QChar letter;
+        ChairSettingsEnum::Flags settings;
+      public:
+        SeatDeclare():settings(ChairSettingsEnum::None){}
+    };
+    
     struct SeatGroup:public ItemOffset{
-        QString letters;
+        QList<SeatDeclare> seats;
     };
     
     struct SeatRowDeclaration{
@@ -219,18 +226,19 @@ class PlaneLayoutParser{
             for(int g=0; g<rowInfo.groups.length(); g++){
                 auto gr = rowInfo.groups[g];
                 
-                for(int i=0; i<gr.letters.length(); i++){
+                for(int i=0; i<gr.seats.length(); i++){
                     
-                    auto letter = gr.letters[i];
-                    if(letter!=NONE_CHAIR){  // если символ '0' - то это отсутствие кресла
+                    auto seat = gr.seats[i];
+                    if(seat.letter!=NONE_CHAIR){  // если символ '0' - то это отсутствие кресла
                         auto chair = new PlaneItemChair();
                         chair->groupId = lineNumber;
-                        chair->letter = letter;
+                        chair->letter = seat.letter;
                         chair->rowNumber = r;
-                        chair->index = this->maxChairsInRow * chair->rowNumber + (letter.toLatin1() - 'A');
+                        chair->settings = seat.settings;
+                        chair->index = this->maxChairsInRow * chair->rowNumber + (chair->letter.toLatin1() - 'A');
 //                        qDebug()<< "index:"<<chair->index << "r:"<<chair->rowNumber << " letter:"<<letter<< " letterval:"<< (letter.toLatin1() - 'A');
-                        chair->id = QString::number(r)+letter;
-                        chair->title = QString::number(r)+' '+letter;
+                        chair->id = QString::number(r)+chair->letter;
+                        chair->title = QString::number(r)+' '+chair->letter;
                         chair->seatType = rowInfo.seatType;
                         chair->location = QRect(posX + gr.xOffset, posY + gr.yOffset, chMetric.width, chMetric.height);
                         
@@ -260,7 +268,7 @@ class PlaneLayoutParser{
         row.rowFrom = fromToList.takeFirst().toInt();
         row.rowTo = (!fromToList.isEmpty()) ? fromToList.takeFirst().toInt():row.rowFrom;
         
-        static QRegularExpression regSeatGroups("(?<letters>[0A-Z]+)(?<props>((\\(.*?\\))|{.*?})*)");        
+        static QRegularExpression regSeatGroups("(?<letters>[0A-Z\\[\\]_^]+)(?<props>((\\(.*?\\))|{.*?})*)");        
         auto seatGroups = parts.takeFirst();
         auto sg = regSeatGroups.globalMatch(seatGroups);
         
@@ -268,10 +276,12 @@ class PlaneLayoutParser{
         
         while( sg.hasNext() ) {
             auto match = sg.next();
-            SeatGroup seatGroup;
             
-            seatGroup.letters = match.captured("letters").toUpper();           
-            row.rowSeatCount += seatGroup.letters.length();
+            
+            auto letters = match.captured("letters").toUpper();
+            SeatGroup seatGroup = GetSeatGroup(letters);
+                       
+            row.rowSeatCount += seatGroup.seats.length();
             
             auto props = match.captured("props");
             if(!props.isEmpty()){
@@ -284,6 +294,31 @@ class PlaneLayoutParser{
             row.groups.append(seatGroup);
         }
         return row;
+    }
+    
+    SeatGroup GetSeatGroup(QString letters)
+    {
+        SeatGroup seatGroup;
+        SeatDeclare seat;
+        for(auto &c:letters)
+        {
+            if(c.isSpace()) continue;
+            if(c.isLetterOrNumber())
+            {
+                if(seat.letter.isLetterOrNumber())
+                    seatGroup.seats.append(seat);
+                
+                seat.letter=c;
+                seat.settings= ChairSettingsEnum::None;                    
+            }
+            if(c=='[') seat.settings |= ChairSettingsEnum::LeftArmrest;
+            if(c==']') seat.settings |= ChairSettingsEnum::RightArmrest;
+            if(c=='_') seat.settings |= ChairSettingsEnum::FixedBack;
+            if(c=='^') seat.settings |= ChairSettingsEnum::SpacePlus;
+        }
+        if(seat.letter.isLetter())
+            seatGroup.seats.append(seat);
+        return seatGroup;
     }
     
     void addRowNumber(int rowNumber, int posY)

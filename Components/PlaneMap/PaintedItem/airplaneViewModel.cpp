@@ -34,7 +34,7 @@ void AirplaneViewModel::loadLayout()
                          
                          "space 350",
                          
-                         "row W  11-16  AC, DEFG (+30), HK",
+                         "row W  11-16  A_]C[^, D^E^F^G_ (+30), HK",
                          
                          "space 50",
                          "row Y 17 AC, DEFG (+50), HK",
