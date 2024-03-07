@@ -95,6 +95,7 @@ class PlaneNavDrawer
         auto sLoc = exit->location.topLeft() / scale + centerOffset;
         auto sSize =  exit->location.size() / (scale);
         
+        // сделаем небольшой отступ от края, чтобы рамка ViewPort не перекрывала выход 
         auto offset = sSize.height()*0.2;
         sLoc = sLoc + QPoint((exit->isLeft)?offset:-offset,0);
         

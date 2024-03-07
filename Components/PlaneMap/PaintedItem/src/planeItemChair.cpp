@@ -18,8 +18,8 @@ QMap<QString, QList<QRectF>> PlaneItemChair::fillChairParts()
         QRect(18,2, 63, 7 * 2), // доп. расстояние для ног
         QRect(4,9, 93, 90), // сиденье
         QRect(25, 87, 50, 6), // фиксир. спинка
-        QRect(11,24, 6,56), // левый подлокотник
-        QRect(82, 24, 6,56) // правый подлокотник
+        QRect(9,24, 6,56), // левый подлокотник
+        QRect(84, 24, 6,56) // правый подлокотник
     } ;
     
     
@@ -29,7 +29,11 @@ QMap<QString, QList<QRectF>> PlaneItemChair::fillChairParts()
     
     // ==== Business ====
     auto partBusSizes = QList<QRect>{
-        QRect(2,3, 97, 60), // сиденье            
+        QRect(18,2, 63, 7 * 2), // доп. расстояние для ног
+        QRect(2, 3, 97, 60), // сиденье
+        QRect(25, 54, 50, 4), // фиксир. спинка
+        QRect(7,13, 4,36), // левый подлокотник
+        QRect(88,13, 4,36) // правый подлокотник        
     } ;
     
     chairParts["J"] = rescale(partBusSizes, 100, 100);//scaledSizes; 
@@ -135,7 +139,7 @@ void PlaneItemChair::drawSpriteCommon(QPainter &p, int width, int height, ChairC
 {
     
     // место для ног
-    DrawHelper::drawRect(p, parts[0], width,  height, QColorConstants::White, chairColor.border, 7);
+//    DrawHelper::drawRect(p, parts[0], width,  height, QColorConstants::White, chairColor.border, 7);
     
     // сиденье
     DrawHelper::drawRect(p, parts[1], width,  height, chairColor.color, chairColor.border, 11);
@@ -143,9 +147,9 @@ void PlaneItemChair::drawSpriteCommon(QPainter &p, int width, int height, ChairC
     // фиксированная спинка
     DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
     
-    // подлокотники
-//    drawRect(p, parts[3], width,  height, chairColor.font);
-//    drawRect(p, parts[4], width,  height, chairColor.font);
+    // подлокотники    
+    DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
+    DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
     
 }
 
@@ -154,12 +158,12 @@ void PlaneItemChair::drawChairInfoCommon(QPainter *painter, const QRect &rect, C
     auto w = rect.width();
     
     // размер фонта увеличиваем согласно Zoom
-    auto fontSize = this->zoom(24, rect);
+    auto fontLetterSize = this->zoom(24, rect);
      
     auto symbolCacheKey = "sl" + QString(this->seatType) + QString::number(chairColor.type);
     QPoint pos(rect.left() + w*0.48, rect.top() + w*0.32);
     
-    SymbolRenderStyle style{fontSize, chairColor.font, chairColor.color, QFont::DemiBold,1.0};
+    SymbolRenderStyle style{fontLetterSize, chairColor.font, chairColor.color, QFont::DemiBold,1.0};
     DrawHelper::drawSymbols(painter, pos, this->letter, style, symbolCacheKey, true);
     
     if(this->cardType != CardTypeEnum::Empty && this->cardType>0)
@@ -172,7 +176,14 @@ void PlaneItemChair::drawChairInfoCommon(QPainter *painter, const QRect &rect, C
 void PlaneItemChair::drawSpriteBuss(QPainter &p, int width, int height, ChairColor &chairColor, QList<QRectF> parts)
 {
     // сиденье
-    DrawHelper::drawRect(p, parts[0], width,  height, chairColor.color, chairColor.border, 11);
+    DrawHelper::drawRect(p, parts[1], width,  height, chairColor.color, chairColor.border, 11);
+    
+    // фиксированная спинка
+    DrawHelper::drawRect(p, parts[2], width,  height, chairColor.font);
+        
+    // подлокотники    
+    DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
+    DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
 }
 
 void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, ChairColor &chairColor)
@@ -189,9 +200,8 @@ void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, Cha
     SymbolRenderStyle letterStyle{letterFontSize, chairColor.font, chairColor.color, QFont::DemiBold, 1.0};
     DrawHelper::drawSymbols(painter, letterPos, this->letter, letterStyle, letterCacheKey, true);
     
-
     if(this->cardType != CardTypeEnum::Empty && this->cardType>0)
-        drawCardTypeInfo(painter, rect, chairColor, this->cardType, 0.45);
+        drawCardTypeInfo(painter, rect, chairColor, this->cardType, 0.44);
 
 }
 
@@ -205,7 +215,7 @@ void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, Chai
     auto starW = zoom(pmStar->width(), rect);
     
     // --- card type ----
-    auto cardFontSize=zoom(20, rect);
+    auto cardFontSize=zoom(18, rect);
     
     QString cardText = CardServiceType::getCardAbbr(this->cardType);    
     auto cardCacheKey = "card" + QString(this->seatType) + QString::number(chairColor.type);
@@ -221,23 +231,26 @@ void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, Chai
 
 
 QPixmap* PlaneItemChair::getStarSprite(CardTypeEnum cardType, ChairColor &chairColor)
-{
-    
+{    
     auto key = "star" + QString(this->seatType) + QString::number(chairColor.type);
-    auto sprite = SpriteCache().get(key);
+    auto starSprite = SpriteCache().get(key);
     
-    if(sprite!=nullptr) return sprite;
+    if(starSprite!=nullptr) return starSprite;
     
     auto fileName = "star-list-" + CardServiceType::getCardAbbr(cardType) +".png";
     auto fullPath = "C:\\Projects\\QT_Test\\QtTest1\\Components\\PlaneMap\\cardtypes\\" + fileName;
     
-    sprite = new QPixmap(fullPath);    
- 
+    QPixmap starPix(fullPath);
+     starSprite = new QPixmap(starPix.size());
+//    starSprite = new QPixmap(20,20);
+    starSprite->fill(chairColor.color);
     
-    SpriteCache().push(key, sprite);
+    QPainter p(starSprite);    
+    p.drawPixmap(0,0, starPix);
+    p.end();
+    SpriteCache().push(key, starSprite);    
     
-    
-    return sprite;
+    return starSprite;
 }
 
 
