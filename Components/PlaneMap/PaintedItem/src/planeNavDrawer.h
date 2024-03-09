@@ -16,9 +16,11 @@ class PlaneNavDrawer
   public:
     PlaneNavDrawer(PlaneMap *planeMap):planeMap(planeMap){}    
     
-    void drawNavMap(QPainter *painter, QRect scrViewPort)
+    QRect drawNavMap(QPainter *painter, QRect scrViewPort)
     {
+//        qDebug()<< "drawNavMap" << painter->viewport().size() << planeMap->devicePixelRatio;
         auto painterSize = painter->viewport().size() / planeMap->devicePixelRatio;
+//        qDebug()<< "  painterSize" << painterSize;
         
         auto layoutSize = planeMap->layoutSize;
         auto scale = __max(layoutSize.width()/(qreal)painterSize.width(),
@@ -48,11 +50,12 @@ class PlaneNavDrawer
         painter->drawPixmap(centerOffset, *navPixmap);
         
         // зона просмотра, выделение
-        drawViewPortArea(painter, scrViewPort,  centerOffset,  paintAreaSize, scale);
+        auto navViewRect = drawViewPortArea(painter, scrViewPort,  centerOffset,  paintAreaSize, scale);
+        return navViewRect;
     }
     
     
-    void drawViewPortArea(QPainter *painter, QRect scrViewPort, QPoint centerOffset, QSize paintAreaSize, qreal scale)
+    QRect drawViewPortArea(QPainter *painter, QRect scrViewPort, QPoint centerOffset, QSize paintAreaSize, qreal scale)
     {
         // границы борта
         auto painterArea = QRect(centerOffset, paintAreaSize);
@@ -66,6 +69,8 @@ class PlaneNavDrawer
         
         painter->fillRect(navViewRect, QBrush(QColor(169, 212, 251, 75)));
         painter->drawRect(navViewRect.marginsAdded(QMargins(-1,0,-1,0))); // margin добавляем из-за толшины линии обводки
+        
+        return navViewRect;        
     }
     
     void drawItems(QPainter *painter,  qreal scale, QPoint centerOffset)
