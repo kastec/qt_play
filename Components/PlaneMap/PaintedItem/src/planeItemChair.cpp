@@ -212,12 +212,38 @@ void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, Cha
     if(this->cardType != CardTypeEnum::Empty && this->cardType>0)
         drawCardTypeInfo(painter, rect, chairColor, this->cardType, 0.44);
     
-//    painter->drawRect(rect);
-    auto textH = rect.height() * 0.35;
-    QRect textRect(rect.x(),rect.y()+ rect.height() - textH, rect.width(), textH);
-//    painter->fillRect(textRect, Qt::red);
-    DrawHelper::drawText(painter, textRect, "Kozlov Alexander Sergeevich");
+    
+    //-- draw NAME
+    auto nameTextHeight = rect.height() * 0.31;
+    QRect nameTextRect(rect.x(),rect.y()+ rect.height() - nameTextHeight, rect.width(), nameTextHeight);
+    
+    auto cacheKey = "paxName-" + QString::number(this->rowNumber) + QString(this->letter);
+    if(this->hasPassenger)
+        DrawHelper::drawSprite(painter, nameTextRect, cacheKey, nameTextRect.width(),
+            [this](auto p, auto r){drawBusinessPaxName(p, r);},
+            false);
+
+ //     drawBusinessPaxName(painter,nameTextRect);
+   
 }
+
+void PlaneItemChair::drawBusinessPaxName(QPainter *painter, const QRect &rect)
+{
+    if(!this->hasPassenger) return;
+    
+    qDebug()<<"paxName"<< rect;
+    SymbolRenderStyle style;
+    style.fontSize = zoom(18, rect);
+    style.color = Qt::black;
+    style.backColor = Qt::white;
+    
+    QTextOption topt;
+    topt.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
+    topt.setAlignment(Qt::AlignTop|Qt::AlignHCenter);
+//    DrawHelper::drawText(painter, rect, "Kozlovqwesdqe Alexander ffsdfdeede", style, topt);
+     DrawHelper::drawText(painter, rect, this->title, style, topt);
+}
+
 
 void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, ChairColor &chairColor,
                                       CardTypeEnum cardType, qreal topMargin)

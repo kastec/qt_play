@@ -76,7 +76,8 @@ class PlaneItemChair  : public PlaneItemBase
     
     void drawSpriteBuss(QPainter &p, int width, int height, ChairColor &chairColor, QList<QRectF> parts);
     void drawChairInfoBuss(QPainter *painter, const QRect &rect, ChairColor &chairColor);
-    
+    void drawBusinessPaxName(QPainter *painter, const QRect &rect);        
+        
     void drawCardTypeInfo(QPainter *painter, const QRect &rect, ChairColor &chairColor, CardTypeEnum cardType, qreal topMargin);
     
     QPixmap* getStarSprite(CardTypeEnum cardType, ChairColor &chairColor);

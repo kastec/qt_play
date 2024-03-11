@@ -4,7 +4,9 @@
 
 #include <QObject>
 #include <QPainter>
+#include <QFile>
 
+#include "qdebug.h"
 #include "qpainterpath.h"
 #include "spriteCache.h"
 
@@ -37,12 +39,13 @@ namespace DrawHelper
         
         //    QPixmap* pixmap = new QPixmap(rect.width()*1.2 ,rect.height()*1.1);
         QPixmap* pixmap = new QPixmap(fW ,fH);
-        
+    
         pixmap->fill(style.backColor);
         //    pixmap->fill(Qt::yellow);
         
         QPainter p(pixmap);
-        
+        p.setRenderHint(QPainter::SmoothPixmapTransform);
+        p.setRenderHint(QPainter::TextAntialiasing);
         p.setRenderHint(QPainter::Antialiasing);
         p.setFont(font);
         
@@ -99,24 +102,32 @@ namespace DrawHelper
     }
     
     static void drawText(QPainter *painter, QRect rect,
-                             QString stringValue)
-//, const SymbolRenderStyle &style,
-//                             QString symbolCacheKey,
-//                             bool isCenterPoint)
+                         QString stringValue,
+                         const SymbolRenderStyle &style,
+                         const QTextOption &topt = QTextOption()
+                         )
         {
-        QTextOption op;
-//        font.setStyleStrategy(QFont::PreferAntialias);
-        painter->setRenderHint(QPainter::Antialiasing);
-        painter->setFont(QFont("Inter", 16));
+        
+        QFont font("Inter", style.fontSize);
+        font.setStyleStrategy(QFont::PreferAntialias);
+//        font.setHintingPreference(QFont::PreferFullHinting);
+        
+//        painter->setRenderHint(QPainter::TextAntialiasing);
+//        painter->setRenderHint(QPainter::Antialiasing);
+        painter->setFont(font);
         
 //        QFont f = painter->font();
 //        f.setPointSizeF(f.pointSizeF()*0.5);
         
-        painter->setPen(Qt::black);
         
-        op.setWrapMode(QTextOption::WordWrap);
-        op.setAlignment(Qt::AlignTop|Qt::AlignHCenter);
-        painter->drawText(rect,stringValue, op);
+        painter->setPen(style.color);
+        painter->fillRect(rect,style.backColor);
+        
+//        op.setWrapMode(QTextOption::WordWrap);
+//        op.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);        
+//       op.setAlignment(Qt::AlignTop|Qt::AlignHCenter);
+        
+        painter->drawText(rect, stringValue, topt);
     }
     
     
@@ -151,6 +162,35 @@ namespace DrawHelper
         //    QPen border(borderColor, width*0.025);
         //    p.setPen(border);
         //    p.fillPath(path, fillColor);
+        
+    }
+    
+    static void drawSprite(QPainter *painter, const QRect &rect, QString cacheKey, int cacheCriteria,
+                           std::function<void(QPainter *painter, const QRect &rect)> drawFunc,
+                           bool smoothPixmapTransform = false
+                           )
+    {
+//        drawFunc(painter,rect);
+//        return ;
+        auto sprite = SpriteCache().get(cacheKey, cacheCriteria);
+        
+        if(sprite==nullptr){
+            QPixmap* pixmap = new QPixmap(rect.width(), rect.height());
+            QPainter p(pixmap);
+
+            QRect r(0,0,rect.width(), rect.height());
+            drawFunc(&p,r);
+                    
+            p.end();
+            
+            SpriteCache().push(cacheKey, pixmap, cacheCriteria);
+            sprite = pixmap;
+        }
+        
+        if(smoothPixmapTransform)
+            painter->setRenderHint(QPainter::SmoothPixmapTransform,smoothPixmapTransform);
+            
+        painter->drawPixmap(rect.topLeft(), *sprite);
         
     }
 };
