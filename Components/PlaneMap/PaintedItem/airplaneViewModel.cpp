@@ -30,14 +30,16 @@ void AirplaneViewModel::loadLayout()
 //    auto type = "32B"; //A321-28-142
 //    auto type = "32Q"; //A330-300 -28-142
  //   auto type = "3KR"; // A333-28-268
-      auto type = "333"; // A333-36-265
+ //     auto type = "333"; // A333-36-265
 //     auto type = "359-28-288"; // A350-28-288
  //   auto type = "73H"; // A350-28-288
 //    auto type = "77R"; // A350-28-288
     //    auto type = "77W"; // A350-28-288
-  //     auto type = "SU9"; // A350-28-288
+       auto type = "SU9"; // A350-28-288
 
-    auto filepath = QString("D:\\0\\layouts\\%1.airplane").arg(type);
+    auto filepath = QString("D:\\0\\airplanes\\%1.airplane").arg(type);
+    if(FileHelper::existFile(filepath)==false) return;
+    qDebug() << "loading airplane layout" << type;
     auto data = FileHelper::readAll(filepath);
     QString planeStr = QString(data);
     QList<QString>  linesA = planeStr.split("\n");
@@ -91,7 +93,7 @@ void AirplaneViewModel::loadLayout()
     
 //    planeMap->createLayout(lines);
     */
-     planeMap->createLayout(linesA);
+    planeMap->createLayout(linesA);
     this->changeZoomLimits();
     
     QList<int> paxs;
@@ -163,7 +165,6 @@ void AirplaneViewModel::setPassengers(const QList<int> &passengers)
 //        }
 //    }
 }
-
 
 
 void AirplaneViewModel::setSelections(const QList<QString> &selectedSeats){

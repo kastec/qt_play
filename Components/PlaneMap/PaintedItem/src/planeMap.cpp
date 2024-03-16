@@ -23,9 +23,8 @@ void PlaneMap::createLayout(QList<QString> lines)
     auto items = layoutParser.parse(lines);
     planeItems = items;
     rows = layoutParser.rows;
-//    chairsInRow = layoutParser.maxChairsInRow;
+
     layoutSize = layoutParser.getPlaneSize();
-//    qDebug()<< "plane-layout-Size:" << airplaneSize ;
     
     planeSearcher.setItems(items);
     //    planeSearcher.print();

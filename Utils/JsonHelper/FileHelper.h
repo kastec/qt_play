@@ -34,6 +34,11 @@ public:
         file.close();
         return rawData;
     }
+    
+    static bool existFile(QString filepath)
+    {
+        return QFile(filepath).exists(filepath);
+    }
 };
 
 #endif // FILEHELPER_H

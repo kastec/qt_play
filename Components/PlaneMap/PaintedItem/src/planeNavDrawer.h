@@ -23,6 +23,8 @@ class PlaneNavDrawer
 //        qDebug()<< "  painterSize" << painterSize;
         
         auto layoutSize = planeMap->layoutSize;
+        if(layoutSize == QSize(0,0)) return QRect();
+                
         auto scale = __max(layoutSize.width()/(qreal)painterSize.width(),
                            layoutSize.height()/(qreal)painterSize.height());
         

@@ -99,6 +99,7 @@ class PlaneLayoutParser{
     
     void parseLayout(const QList<QString> &lines)
     {
+        qDebug()<< "parsing airplane layout" << lines.length()<<"lines";
         int lineNum=0;
         for( auto &currLine: lines)
         {            
@@ -110,8 +111,9 @@ class PlaneLayoutParser{
             cline = cline.section(' ', 1);            
             auto line = clearLine(cline);          
                        
-//            qDebug() << "lineType:" << lineType << line;           
-                        
+//            qDebug() << "lineType:" << lineType << line;
+            
+            if(lineType == "name") qDebug()<< "  layout "<< line;
             if(lineType == "plane_width") setMaxPlaneWidth(line);
             if(lineType == "seat_scale") makeChairSizes(line);
             if(lineType == "row") makeRowSeatsLine(line, lineNum);

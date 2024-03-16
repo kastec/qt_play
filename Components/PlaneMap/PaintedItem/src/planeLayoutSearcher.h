@@ -95,7 +95,7 @@ class PlaneLayoutSearcher{
         seats.clear();
   
         seats.resize((rows+1) * chairsInRow);
-        qDebug()<< "seats allow:" << seats.length() << "rows:"<< rows<<"chairsInRow:"<<chairsInRow;
+        qDebug()<< "seats:" << seats.length() << "rows:"<< rows<<"chairsInRow:"<<chairsInRow;
         for(auto &i:planeItems)
         {
             if(i->type!="seat") continue;
@@ -128,8 +128,7 @@ class PlaneLayoutSearcher{
         for(auto &s : seats)
             s->isSelected = true;
     }
-    
-    
+        
   private:
     PlaneItemBase* findItem(PlaneTreeItem &item, const QPoint &point)
     {

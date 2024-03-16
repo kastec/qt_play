@@ -26,7 +26,7 @@ class PlaneMap
     
   public:
     PlaneMap();
-    int rows; //, chairsInRow;
+    int rows;
     QSize layoutSize;
     QRect navViewRect;
     
