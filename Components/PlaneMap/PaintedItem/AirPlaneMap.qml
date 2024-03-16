@@ -18,7 +18,7 @@ Item {
     }
 
     Component.onCompleted: {
-        airplaneViewModel.loadLayout()
+        loadLayout()
     }
 
     function ensureVisible(seatName) {
@@ -26,6 +26,10 @@ Item {
             return
         //Logger.logInfo("scroll plane map to " + seatName)
         airplaneViewControl.scrollTo(seatName)
+    }
+
+    function loadLayout() {
+        airplaneViewModel.loadLayout()
     }
 
     RowLayout {
@@ -57,5 +61,10 @@ Item {
             Layout.preferredWidth: 2
             //            width: 150
         }
+    }
+    Button {
+        anchors.right: parent.right
+        text: "RELOAD"
+        onClicked: loadLayout()
     }
 }

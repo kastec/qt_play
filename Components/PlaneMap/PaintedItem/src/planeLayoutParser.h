@@ -229,14 +229,13 @@ class PlaneLayoutParser{
                 for(int i=0; i<gr.seats.length(); i++){
                     
                     auto seat = gr.seats[i];
+//                    qDebug()<<"seats"<< r << seat.letter ;
                     if(seat.letter!=NONE_CHAIR){  // если символ '0' - то это отсутствие кресла
                         auto chair = new PlaneItemChair();
                         chair->groupId = lineNumber;
                         chair->letter = seat.letter;
                         chair->rowNumber = r;
-                        chair->settings = seat.settings;
-                        chair->index = this->maxChairsInRow * chair->rowNumber + (chair->letter.toLatin1() - 'A');
-//                        qDebug()<< "index:"<<chair->index << "r:"<<chair->rowNumber << " letter:"<<letter<< " letterval:"<< (letter.toLatin1() - 'A');
+                        chair->settings = seat.settings;                        
                         chair->id = QString::number(r)+chair->letter;
                         chair->title = QString::number(r)+' '+chair->letter;
                         chair->seatType = rowInfo.seatType;
@@ -316,7 +315,7 @@ class PlaneLayoutParser{
             if(c=='_') seat.settings |= ChairSettingsEnum::FixedBack;
             if(c=='^') seat.settings |= ChairSettingsEnum::SpacePlus;
         }
-        if(seat.letter.isLetter())
+        if(seat.letter.isLetterOrNumber())
             seatGroup.seats.append(seat);
         return seatGroup;
     }
@@ -325,7 +324,8 @@ class PlaneLayoutParser{
     {
         auto rowNumItem = new PlaneItemText();
         auto strNum = (rowNumber<10?"0":"") + QString::number(rowNumber);
-        rowNumItem->id = "rw"+strNum;
+        rowNumItem->type="rownum";
+        rowNumItem->id = "rownum"+strNum;
         rowNumItem->title = strNum;
         
         // для RowNumber указываем только позицию,
@@ -463,10 +463,13 @@ class PlaneLayoutParser{
         for(int i=0; i< planeItems.length();i++)
         {
             auto item = planeItems[i];
-            if(item->type!="seat") continue;
-            auto seat = (PlaneItemChair*)item;
-            maxW = __max(seat->location.right(), maxW);
-            maxH = __max(seat->location.bottom(), maxH);
+            
+            // не учитываем элемент с номером ряда, т.к. он сильно растянут, чтобы работал ZOOM
+            if(item->type=="rownum") continue;
+//            if(item->location.right()> maxW)
+//                qDebug()<<"max "<< item->type<< item->id<< item->title<< item->location;
+            maxW = __max(item->location.right(), maxW);
+            maxH = __max(item->location.bottom(), maxH);
         }
         return QSize(maxW,maxH);
     }

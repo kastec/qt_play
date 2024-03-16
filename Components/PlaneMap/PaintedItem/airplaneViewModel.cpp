@@ -3,6 +3,7 @@
 #include <QPainter>
 
 
+#include "Utils/JsonHelper/FileHelper.h"
 #include "airplaneViewModel.h"
 #include "./src/cardServiceType.h"
 #include "qguiapplication.h"
@@ -21,7 +22,26 @@ AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent),
 
 void AirplaneViewModel::loadLayout()
 {
-       
+//    auto type = "359"; //A359-28-24-264
+//    auto type = "320"; // A320-20-120
+//    auto type = "32A"; //A320-8-150
+//    auto type = "32N"; //A320-12-144
+//    auto type = "321"; //A321-28-142
+//    auto type = "32B"; //A321-28-142
+//    auto type = "32Q"; //A330-300 -28-142
+ //   auto type = "3KR"; // A333-28-268
+      auto type = "333"; // A333-36-265
+//     auto type = "359-28-288"; // A350-28-288
+ //   auto type = "73H"; // A350-28-288
+//    auto type = "77R"; // A350-28-288
+    //    auto type = "77W"; // A350-28-288
+  //     auto type = "SU9"; // A350-28-288
+
+    auto filepath = QString("D:\\0\\layouts\\%1.airplane").arg(type);
+    auto data = FileHelper::readAll(filepath);
+    QString planeStr = QString(data);
+    QList<QString>  linesA = planeStr.split("\n");
+  /* 
     QList<QString> lines {"NAME 777-300ER",
                          "PLANE_WIDTH  3,4,3",
                          "SEAT_SCALE W:1.15 J:1.7   ## scales chairs in percent",
@@ -69,48 +89,69 @@ void AirplaneViewModel::loadLayout()
                          "row Y 51 0, DEFG, 0",
                          "",""};
     
-    planeMap->createLayout(lines);
+//    planeMap->createLayout(lines);
+    */
+     planeMap->createLayout(linesA);
     this->changeZoomLimits();
     
     QList<int> paxs;
-    setPassengers(paxs);    
+    setPassengers(paxs);
+    
+    if(this->airplanePainter)this->airplanePainter->update();
+    if(this->navigationPainter)this->navigationPainter->update();
 }
+
 
 void AirplaneViewModel::setPassengers(const QList<int> &passengers)
 {
     auto searcher = planeMap->planeSearcher;
     
-    
+ 
     auto s1 = searcher.findChair("1C");
-    s1->hasPassenger=true;
-    s1->title="KOZLOV ALEXANDER SERGEEVICH";
-    QString t1 = "silver";
-    s1->cardType = CardServiceType::getCardType(t1);
-    s1->isSelected = true;
+    if(s1){
+        s1->hasPassenger=true;
+        s1->title="KOZLOV ALEXANDER SERGEEVICH";
+        QString t1 = "silver";
+        s1->cardType = CardServiceType::getCardType(t1);
+        s1->isSelected = true;
+    }
     
-    auto s2 = searcher.findChair("2A");
-    s2->hasPassenger=true;
-    s2->title="Kozlov Alexander";
-    QString t2 = "Gold";
-    s2->cardType = CardServiceType::getCardType(t2);
-    s2->isSelected = false;
+    auto s3d = searcher.findChair("3D");
+    if(s3d){
+        s3d->hasPassenger=true;
+        s3d->title="KOZLOV ALEXANDER SERGEEVICH";
+        QString t1 = "silver";
+        s3d->cardType = CardServiceType::getCardType(t1);
+        s3d->isSelected = true;
+    }
     
-  
+  auto s2 = searcher.findChair("2A");
+    if(s2){
+        s2->hasPassenger=true;
+        s2->title="Kozlov Alexander";
+        QString t2 = "Gold";
+        s2->cardType = CardServiceType::getCardType(t2);
+        s2->isSelected = false;
+    }
+    
     auto s3 = searcher.findChair("11C");
-    s3->hasPassenger=true;
-    s3->title="KOZLOV ALEXANDER SERGEEVICH";
-    QString t3 = "Platinum";
-    s3->cardType = CardServiceType::getCardType(t3);
-    s3->isSelected = true;
-    
+    if(s3){
+        s3->hasPassenger=true;
+        s3->title="KOZLOV ALEXANDER SERGEEVICH";
+        QString t3 = "Platinum";
+        s3->cardType = CardServiceType::getCardType(t3);
+        s3->isSelected = true;
+    }
     
     auto s4 = searcher.findChair("12A");
-    s4->hasPassenger=true;
-    s4->title="KOZLOV ALEXANDER SERGEEVICH";
-    QString t4 = "silver";
-    s3->cardType = CardServiceType::getCardType(t4);
-    s4->isSelected = false;
-    
+    if(s4)    {
+        s4->hasPassenger=true;
+        s4->title="KOZLOV ALEXANDER SERGEEVICH";
+        QString t4 = "silver";
+        s3->cardType = CardServiceType::getCardType(t4);
+        s4->isSelected = false;
+    }
+   
 //    for(auto &p: passengers){
 //        if(p->seatNumber.isEmpty) continue;
 //        if(PlaneItemChair* seat = searcher.findChair(p->seatNumber); seat!=nullptr)

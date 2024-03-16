@@ -123,10 +123,6 @@ namespace DrawHelper
         painter->setPen(style.color);
         painter->fillRect(rect,style.backColor);
         
-//        op.setWrapMode(QTextOption::WordWrap);
-//        op.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);        
-//       op.setAlignment(Qt::AlignTop|Qt::AlignHCenter);
-        
         painter->drawText(rect, stringValue, topt);
     }
     

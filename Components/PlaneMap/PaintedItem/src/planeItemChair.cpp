@@ -223,7 +223,7 @@ void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, Cha
             [this](auto p, auto r){drawBusinessPaxName(p, r);},
             false);
 
- //     drawBusinessPaxName(painter,nameTextRect);
+//     drawBusinessPaxName(painter,nameTextRect);
    
 }
 
@@ -231,17 +231,28 @@ void PlaneItemChair::drawBusinessPaxName(QPainter *painter, const QRect &rect)
 {
     if(!this->hasPassenger) return;
     
-    qDebug()<<"paxName"<< rect;
+//    qDebug()<<"paxName"<< rect;
     SymbolRenderStyle style;
-    style.fontSize = zoom(18, rect);
+    
+    auto fontScale = 11 * (location.width()/(qreal)100); // размер фонта зависит от размера ячейки
+    style.fontSize = zoom(fontScale , rect); // размер фона зависит от ZOOM
+    
+//    style.fontSize = zoom(18, rect); // размер фона зависит от ZOOM
     style.color = Qt::black;
     style.backColor = Qt::white;
     
     QTextOption topt;
+   
     topt.setWrapMode(QTextOption::WrapAtWordBoundaryOrAnywhere);
     topt.setAlignment(Qt::AlignTop|Qt::AlignHCenter);
 //    DrawHelper::drawText(painter, rect, "Kozlovqwesdqe Alexander ffsdfdeede", style, topt);
-     DrawHelper::drawText(painter, rect, this->title, style, topt);
+    
+     QFont font("Inter", style.fontSize);
+     QFontMetrics fm(font);
+     auto fH = (fm.height() )*2; // только  2 строки рисуем
+     auto textRect = rect;
+    
+    DrawHelper::drawText(painter, textRect, this->title, style, topt);
 }
 
 
@@ -252,10 +263,10 @@ void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, Chai
     
     // --- draw star
     auto pmStar = getStarSprite(this->cardType, chairColor);
-    auto starW = zoom(pmStar->width(), rect);
+    auto starW = zoom(0.9*pmStar->width(), rect);
     
     // --- card type ----
-    auto cardFontSize=zoom(18, rect);
+    auto cardFontSize=zoom(15, rect);
     
     QString cardText = CardServiceType::getCardAbbr(this->cardType);    
     auto cardCacheKey = "card" + QString(this->seatType) + QString::number(chairColor.type);
@@ -265,7 +276,7 @@ void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, Chai
     auto cardRect = DrawHelper::drawSymbols(painter, cardTxtPos, cardText, cardStyle, cardCacheKey, true);
     
     //    QPoint starPos = cardTxtRect.topLeft()- QPoint(starW,0);
-    QRect starRect(cardRect.x() - starW*1.05, cardRect.y() + starW*0.1, starW, starW);
+    QRect starRect(cardRect.x() - starW*1.05, cardRect.y() + starW*0.0, starW, starW);
     painter->drawPixmap(starRect,*pmStar);
 }
 

@@ -39,13 +39,21 @@ class PlaneLayoutSearcher{
   public:
     
     PlaneItemChair* findChair(const QString &seatNumber){
+        
         auto index = PlaneItemChair::getSeatIndex(chairsInRow, seatNumber);
+//        qDebug()<<"find-ch"<<seatNumber<< index;
+//        qDebug()<< "seats-len"<<this->seats.length() << "chairsInRow:"<< chairsInRow;
         if(index <= 0 || index> this->seats.length())
         {
             // TODO: можно поискать по всем Items через find();
             return nullptr;
         }
-
+        if(seats[index]==nullptr){
+            auto mess = QString("Error find seat: seat '%1' not found in layout!").arg(seatNumber);
+            qDebug()<< mess; // TODO: write to log
+            return nullptr;
+        }
+//        qDebug()<< "   found: "<< seats[index]->rowNumber<< seats[index]->letter<< "ind:"<<seats[index]->index;
         return seats[index];
     }
     
@@ -60,21 +68,43 @@ class PlaneLayoutSearcher{
         return vpItems;
     }
     
-    void addItems(const QList<PlaneItemBase*> &planeItems, int rows, int chairsInRow)
+    auto getMaxIndexInRow(const QList<PlaneItemBase*> &planeItems)
     {
-        this->rows = rows;
-        this->chairsInRow = chairsInRow;
-        
-        root = makeItemGroupsTree(planeItems);
-  
-        seats.clear();
-        seats.resize((rows+1) * chairsInRow);
-//      qDebug()<< "seats allow:" << seats.length() << "rows:"<< rows<<"chairsInRow:"<<chairsInRow;
+        int maxLetterNum=0;
+        int maxRow=0;
         for(auto &i:planeItems)
         {
             if(i->type!="seat") continue;
             auto seat = (PlaneItemChair*)i;
-//          qDebug()<< "seat:" << seat->index;
+            auto letterNum = seat->letter.toLatin1()-'A';
+            maxLetterNum = __max(letterNum, maxLetterNum);
+            maxRow = __max(maxRow, seat->rowNumber);
+        }
+//        qDebug()<<"getMaxIndexInRow:"<< maxRow<< maxLetterNum;
+        return std::make_tuple(maxRow, maxLetterNum);
+    }
+    
+    void setItems(const QList<PlaneItemBase*> &planeItems)
+    {
+        auto [rows, maxChairIndexInRow] = getMaxIndexInRow(planeItems);
+        this->rows = rows;
+        this->chairsInRow = maxChairIndexInRow+1;
+        
+        root = makeItemGroupsTree(planeItems);
+                
+        seats.clear();
+  
+        seats.resize((rows+1) * chairsInRow);
+        qDebug()<< "seats allow:" << seats.length() << "rows:"<< rows<<"chairsInRow:"<<chairsInRow;
+        for(auto &i:planeItems)
+        {
+            if(i->type!="seat") continue;
+            auto seat = (PlaneItemChair*)i;
+            
+            seat->index = this->chairsInRow * seat->rowNumber + (seat->letter.toLatin1() - 'A');
+            
+//            if(seat->rowNumber<3)
+//                qDebug()<< "seat-ind:" << seat->index << seat->rowNumber<<seat->letter;
             this->seats[seat->index] = seat;
         }
     }
