@@ -67,13 +67,17 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/liveimageprovider.h Components/PlaneMap/liveimageprovider.cpp
         Components/PlaneMap/colorImageProvider.h        
         Components/PlaneMap/OpGlItem/glitem.h Components/PlaneMap/OpGlItem/glitem.cpp
-        
-        Components/PlaneMap/PaintedItem/paintArea.h
-       Components/PlaneMap/PaintedItem/src/planeItemBase.h Components/PlaneMap/PaintedItem/src/planeItemBase.cpp
-        Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
-        Components/PlaneMap/PaintedItem/src/planeItemChair.h Components/PlaneMap/PaintedItem/src/planeItemChair.cpp
-        Components/PlaneMap/PaintedItem/src/planeItemExit.h Components/PlaneMap/PaintedItem/src/planeItemExit.cpp
-        Components/PlaneMap/PaintedItem/src/planeColors.h
+                
+				
+        Components/PlaneMap/PaintedItem/src/planeItems/planeItemBase.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemBase.cpp
+        Components/PlaneMap/PaintedItem/src/planeItems/planeItemChair.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemChair.cpp
+        Components/PlaneMap/PaintedItem/src/planeItems/planeItemExit.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemExit.cpp
+        Components/PlaneMap/PaintedItem/src/planeItems/planeColors.h
+		Components/PlaneMap/PaintedItem/src/planeItems/cardServiceType.h
+		Components/PlaneMap/PaintedItem/src/planeItems/drawHelper.h 
+		
+		Components/PlaneMap/PaintedItem/paintArea.h
+		Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
         Components/PlaneMap/PaintedItem/src/planeLayoutParser.h
         Components/PlaneMap/PaintedItem/src/spriteCache.h 
         Components/PlaneMap/PaintedItem/src/frameRateCalc.h
@@ -81,10 +85,9 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/PaintedItem/airplaneViewModel.h Components/PlaneMap/PaintedItem/airplaneViewModel.cpp
         Components/PlaneMap/PaintedItem/src/renderBuffer.h
         Components/PlaneMap/PaintedItem/src/planePassengers.h
-        Components/PlaneMap/PaintedItem/src/cardServiceType.h
-        Components/PlaneMap/PaintedItem/src/planeNavDrawer.h 
-        Components/PlaneMap/PaintedItem/src/drawHelper.h 
         
+        Components/PlaneMap/PaintedItem/src/planeNavDrawer.h 
+                
         Utils/JsonHelper/serializationBinder.h
         Components/Test/derivedDeserializeTest.h
     )

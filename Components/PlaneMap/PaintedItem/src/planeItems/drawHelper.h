@@ -8,7 +8,7 @@
 
 #include "qdebug.h"
 #include "qpainterpath.h"
-#include "spriteCache.h"
+#include "../spriteCache.h"
 
 
 struct SymbolRenderStyle{

@@ -5,10 +5,11 @@
 #include <QObject>
 #include <QRect>
 #include <QMap>
-#include "planeItemChair.h"
-#include "qdebug.h"
 
-#include "planeItemBase.h"
+#include "planeItems/planeItemChair.h"
+#include "planeItems/planeItemBase.h"
+
+#include "qdebug.h"
 
 struct PlaneTreeItem
 {

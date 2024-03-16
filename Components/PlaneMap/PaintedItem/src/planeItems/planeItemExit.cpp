@@ -1,7 +1,7 @@
 
 #include "planeItemExit.h"
 #include <QMargins>
-#include "spriteCache.h"
+#include "../spriteCache.h"
 #include "qdebug.h"
 
 

@@ -3,7 +3,7 @@
 #define PLANENAVDRAWER_H
 
 #include <QObject>
-#include "planeItemExit.h"
+#include "planeItems/planeItemExit.h"
 #include "spriteCache.h"
 #include "qpainter.h"
 #include "planeMap.h"

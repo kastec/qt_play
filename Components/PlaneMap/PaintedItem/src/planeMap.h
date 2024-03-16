@@ -2,7 +2,7 @@
 #ifndef PLANEMAP_H
 #define PLANEMAP_H
 
-#include "planeItemBase.h"
+#include "planeItems/planeItemBase.h"
 #include "planeLayoutSearcher.h"
 #include "renderBuffer.h"
 //#include "planeNavDrawer.h"

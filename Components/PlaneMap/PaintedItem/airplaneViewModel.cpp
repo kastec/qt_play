@@ -5,7 +5,7 @@
 
 #include "Utils/JsonHelper/FileHelper.h"
 #include "airplaneViewModel.h"
-#include "./src/cardServiceType.h"
+#include "src/planeItems/cardServiceType.h"
 #include "qguiapplication.h"
 //#include "qdebug.h"
 

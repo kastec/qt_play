@@ -3,7 +3,7 @@
 #include "qdebug.h"
 
 #include "drawHelper.h"
-#include "spriteCache.h"
+#include "../spriteCache.h"
 #include "PlaneItemChair.h"
 #include "planeColors.h"
 #include "cardServiceType.h"

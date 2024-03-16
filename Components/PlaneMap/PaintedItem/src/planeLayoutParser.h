@@ -4,9 +4,9 @@
 
 #include <QRegularExpression>
 #include <QObject>
-#include "planeItemChair.h"
-#include "planeItemBase.h"
-#include "planeItemExit.h"
+#include "planeItems/planeItemChair.h"
+#include "planeItems/planeItemBase.h"
+#include "planeItems/planeItemExit.h"
 
 
 class PlaneLayoutParser{
