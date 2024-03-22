@@ -8,9 +8,12 @@
 #include "qpainter.h"
 #include "planeMap.h"
 
+//TODO: remove, нужна только константа
+#include "planeLayoutParser.h"
+
 class PlaneNavDrawer
 {
-
+   
   private:
     PlaneMap  *planeMap;
 
@@ -31,6 +34,9 @@ class PlaneNavDrawer
 //        qDebug()<< "  painterSize" << painterSize;
         
         auto layoutSize = planeMap->layoutSize;
+        
+        layoutSize.setHeight(layoutSize.height() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        
         if(layoutSize == QSize(0,0)) return;
         
         auto scale = std::max(layoutSize.width()/(qreal)painterSize.width(),
@@ -72,7 +78,11 @@ class PlaneNavDrawer
         // границы борта
         auto painterArea = QRect(centerOffset, paintAreaSize);
         
-        QRect rect = QRect( scrViewPort.topLeft() /scale + centerOffset, scrViewPort.size() / (scale));
+        scrViewPort.setTop(scrViewPort.top() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        scrViewPort.setBottom(scrViewPort.bottom() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+             
+        QRect rect = QRect( scrViewPort.topLeft() /scale + centerOffset, scrViewPort.size() / scale);
+
         
         auto navViewRect = rect.intersected(painterArea);
         
@@ -102,7 +112,10 @@ class PlaneNavDrawer
         auto sLoc = chair->location.topLeft() / scale + centerOffset;
         
         // уменьшим масштаб на 1.2, чтобы лучше отделить сиденья друг от друга
-        auto sSize =  chair->location.size() / (scale *1.2);            
+        auto sSize =  chair->location.size() / (scale *1.2);
+                
+        sLoc.setY(sLoc.y() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        
         QRect seatNav(sLoc, sSize);            
         painter->fillRect(seatNav,  chair->isSelected?QColorConstants::Black:QColorConstants::White);   
     }
@@ -115,6 +128,8 @@ class PlaneNavDrawer
         // сделаем небольшой отступ от края, чтобы рамка ViewPort не перекрывала выход 
         auto offset = sSize.height()*0.2;
         sLoc = sLoc + QPoint((exit->isLeft)?offset:-offset,0);
+        
+        sLoc.setY(sLoc.y() * PlaneLayoutParser::NAV_SPREAD_ROWS);
         
         auto w = sSize.width();
         auto h = sSize.height();

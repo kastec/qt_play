@@ -7,6 +7,9 @@
 #include "airplaneViewModel.h"
 #include "src/planeItems/cardServiceType.h"
 #include "qguiapplication.h"
+
+//TODO: remove, нужна только константа
+#include "src/planeLayoutParser.h"
 //#include "qdebug.h"
 
 AirplaneViewModel::AirplaneViewModel(QObject *parent): QObject(parent),
@@ -329,9 +332,9 @@ bool AirplaneViewModel::setNavPos(qreal x, qreal y)
    auto scale = getNavMapScale();  
    auto scrSize = QSize(airplanePainter->width(), airplanePainter->height());
    
-   QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);   
-      
-   QPoint airplamePoint = +centerOffs  -QPoint(x-navAirplaneRect.x(),y-navAirplaneRect.y()) * scale *zoom;
+   QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);
+   
+   QPoint airplamePoint = +centerOffs  -QPoint(x-navAirplaneRect.x(), (y-navAirplaneRect.y()) /1.3 ) * scale *zoom;
    
    if(this->isFixedZoom)
        airplamePoint.setX(position.x());
@@ -345,7 +348,9 @@ void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff)
    if(this->isFixedZoom) xOff=0;
    
    auto scale = getNavMapScale();
-   QPointF move = QPointF(xOff,yOff)* scale* zoom;
+   
+   auto spreadRows = PlaneLayoutParser::NAV_SPREAD_ROWS;
+   QPointF move = QPointF(xOff,yOff) / spreadRows * scale* zoom;
 //   qDebug()<< "   move:" << move;
    QPointF newPos = position + move;
    this->set_position(newPos.toPoint());
