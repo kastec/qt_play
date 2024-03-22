@@ -14,7 +14,8 @@ class PlaneLayoutParser{
   public:
    static const int CHAIR_SIZE=100;
    static const int CHAIR_OFFSET=CHAIR_SIZE*0.04;
-   static const int CHAIR_ROW_OFFSET=CHAIR_SIZE*0.2;
+   static const int CHAIR_ROW_OFFSET=CHAIR_SIZE*0.4;
+   static const int CHAIR_ROW_OFFSET_BUSS=CHAIR_SIZE*0.2;
    static const int CHAIR_WALKWAY=CHAIR_SIZE*0.5;
    const QChar NONE_CHAIR='0';
    
@@ -127,7 +128,8 @@ class PlaneLayoutParser{
     {        
         qreal scale = chairScales.value(row.seatType, 1.0);
         
-        int w = CHAIR_SIZE*scale, h=w, offs=CHAIR_OFFSET*scale, rowOffs = CHAIR_ROW_OFFSET* scale;
+        int w = CHAIR_SIZE*scale, h=w, offs=CHAIR_OFFSET*scale;
+        int rowOffs = (row.seatType=='J'? CHAIR_ROW_OFFSET_BUSS:CHAIR_ROW_OFFSET)* scale;
         int walkWay = (airplaneWidth - (w+offs)*row.rowSeatCount) / (qreal)(row.groups.length()-1);
 
         return SeatRowMetric {w, h, offs, rowOffs, walkWay };;

@@ -27,15 +27,15 @@ void AirplaneViewModel::loadLayout()
 //    auto type = "32A"; //A320-8-150
 //    auto type = "32N"; //A320-12-144
 //    auto type = "321"; //A321-28-142
-//    auto type = "32B"; //A321-28-142
- //   auto type = "32Q"; //A330-300 -28-142
+//    auto type = "32B"; //A321-16-167
+ //   auto type = "32Q"; // A321-12-184
  //   auto type = "3KR"; // A333-28-268
-     auto type = "333"; // A333-36-265
+ //     auto type = "333"; // A333-36-265
 //     auto type = "359-28-288"; // A350-28-288
- //   auto type = "73H"; // A350-28-288
- //   auto type = "77R"; // A350-28-288
-    //    auto type = "77W"; // A350-28-288
-   //     auto type = "SU9"; // A350-28-288
+   auto type = "73H"; // B737-20-138
+ //   auto type = "77R"; // B777-28-24-375
+    //    auto type = "77W"; // B777-30-48-324
+   //     auto type = "SU9"; // SU95-12-75
        
       
     auto filepath = QString("D:\\0\\airplanes\\%1.airplane").arg(type);
