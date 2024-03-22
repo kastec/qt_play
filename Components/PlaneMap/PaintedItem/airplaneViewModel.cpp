@@ -318,8 +318,7 @@ qreal AirplaneViewModel::getNavMapScale(){
 bool AirplaneViewModel::setNavPos(qreal x, qreal y)
 {
    auto [navViewPortRect,navAirplaneRect] = planeMap->getNavPaintSizes();
-   
-   qDebug()<<"nav-airp" << navAirplaneRect<<"vp"<<navViewPortRect << x<< y;
+
    // 1 если не попали в облать отрисовки NavMap - ничего не реагируем
    if(!navAirplaneRect.contains(x,y)) return false;
        
@@ -328,13 +327,11 @@ bool AirplaneViewModel::setNavPos(qreal x, qreal y)
    
    // 3 если попали в область отрисовки, но не в ViewPort - центруем ViewPort на место клика
    auto scale = getNavMapScale();  
-   auto scrSize = airplanePainter->size().toSize();
+   auto scrSize = QSize(airplanePainter->width(), airplanePainter->height());
    
-   QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);
-   
-   
+   QPoint centerOffs = QPoint(scrSize.width()/2, scrSize.height()/2);   
+      
    QPoint airplamePoint = +centerOffs  -QPoint(x-navAirplaneRect.x(),y-navAirplaneRect.y()) * scale *zoom;
-//   QPoint mapPoint = +centerOffs  -QPoint(x,y) * scale *zoom;
    
    if(this->isFixedZoom)
        airplamePoint.setX(position.x());
