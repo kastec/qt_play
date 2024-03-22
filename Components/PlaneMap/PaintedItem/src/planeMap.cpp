@@ -99,11 +99,12 @@ void PlaneMap::drawItems(QPainter *painter, qreal zoom, QRect viewPort)
     }     
 }
 
+std::pair<const QRect&, const QRect&> PlaneMap::getNavPaintSizes(){ return navDrawer->getPaintSizes(); }
 
 void PlaneMap::drawNavMap(QPainter *painter, QRect scrViewPort)
 {
     // просто вынес логику отрисовки в отдельный класс, чтобы не было простыни
-    this->navViewRect = navDrawer->drawNavMap(painter, scrViewPort);
+    navDrawer->drawNavMap(painter, scrViewPort);
 }
 
 

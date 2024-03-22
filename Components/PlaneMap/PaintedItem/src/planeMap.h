@@ -19,6 +19,7 @@ class PlaneMap
     
     //OBSOLETE - DELTE  для правильного расчета размеров на Windows
     qreal devicePixelRatio;
+    
     PlaneNavDrawer *navDrawer;
     
   public:
@@ -28,11 +29,8 @@ class PlaneMap
     PlaneMap();
     int rows;
     QSize layoutSize;
-    QRect navViewRect;
-    
+        
     void createLayout(QList<QString> lines);
-    // obsolete
-//    void draw(QPainter *painter, int xOff, int yOff, qreal zoom);
     
     void drawLayout(QPainter *painter, qreal zoom, QRect scrViewPort);    
     void drawNavMap(QPainter *painter, QRect scrViewPort);
@@ -43,10 +41,8 @@ class PlaneMap
     PlaneItemBase* findItem(const QString &objId);
     PlaneItemBase* findItem(QPoint point);
     
-//    PlaneItemChair* findChair(QString seatNumber);
-    
+    std::pair<const QRect&, const QRect&> getNavPaintSizes();
    private:
-//    QList<PlaneItemBase*> getItemsInViewPort(int xOff, int yOff, qreal zoom);
     
     RenderBuffer buffer;
      

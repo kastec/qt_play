@@ -46,8 +46,11 @@ Item {
             property real pressY
             property real moveDistance
 
-            //        enabled: !pa.isDragging
+            property bool isDragging
+
             onPositionChanged: {
+                if (!isDragging)
+                    return
                 if (Math.abs(ix - mouseX) > 1.0 || Math.abs(iy - mouseY) > 1.0) {
                     //                    airplaneDrawer.moveBy(ix - mouseX, iy - mouseY)
                     viewModel.moveNavBy(ix - mouseX, iy - mouseY)
@@ -64,10 +67,11 @@ Item {
                 pressX = mouseX
                 pressY = mouseY
 
-                viewModel.setNavPos(ix - x, iy - y)
+                isDragging = viewModel.setNavPos(ix - x, iy - y)
             }
 
             onReleased: {
+                isDragging = false
                 heldTimeMsec = new Date().getTime() - pressTime.getTime()
                 moveDistance = Math.sqrt(Math.pow((mouseX - pressX), 2) + Math.pow((mouseY - pressY), 2))
             }

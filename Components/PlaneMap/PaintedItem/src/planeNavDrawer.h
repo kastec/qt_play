@@ -9,29 +9,40 @@
 #include "planeMap.h"
 
 class PlaneNavDrawer
-{    
+{
+
   private:
     PlaneMap  *planeMap;
+
+    QRect navPaintViewPortRect;
+    QRect navPaintAirplaneRect;
     
   public:
-    PlaneNavDrawer(PlaneMap *planeMap):planeMap(planeMap){}    
+    PlaneNavDrawer(PlaneMap *planeMap):planeMap(planeMap){}
     
-    QRect drawNavMap(QPainter *painter, QRect scrViewPort)
+    std::pair<const QRect&, const QRect&> getPaintSizes(){
+        return std::make_pair(std::ref(navPaintViewPortRect), std::ref(navPaintAirplaneRect));
+    }
+    
+    void drawNavMap(QPainter *painter, QRect scrViewPort)
     {
 //        qDebug()<< "drawNavMap" << painter->viewport().size() << planeMap->devicePixelRatio;
         auto painterSize = painter->viewport().size() / planeMap->devicePixelRatio;
 //        qDebug()<< "  painterSize" << painterSize;
         
         auto layoutSize = planeMap->layoutSize;
-        if(layoutSize == QSize(0,0)) return QRect();
-                
-        auto scale = __max(layoutSize.width()/(qreal)painterSize.width(),
+        if(layoutSize == QSize(0,0)) return;
+        
+        auto scale = std::max(layoutSize.width()/(qreal)painterSize.width(),
                            layoutSize.height()/(qreal)painterSize.height());
         
         auto paintAreaSize = layoutSize / scale;
         
         // смещение для выравнивания по центру
-        auto centerOffset = QPoint( (painterSize.width()-paintAreaSize.width())/2 , 0);
+        auto offSize = ((painterSize - paintAreaSize) / 2);
+        auto centerOffset = QPoint(offSize.width(),offSize.height() );
+        this->navPaintAirplaneRect = QRect(centerOffset, paintAreaSize);
+        
         
         static QString spriteKey("nav-map");
         auto cacheCriteria = paintAreaSize.width()*paintAreaSize.height();
@@ -52,8 +63,7 @@ class PlaneNavDrawer
         painter->drawPixmap(centerOffset, *navPixmap);
         
         // зона просмотра, выделение
-        auto navViewRect = drawViewPortArea(painter, scrViewPort,  centerOffset,  paintAreaSize, scale);
-        return navViewRect;
+        this->navPaintViewPortRect = drawViewPortArea(painter, scrViewPort,  centerOffset,  paintAreaSize, scale);
     }
     
     

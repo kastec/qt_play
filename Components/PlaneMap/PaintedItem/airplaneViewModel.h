@@ -58,7 +58,7 @@ class AirplaneViewModel: public QObject
     Q_INVOKABLE QString getIdAt(int x, int y);
     
     Q_INVOKABLE void moveNavBy(qreal xOff, qreal yOff);
-    Q_INVOKABLE void setNavPos(qreal xOff, qreal yOff);
+    Q_INVOKABLE bool setNavPos(qreal xOff, qreal yOff);
     
   private:
     bool onPositionChanging(QPoint newPos);
