@@ -95,7 +95,11 @@ class PlaneLayoutSearcher{
                 
         seats.clear();
   
-        seats.resize((rows+1) * chairsInRow);
+//       seats.resize((rows+1) * chairsInRow);
+        
+        seats.reserve((rows+1) * chairsInRow);        
+        std::fill_n(std::back_inserter(seats), (rows+1) * chairsInRow, nullptr);
+      
         qDebug()<< "seats:" << seats.length() << "rows:"<< rows<<"chairsInRow:"<<chairsInRow;
         for(auto &i:planeItems)
         {

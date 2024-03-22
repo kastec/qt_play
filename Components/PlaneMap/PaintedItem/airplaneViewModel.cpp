@@ -28,22 +28,24 @@ void AirplaneViewModel::loadLayout()
 //    auto type = "32N"; //A320-12-144
 //    auto type = "321"; //A321-28-142
 //    auto type = "32B"; //A321-28-142
-//    auto type = "32Q"; //A330-300 -28-142
+ //   auto type = "32Q"; //A330-300 -28-142
  //   auto type = "3KR"; // A333-28-268
- //     auto type = "333"; // A333-36-265
+     auto type = "333"; // A333-36-265
 //     auto type = "359-28-288"; // A350-28-288
  //   auto type = "73H"; // A350-28-288
-//    auto type = "77R"; // A350-28-288
+ //   auto type = "77R"; // A350-28-288
     //    auto type = "77W"; // A350-28-288
-       auto type = "SU9"; // A350-28-288
-
+   //     auto type = "SU9"; // A350-28-288
+       
+      
     auto filepath = QString("D:\\0\\airplanes\\%1.airplane").arg(type);
     if(FileHelper::existFile(filepath)==false) return;
     qDebug() << "loading airplane layout" << type;
     auto data = FileHelper::readAll(filepath);
     QString planeStr = QString(data);
-    QList<QString>  linesA = planeStr.split("\n");
-  /* 
+    QList<QString>  lines = planeStr.split("\n");
+  
+   /*
     QList<QString> lines {"NAME 777-300ER",
                          "PLANE_WIDTH  3,4,3",
                          "SEAT_SCALE W:1.15 J:1.7   ## scales chairs in percent",
@@ -90,10 +92,9 @@ void AirplaneViewModel::loadLayout()
                          "row Y 50 AB(0,60), DEFG, HK(0,-60)",
                          "row Y 51 0, DEFG, 0",
                          "",""};
-    
-//    planeMap->createLayout(lines);
     */
-    planeMap->createLayout(linesA);
+    planeMap->createLayout(lines);
+  
     this->changeZoomLimits();
     
     QList<int> paxs;

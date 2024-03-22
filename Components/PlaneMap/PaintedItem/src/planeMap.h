@@ -14,7 +14,7 @@ class PlaneMap
   friend class PlaneNavDrawer;
     
   private:
-    QSize screenSize;  
+ 
     QList<PlaneItemBase*> planeItems;
     
     //OBSOLETE - DELTE  для правильного расчета размеров на Windows
@@ -36,8 +36,8 @@ class PlaneMap
     
     void drawLayout(QPainter *painter, qreal zoom, QRect scrViewPort);    
     void drawNavMap(QPainter *painter, QRect scrViewPort);
-        
-    void setScreenSize(QSize screenSize);
+    
+//    void setScreenSize(QSize screenSize);
     
     PlaneItemChair* findChair(const QString &seatNumber);    
     PlaneItemBase* findItem(const QString &objId);

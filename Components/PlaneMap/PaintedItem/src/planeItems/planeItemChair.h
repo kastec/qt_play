@@ -52,7 +52,7 @@ class PlaneItemChair  : public PlaneItemBase
     
     void draw(QPainter *p, QRect &rect);
     
-    PlaneItemChair():PlaneItemBase("seat"),hasPassenger(false), isSelected(false){   }
+    PlaneItemChair():PlaneItemBase("seat"),hasPassenger(false), isSelected(false), cardType(Empty){   }
     
   public:
     static int getSeatIndex(int seatInRows, QString seatNumber);

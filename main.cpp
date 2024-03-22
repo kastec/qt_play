@@ -144,8 +144,7 @@ int main(int argc, char *argv[])
 
 
 void RegisterTypes()
-{
-    
+{    
     qmlRegisterType<GlItem>("AppQtTest12", 1, 0, "GlItem");
     qmlRegisterType<BookItem>("AppQtTest12", 1,0, "BookItem");
     qmlRegisterType<BookList>("AppQtTest12",1,0, "BookList");
@@ -153,9 +152,9 @@ void RegisterTypes()
     qmlRegisterType<PersonListModel>("AppQtTest12",1,0, "PersonListModel");
     qmlRegisterType<JsonListModel>("AppQtTest12",1,0, "JsonListModel");
     
-    qmlRegisterType<AirplaneViewModel>("AppQtTest12",1,0, "AirplaneViewModel");
     qmlRegisterType<FlightsListModel>("AppQtTest12",1,0, "FlightsListModel");
     
+    qmlRegisterType<AirplaneViewModel>("AppQtTest12",1,0, "AirplaneViewModel");
     qmlRegisterType<PaintArea>("AppQtTest12", 1, 0, "PaintArea");
 
 }
