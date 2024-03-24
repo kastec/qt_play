@@ -8,9 +8,9 @@
 #include "qpainter.h"
 #include "planeMap.h"
 
-//TODO: remove, нужна только константа
-#include "planeLayoutParser.h"
-
+#include "airplaneLayoutContants.h"
+using namespace AirplaneLayoutConstants;
+    
 class PlaneNavDrawer
 {
    
@@ -35,7 +35,7 @@ class PlaneNavDrawer
         
         auto layoutSize = planeMap->layoutSize;
         
-        layoutSize.setHeight(layoutSize.height() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        layoutSize.setHeight(layoutSize.height() * NAV_SPREAD_ROWS);
         
         if(layoutSize == QSize(0,0)) return;
         
@@ -78,8 +78,9 @@ class PlaneNavDrawer
         // границы борта
         auto painterArea = QRect(centerOffset, paintAreaSize);
         
-        scrViewPort.setTop(scrViewPort.top() * PlaneLayoutParser::NAV_SPREAD_ROWS);
-        scrViewPort.setBottom(scrViewPort.bottom() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        // добавляем растяжение nav карты 
+        scrViewPort.setTop(scrViewPort.top() * NAV_SPREAD_ROWS);
+        scrViewPort.setBottom(scrViewPort.bottom() * NAV_SPREAD_ROWS);
              
         QRect rect = QRect( scrViewPort.topLeft() /scale + centerOffset, scrViewPort.size() / scale);
 
@@ -114,7 +115,7 @@ class PlaneNavDrawer
         // уменьшим масштаб на 1.2, чтобы лучше отделить сиденья друг от друга
         auto sSize =  chair->location.size() / (scale *1.2);
                 
-        sLoc.setY(sLoc.y() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        sLoc.setY(sLoc.y() * NAV_SPREAD_ROWS); // из-за растяжения NAV-карты надо изменить Y-координату
         
         QRect seatNav(sLoc, sSize);            
         painter->fillRect(seatNav,  chair->isSelected?QColorConstants::Black:QColorConstants::White);   
@@ -129,7 +130,7 @@ class PlaneNavDrawer
         auto offset = sSize.height()*0.2;
         sLoc = sLoc + QPoint((exit->isLeft)?offset:-offset,0);
         
-        sLoc.setY(sLoc.y() * PlaneLayoutParser::NAV_SPREAD_ROWS);
+        sLoc.setY(sLoc.y() * NAV_SPREAD_ROWS); // из-за растяжения NAV-карты надо изменить Y-координату
         
         auto w = sSize.width();
         auto h = sSize.height();

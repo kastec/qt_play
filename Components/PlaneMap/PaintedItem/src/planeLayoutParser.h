@@ -7,23 +7,12 @@
 #include "planeItems/planeItemChair.h"
 #include "planeItems/planeItemBase.h"
 #include "planeItems/planeItemExit.h"
+#include "airplaneLayoutContants.h"
 
+using namespace AirplaneLayoutConstants;
 
 class PlaneLayoutParser{
     
-  public:
-   static const int CHAIR_SIZE=100;
-   static const int CHAIR_OFFSET=CHAIR_SIZE*0.04;
-   static const int CHAIR_ROW_OFFSET=CHAIR_SIZE*0.4;
-   static const int CHAIR_ROW_OFFSET_BUSS=CHAIR_SIZE*0.2;
-   static const int CHAIR_WALKWAY=CHAIR_SIZE*0.5;
-   
-   // дополнительно непорпорционально растянуть Nav по вертикали
-   constexpr static const qreal NAV_SPREAD_ROWS=1.25;
-   
-   const QChar NONE_CHAIR='0';
-   
-   
  public:
    int maxChairsInRow; // максимальное кол-во сидений в ряду
    int rows; // кол-во рядов
@@ -132,8 +121,8 @@ class PlaneLayoutParser{
     {        
         qreal scale = chairScales.value(row.seatType, 1.0);
         
-        int w = CHAIR_SIZE*scale, h=w, offs=CHAIR_OFFSET*scale;
-        int rowOffs = (row.seatType=='J'? CHAIR_ROW_OFFSET_BUSS:CHAIR_ROW_OFFSET)* scale;
+        int w = CHAIR_SIZE*scale, h=w, offs = CHAIR_OFFSET*scale;
+        int rowOffs = (row.seatType=='J' ? CHAIR_ROW_OFFSET_BUSS : CHAIR_ROW_OFFSET)* scale;
         int walkWay = (airplaneWidth - (w+offs)*row.rowSeatCount) / (qreal)(row.groups.length()-1);
 
         return SeatRowMetric {w, h, offs, rowOffs, walkWay };;
@@ -165,7 +154,7 @@ class PlaneLayoutParser{
         for(auto &g:groups)
             this->maxChairsInRow += g.toInt();
         
-        this->airplaneWidth = (CHAIR_SIZE+CHAIR_OFFSET)*this->maxChairsInRow + (groups.count()-1)*CHAIR_WALKWAY + addWidth;
+        this->airplaneWidth = (AirplaneLayoutConstants::CHAIR_SIZE+AirplaneLayoutConstants::CHAIR_OFFSET)*this->maxChairsInRow + (groups.count()-1)*CHAIR_WALKWAY + addWidth;
     }
     
     void makeSpace(QString &line)
@@ -238,7 +227,7 @@ class PlaneLayoutParser{
                     
                     auto seat = gr.seats[i];
 //                    qDebug()<<"seats"<< r << seat.letter ;
-                    if(seat.letter!=NONE_CHAIR){  // если символ '0' - то это отсутствие кресла
+                    if(seat.letter!=AirplaneLayoutConstants::NONE_CHAIR){  // если символ '0' - то это отсутствие кресла
                         auto chair = new PlaneItemChair();
                         chair->groupId = lineNumber;
                         chair->letter = seat.letter;
@@ -338,7 +327,7 @@ class PlaneLayoutParser{
         
         // для RowNumber указываем только позицию,
         // размер rect делаем во всю ширину, чтобы при зуме всегда был виден RowNum
-        rowNumItem->location = QRect(-80, posY+PlaneLayoutParser::CHAIR_SIZE*0.3, 2000,PlaneLayoutParser::CHAIR_SIZE);
+        rowNumItem->location = QRect(-80, posY+CHAIR_SIZE*0.3, 2000, CHAIR_SIZE);
         
         this->planeItems.append(rowNumItem);
     }

@@ -73,11 +73,11 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/PaintedItem/src/planeItems/planeItemChair.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemChair.cpp
         Components/PlaneMap/PaintedItem/src/planeItems/planeItemExit.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemExit.cpp
         Components/PlaneMap/PaintedItem/src/planeItems/planeColors.h
-		Components/PlaneMap/PaintedItem/src/planeItems/cardServiceType.h
-		Components/PlaneMap/PaintedItem/src/planeItems/drawHelper.h 
-		
-		Components/PlaneMap/PaintedItem/paintArea.h
-		Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
+	Components/PlaneMap/PaintedItem/src/planeItems/cardServiceType.h
+	Components/PlaneMap/PaintedItem/src/planeItems/drawHelper.h 		
+	Components/PlaneMap/PaintedItem/paintArea.h
+	Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
+        Components/PlaneMap/PaintedItem/src/airplaneLayoutContants.h
         Components/PlaneMap/PaintedItem/src/planeLayoutParser.h
         Components/PlaneMap/PaintedItem/src/spriteCache.h 
         Components/PlaneMap/PaintedItem/src/frameRateCalc.h
