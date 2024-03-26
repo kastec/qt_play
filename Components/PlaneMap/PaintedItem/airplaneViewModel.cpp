@@ -313,8 +313,9 @@ QString AirplaneViewModel::getIdAt(int x, int y){
 
 qreal AirplaneViewModel::getNavMapScale(){
    QSize srcRenderSize = navigationPainter->size().toSize();
-   auto navMapScale = std::max(planeMap->layoutSize.width()/(qreal)srcRenderSize.width(),
-                            planeMap->layoutSize.height()/(qreal)srcRenderSize.height());
+   auto navMapScale = std::max(
+       planeMap->layoutSize.width() /(qreal)srcRenderSize.width(),
+       (planeMap->layoutSize.height() *AirplaneLayoutConstants::NAV_SPREAD_ROWS)/(qreal)srcRenderSize.height());
    return navMapScale;
 }
 
