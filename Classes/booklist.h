@@ -19,7 +19,7 @@ public:
     Q_INVOKABLE BookItem* getBookItem( int index );
 
     QQmlListProperty<BookItem> data();
-    Q_INVOKABLE void add();
+    Q_INVOKABLE void add(const QString& name="");
     Q_INVOKABLE void updateListData();
 
 

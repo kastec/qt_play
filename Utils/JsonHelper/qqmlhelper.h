@@ -199,4 +199,16 @@ class name : public QObject { \
 class QmlProperty : public QObject { Q_OBJECT }; // NOTE : to avoid "no suitable class found" MOC note
 */
 
+
+/*!  SINGLETON DESIGN PATTERN (Thread Safe) */
+#define SINGLETON_PATTERN_DECLARE(classname)\
+public: \
+    static classname* i() {  if(m_instance==NULL) m_instance=new classname(); return m_instance; } \
+    private: \
+    static classname* m_instance; 
+
+#define SINGLETON_PATTERN_IMPLIMENT(classname)\
+classname* classname::m_instance = NULL; 
+
+
 #endif // QQMLHELPER_H

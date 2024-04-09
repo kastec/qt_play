@@ -16,6 +16,7 @@
 #include "Utils/JsonHelper/FileHelper.h"
 
 #include "Components/Test/derivedDeserializeTest.h"
+#include "DataSources/appMessageBus.h"
 
 struct package_manager {
   static constexpr auto package_name = "com.QtTestapp.package";
@@ -119,8 +120,8 @@ int main(int argc, char *argv[])
     engine.addImageProvider(QLatin1String("colors"), new ColorImageProvider);
     
     engine.addImageProvider("live", liveImageProvider.data());
-
-
+    
+   
     
   // auto jsonPers = DataSamples::LoadJsonData();
   //  qDebug() << &jsonPers;
@@ -133,7 +134,14 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-
+    
+   
+    // test message bus
+    QObject::connect(AppMessageBus::i(), &AppMessageBus::logEvent,
+            [=](const QString& line) {
+                qDebug() << "got SIGNAL Log: "<< line;                
+            });
+    
     engine.load(url);
     
 //    JsonHelper::Test();
@@ -156,5 +164,7 @@ void RegisterTypes()
     
     qmlRegisterType<AirplaneViewModel>("AppQtTest12",1,0, "AirplaneViewModel");
     qmlRegisterType<PaintArea>("AppQtTest12", 1, 0, "PaintArea");
-
+    
+    qmlRegisterSingletonType<AppMessageBus>("AppQtTest12", 1,0,"AppMessageBus", &AppMessageBus::qmlInstance);
+   
 }

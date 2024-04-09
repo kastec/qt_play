@@ -18,17 +18,19 @@ Window {
 
     SwipeView {
         id: swipeView
+
         anchors.fill: parent
 
-        AirPlaneMap {}
+        //		plane render
+        //        AirPlaneMap {}
+
         //        AirPlaneViewControl {}
         //2 FlickPlan {}
         //1        PlaneMap {}
-
         //        LayoutCtrl {}
         //        JsonListComp {}
-        //        PersonListCtrl {}
-        //        BookListCtrl {}
+        PersonListCtrl {}
+        BookListCtrl {}
     }
     PageIndicator {
         anchors.bottom: parent.bottom

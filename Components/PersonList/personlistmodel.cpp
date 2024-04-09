@@ -3,7 +3,7 @@
 #include "qdebug.h"
 #include "Utils/datasamples.h"
 #include "qqmllist.h"
-
+#include "DataSources/appMessageBus.h"
 
 
 PersonListModel::PersonListModel(QObject *parent)
@@ -46,6 +46,8 @@ void PersonListModel::log(int index)
 {
     auto p = m_persons[index];
     qDebug() << "["<<index<<"]:" << p->name << p->age;
+    
+    AppMessageBus::i()->createBook(p->name);
 }
 
 QList<Person*> PersonListModel::persons()

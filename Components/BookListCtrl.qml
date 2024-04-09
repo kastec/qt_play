@@ -45,7 +45,10 @@ Item {
                 Button {
                     anchors.verticalCenter: parent.verticalCenter
                     text: "Replace List"
-                    onClicked: dataModel.updateListData()
+                    onClicked: {
+                        AppMessageBus.logEvent("EVENT Relace list")
+                        dataModel.updateListData()
+                    }
                 }
 
                 Text {

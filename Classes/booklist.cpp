@@ -3,6 +3,7 @@
 #include "Utils/datasamples.h"
 #include <QAbstractListModel>
 #include <QDebug>
+#include "DataSources/appMessageBus.h"
 
 BookList::BookList(QObject *parent) : QObject(parent) {
   auto book = getNewBookItem();
@@ -10,6 +11,12 @@ BookList::BookList(QObject *parent) : QObject(parent) {
 
   auto book2 = getNewBookItem();
   m_data << book2;
+  
+  connect(AppMessageBus::i(), &AppMessageBus::createBook, this,
+          [=](const QString& author) {
+              qDebug() << "got SIGNAL CreateBook "<< author;
+              this->add(author);
+          });
 }
 
 QQmlListProperty<BookItem> BookList::data() {
@@ -37,16 +44,24 @@ BookItem * BookList::getNewBookItem()
   book->setText(color);
   //book->setProperty("color", color);
   //book->setProperty("text", color);
-
+  
+  
+  
+  
   return book;
 }
 
-void BookList::add() {
+void BookList::add(const QString& name) {
 
   auto book = getNewBookItem();
+  if(!name.isEmpty())
+      book->setText(name);
   
   m_data.insert(m_data.count()/2,book);
 //  m_data.append(book);
+  
+  emit AppMessageBus::i()->logEvent(" log bus event: book added "+book->text());
+  
   emit dataChanged();
 
 }

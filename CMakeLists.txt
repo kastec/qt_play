@@ -87,6 +87,8 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/PaintedItem/src/planePassengers.h
         
         Components/PlaneMap/PaintedItem/src/planeNavDrawer.h 
+        
+        DataSources/appMessageBus.h DataSources/appMessageBus.cpp
                 
         Utils/JsonHelper/serializationBinder.h
         Components/Test/derivedDeserializeTest.h

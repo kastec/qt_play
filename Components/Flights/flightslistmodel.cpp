@@ -12,6 +12,7 @@
 
 FlightsListModel::FlightsListModel(QObject *parent) : QObject{parent}
 {
+    
 }
 
 void FlightsListModel::loadJsonArray() { loadJsonArrayUrl("/api/flights/6/2023-09-09"); }
