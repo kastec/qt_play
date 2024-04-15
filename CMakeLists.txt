@@ -18,6 +18,8 @@ qt_add_qml_module(appQtTest1
     QML_FILES
         main.qml ElemTest.qml
         Components/BookListCtrl.qml
+        Components/InternetConnectinTest.qml
+        
         Components/PersonList/PersonListCtrl.qml
         Components/PersonList/PersonEditCtrl.qml
         
@@ -92,6 +94,8 @@ qt_add_qml_module(appQtTest1
                 
         Utils/JsonHelper/serializationBinder.h
         Components/Test/derivedDeserializeTest.h
+        
+        Utils/internetChecker.h Utils/internetChecker.cpp
     )
 
 set_target_properties(appQtTest1 PROPERTIES

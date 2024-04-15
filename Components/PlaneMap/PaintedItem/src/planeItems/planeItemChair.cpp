@@ -282,8 +282,8 @@ void PlaneItemChair::drawCardTypeInfo(QPainter *painter, const QRect &rect, Chai
 
 
 QPixmap* PlaneItemChair::getStarSprite(CardTypeEnum cardType, ChairColor &chairColor)
-{    
-    auto key = "star" + QString(this->seatType) + QString::number(chairColor.type);
+{
+    auto key = "star" + QString::number((int)cardType) +QString(this->seatType) + QString::number(chairColor.type);
     auto starSprite = SpriteCache().get(key);
     
     if(starSprite!=nullptr) return starSprite;

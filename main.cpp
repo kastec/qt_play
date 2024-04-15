@@ -13,10 +13,12 @@
 
 #include "Components/PlaneMap/OpGlItem/glitem.h"
 #include "Components/PlaneMap/PaintedItem/airplaneViewModel.h"
+#include "Utils/InternetChecker.h"
 #include "Utils/JsonHelper/FileHelper.h"
 
 #include "Components/Test/derivedDeserializeTest.h"
 #include "DataSources/appMessageBus.h"
+#include "Utils/internetChecker.h"
 
 struct package_manager {
   static constexpr auto package_name = "com.QtTestapp.package";
@@ -84,9 +86,10 @@ void derivedDeserTest()
   if(list!=nullptr)
       qDebug()<<"cnt:" << list->items.length();
   
-  auto sdata =JsonHelper::serialize(list);
+  auto sdata = JsonHelper::serialize(list);
   FileHelper::save("C:\\Projects\\Aurora\\derivedTest_s.json", sdata);
 }
+
 
 
 int main(int argc, char *argv[])
@@ -101,17 +104,18 @@ int main(int argc, char *argv[])
 //  spo->mystr
 //  sp->mystr
   
-
-// test2();
- 
+  
  
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-
-    // SharedDataContext context();
-    //engine.rootContext()->setContextProperty("_context", &context);
-
+    
+    auto ch = InternetChecker::i();
+    ch->startMonitoring();
+    QObject::connect(ch, &InternetChecker::connected, []() {qDebug()<<"Internet - connected - CLIENT";});
+    QObject::connect(ch, &InternetChecker::disconnected,  []() {qDebug()<<"Internet - disconnetct - CLIENT";});
+     
+ 
     RegisterTypes();
     
     /// test image proviger for PlaneMap
@@ -166,5 +170,6 @@ void RegisterTypes()
     qmlRegisterType<PaintArea>("AppQtTest12", 1, 0, "PaintArea");
     
     qmlRegisterSingletonType<AppMessageBus>("AppQtTest12", 1,0,"AppMessageBus", &AppMessageBus::qmlInstance);
-   
+    qmlRegisterSingletonType<InternetChecker>("AppQtTest12", 1,0,"InternetChecker", &InternetChecker::qmlInstance);
+
 }

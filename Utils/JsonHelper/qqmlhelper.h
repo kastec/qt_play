@@ -3,6 +3,7 @@
 #define QQMLHELPER_H
 
 #include <QObject>
+#include <QQmlEngine>
 
 #define QML_WRITABLE_PROPERTY(type, name) \
 protected: \
@@ -200,12 +201,17 @@ class QmlProperty : public QObject { Q_OBJECT }; // NOTE : to avoid "no suitable
 */
 
 
-/*!  SINGLETON DESIGN PATTERN (Thread Safe) */
 #define SINGLETON_PATTERN_DECLARE(classname)\
 public: \
     static classname* i() {  if(m_instance==NULL) m_instance=new classname(); return m_instance; } \
+    static QObject* qmlInstance(QQmlEngine *engine, QJSEngine *scriptEngine) { \
+        Q_UNUSED(engine); \
+        Q_UNUSED(scriptEngine); \
+        auto inst = classname::i(); \
+        return inst; \
+       }; \
     private: \
-    static classname* m_instance; 
+    static classname* m_instance;
 
 #define SINGLETON_PATTERN_IMPLIMENT(classname)\
 classname* classname::m_instance = NULL; 

@@ -28,9 +28,10 @@ Window {
         //2 FlickPlan {}
         //1        PlaneMap {}
         //        LayoutCtrl {}
-        //        JsonListComp {}
-        PersonListCtrl {}
-        BookListCtrl {}
+        //JsonListComp {}
+        InternetConnectinTest {}
+        // BookListCtrl {}
+        // PersonListCtrl {}
     }
     PageIndicator {
         anchors.bottom: parent.bottom
