@@ -117,7 +117,7 @@ void AirplaneViewModel::setPassengers(const QList<int> &passengers)
     if(s1){
         s1->hasPassenger=true;
         s1->title="KOZLOV ALEXANDER SERGEEVICH";
-        QString t1 = "silver";
+        QString t1 = "Gold";
         s1->cardType = CardServiceType::getCardType(t1);
         s1->isSelected = true;
     }
@@ -135,9 +135,9 @@ void AirplaneViewModel::setPassengers(const QList<int> &passengers)
     if(s2){
         s2->hasPassenger=true;
         s2->title="Kozlov Alexander";
-        QString t2 = "Gold";
+        QString t2 = "silver";
         s2->cardType = CardServiceType::getCardType(t2);
-        s2->isSelected = false;
+        s2->isSelected = true;
     }
     
     auto s3 = searcher.findChair("11C");

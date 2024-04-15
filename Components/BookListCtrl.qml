@@ -10,8 +10,14 @@ Item {
     }
 
     Column {
-
         anchors.fill: parent
+
+        Connections {
+            target: AppMessageBus
+            onLogEvent: function (strVal) {
+                console.log("----- GOT signal ------:" + strVal)
+            }
+        }
 
         Rectangle {
 
