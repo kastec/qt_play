@@ -12,7 +12,6 @@
 #ifdef Q_OS_WIN
 #include <winsock2.h>
 #include <ws2tcpip.h>
-
 #include <QtConcurrent/QtConcurrent>
 #endif
 
@@ -20,9 +19,6 @@
 
 #include "netinet/in.h"
 #include "netinet/tcp.h"
-//netinet/in.h, netinet/tcp.h
-//sys/socket.h
-//#include <QtConcurrent>
 #endif
 
 //http://www.forum.crossplatform.ru/lofiversion/index.php/t8798.html
