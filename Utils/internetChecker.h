@@ -5,6 +5,7 @@
 
 #include <QTcpSocket>
 #include "Utils/JsonHelper/qqmlhelper.h"
+//#include <QNetworkConfiguration>
 
 class InternetChecker : public QObject{
     Q_OBJECT
@@ -26,7 +27,9 @@ class InternetChecker : public QObject{
     static QList<int> attemptTimeoutsSec;
     
     QTcpSocket socket;
-
+    
+//    QNetworkConfiguration netConf;
+    
   signals:
     void connected();
     void disconnected();  

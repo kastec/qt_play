@@ -17,4 +17,18 @@ private:
     static QList<QString> colors;
 };
 
+template <typename T>
+std::pair<QList<T>, QList<T>> split(QList<T> src, std::function<bool(const T&)> const pred) {
+    QList<T> first;
+    QList<T> second;
+    for (const auto &v : src) {
+        auto res = pred(v);
+        if(res)
+            first.append(v);
+        else
+            second.append(v);
+    }  
+    return {first, second};
+}
+
 #endif // DATASAMPLES_H

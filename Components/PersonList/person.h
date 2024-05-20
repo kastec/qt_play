@@ -10,6 +10,7 @@ class Person : public QObject
     Q_PROPERTY(int age MEMBER age )
     Q_PROPERTY(QString seat MEMBER seat )
     Q_PROPERTY(bool enabled READ getEnabled WRITE setEnabled NOTIFY enabledChanged)
+
 public:
     explicit Person(QObject *parent = nullptr);
 public:

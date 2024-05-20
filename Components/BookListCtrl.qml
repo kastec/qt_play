@@ -114,7 +114,7 @@ Item {
                         anchors.centerIn: parent
                         renderType: Text.NativeRendering
                         //text: bookitem.text
-                        text: "%1%2".arg(model.text).arg(isCurrent ? " *" : "")
+                        text: "%1%2%3".arg(model.text).arg(model.date).arg(isCurrent ? " *" : "")
                     }
 
                     MouseArea {
