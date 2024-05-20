@@ -11,7 +11,7 @@ import "./Components/PlaneMap/PaintedItem"
 import "./Components/PlaneMap/OpGlItem"
 
 Window {
-    width: 1200
+    width: 500
     height: 700
     visible: true
     title: qsTr("Hello World")
@@ -22,16 +22,15 @@ Window {
         anchors.fill: parent
 
         //		plane render
-        //        AirPlaneMap {}
+        AirPlaneMap {}
 
-        //        AirPlaneViewControl {}
         //2 FlickPlan {}
         //1        PlaneMap {}
         //        LayoutCtrl {}
         //JsonListComp {}
-        InternetConnectinTest {}
-        // BookListCtrl {}
-        // PersonListCtrl {}
+        //InternetConnectinTest {}
+        //         BookListCtrl {}
+        //         PersonListCtrl {}
     }
     PageIndicator {
         anchors.bottom: parent.bottom

@@ -19,6 +19,10 @@
 #include "Components/Test/derivedDeserializeTest.h"
 #include "DataSources/appMessageBus.h"
 #include "Utils/internetChecker.h"
+#include "Utils/datasamples.h"
+#include "qdebug.h"
+
+#include <QObject>
 
 struct package_manager {
   static constexpr auto package_name = "com.QtTestapp.package";
@@ -29,10 +33,22 @@ struct package_manager {
 
 void RegisterTypes();
 
+
+static QString ptrToStr(void *p){
+  auto str = QString::number((std::uintptr_t)(p));
+  return str;
+}
+
 class SpriteData{
 public:
   uint spec;
   QString mystr;
+  
+  SpriteData(){qDebug()<<"ctr";}
+  SpriteData(int i, QString s){        
+      spec =i, mystr=s;
+      qDebug()<<"s:" << spec << ptrToStr((void *)this);     
+  }
   ~SpriteData(){
       qDebug()<<"DESTR" << spec;
   }
@@ -56,7 +72,7 @@ void test2()
   auto sp2 = test1();
   qDebug()<<"t2-shared:" << sp2->spec << &sp2<< "(data:"<<sp2.data()<<")";
   
-  auto scop = QScopedPointer<SpriteData>(new SpriteData{2222});
+  auto scop = QScopedPointer<SpriteData>(new SpriteData{2,""});
   qDebug()<< "t2-scoped:" << scop->spec;
 };
 
@@ -90,10 +106,44 @@ void derivedDeserTest()
   FileHelper::save("C:\\Projects\\Aurora\\derivedTest_s.json", sdata);
 }
 
+QList<SpriteData*> filltest()
+{
+  QList<SpriteData*>  l;
+  l.append(new SpriteData(11,"11"));
+  l.append(new SpriteData(22,"22"));
+  qDebug()<< "ret list" << &l;
+  qDebug()<< " list[0]" << &l[0];
+  return l;
+}
+
+SpriteData filltest2()
+{
+  auto r = filltest();
+  qDebug()<< "got R list" << &r;
+  qDebug()<< " R list[0]" << &r[0];
+  return *r[0];
+}
+
+
+void testSplit()
+{
+  QList<SpriteData*> l;
+  l.append(new SpriteData(1,"11"));
+  l.append(new SpriteData(2,"22"));
+  l.append(new SpriteData(3,"33"));
+  
+  auto [a,b] = split<SpriteData*>(l, [](const auto &s){
+      qDebug() << s->mystr <<  ptrToStr((void *)&s);
+      return s->spec%2==1; });
+  
+  qDeleteAll(b); 
+}
 
 
 int main(int argc, char *argv[])
 {
+ 
+  
 //  derivedDeserTest();  
 //  return 0;
   
@@ -110,10 +160,10 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
     
-    auto ch = InternetChecker::i();
-    ch->startMonitoring();
-    QObject::connect(ch, &InternetChecker::connected, []() {qDebug()<<"Internet - connected - CLIENT";});
-    QObject::connect(ch, &InternetChecker::disconnected,  []() {qDebug()<<"Internet - disconnetct - CLIENT";});
+//    auto ch = InternetChecker::i();
+//    ch->startMonitoring();
+//    QObject::connect(ch, &InternetChecker::connected, []() {qDebug()<<"Internet - connected - CLIENT";});
+//    QObject::connect(ch, &InternetChecker::disconnected,  []() {qDebug()<<"Internet - disconnetct - CLIENT";});
      
  
     RegisterTypes();
