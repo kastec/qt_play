@@ -319,6 +319,20 @@ qreal AirplaneViewModel::getNavMapScale(){
    return navMapScale;
 }
 
+QPoint AirplaneViewModel::validateYRestriction(QPoint pos)
+{
+   if(pos.y()>0)
+       pos.setY(0);
+   
+   auto lowPoint =   (-pos.y() + airplanePainter->height()) / zoom;
+   if(lowPoint >= planeMap->layoutSize.height())
+   {
+       auto lowPointY = airplanePainter->height() - planeMap->layoutSize.height() * zoom;
+       pos.setY(lowPointY); 
+   }
+   return pos;
+}
+
 bool AirplaneViewModel::setNavPos(qreal x, qreal y)
 {
    auto [navViewPortRect,navAirplaneRect] = planeMap->getNavPaintSizes();
@@ -341,17 +355,12 @@ bool AirplaneViewModel::setNavPos(qreal x, qreal y)
    if(this->isFixedZoom)
        airplamePoint.setX(position.x());
    
-   qDebug()<<"airplamePoint: " <<airplamePoint;
-   if(airplamePoint.y()>0)
-       airplamePoint.setY(0);
-   
-//   qDebug()<<"scale: "<< scale  << "scrSize.height()" <<scrSize.height() << "*="<<scrSize.height()*scale;
-//   airplamePoint + scrSize.height()*scale;
-   
-   
+   airplamePoint = validateYRestriction(airplamePoint);
+
    this->set_position(airplamePoint);
    return true;
 }
+
 
 void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff)
 {
@@ -361,15 +370,11 @@ void AirplaneViewModel::moveNavBy(qreal xOff, qreal yOff)
    
    auto spreadRows = AirplaneLayoutConstants::NAV_SPREAD_ROWS;
    QPointF move = QPointF(xOff,yOff) / spreadRows * scale* zoom;
-//   qDebug()<< "   move:" << move;
    QPointF newPos = position + move;
-//   qDebug()<< "   newPos:" << newPos;
    
-   if(newPos.y()>0)
-       return;
-   
-   this->set_position(newPos.toPoint());
-   
+   newPos = validateYRestriction(newPos.toPoint());
+
+   this->set_position(newPos.toPoint());   
 }
 
 

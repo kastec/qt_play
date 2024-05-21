@@ -66,7 +66,7 @@ class AirplaneViewModel: public QObject
     
     void changeZoomLimits();
     
-    
+    QPoint validateYRestriction(QPoint pos);
     QRect getSrcViewPort();
     qreal getNavMapScale();
     void drawAirplaneLayout(QPainter *painter);
