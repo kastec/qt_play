@@ -21,7 +21,7 @@ Item {
     Flickable {
         id: flickArea
         anchors.fill: parent
-        focus: true
+        focus: true		
         anchors.centerIn: parent
         boundsBehavior: Flickable.StopAtBounds
 
@@ -74,7 +74,7 @@ Item {
     Slider {
         id: slider
         value: .01
-        orientation: Qt.Vertical
+		orientation: Qt.Vertical
         anchors {
             bottom: parent.bottom
             right: parent.right

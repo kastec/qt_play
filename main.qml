@@ -9,27 +9,31 @@ import "./Components/MainLayout"
 import "./Components/PlaneMap"
 import "./Components/PlaneMap/PaintedItem"
 import "./Components/PlaneMap/OpGlItem"
+import "./Components/Catering"
 
 Window {
-    width: 500
-    height: 700
+    width: 1200
+    height: 800
     visible: true
     title: qsTr("Hello World")
 
+    CaterPlane {}
+
+    /*
     SwipeView {
         id: swipeView
 
         anchors.fill: parent
 
         //		plane render
-        AirPlaneMap {}
-
+        // AirPlaneMap {}
+        //CaterPlane {}
         //2 FlickPlan {}
         //1        PlaneMap {}
         //        LayoutCtrl {}
         //JsonListComp {}
         //InternetConnectinTest {}
-        //         BookListCtrl {}
+        //        BookListCtrl {}
         //         PersonListCtrl {}
     }
     PageIndicator {
@@ -39,6 +43,7 @@ Window {
         currentIndex: swipeView.currentIndex
         count: swipeView.count
     }
+*/
 
 
     /*

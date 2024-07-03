@@ -230,6 +230,7 @@ class PlaneLayoutParser{
                     if(seat.letter!=AirplaneLayoutConstants::NONE_CHAIR){  // если символ '0' - то это отсутствие кресла
                         auto chair = new PlaneItemChair();
                         chair->groupId = lineNumber;
+                        chair->rowGroupId = g;
                         chair->letter = seat.letter;
                         chair->rowNumber = r;
                         chair->settings = seat.settings;                        

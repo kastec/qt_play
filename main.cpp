@@ -21,8 +21,10 @@
 #include "Utils/internetChecker.h"
 #include "Utils/datasamples.h"
 #include "qdebug.h"
-
 #include <QObject>
+
+#include "Components/Catering/caterPlaneViewModel.h"
+#include "Components/Catering/caterSeatViewModel.h"
 
 struct package_manager {
   static constexpr auto package_name = "com.QtTestapp.package";
@@ -77,22 +79,6 @@ void test2()
 };
 
 
-bool calcSeatOrderValue(QString seatNumber){
-  if(seatNumber.isEmpty()){
-      return 0;
-  }
-  QString salon ="W";
-  
-  // надо сортировать по классу (salon) и по сидению
-  auto letter = seatNumber.at(seatNumber.length()-1);
-  auto num = seatNumber.left(seatNumber.length()-1);
-  int rowNum = num.toInt();
-  int letterValue = letter.unicode()-'A';
-  
-  int salonValue = (salon[0].unicode()-'A');
-  auto seatOrderValue = (rowNum * 100 +letterValue)*100 + salonValue;
-  return seatOrderValue;
-}
 
 void derivedDeserTest()
 {
@@ -147,7 +133,7 @@ int main(int argc, char *argv[])
 //  derivedDeserTest();  
 //  return 0;
   
-//  auto e = calcSeatOrderValue("2F");
+
 //   return 0;
 //  auto spo = new SpriteData();
 //  SP<SpriteData> sp(new SpriteData());
@@ -175,8 +161,7 @@ int main(int argc, char *argv[])
     
     engine.addImageProvider("live", liveImageProvider.data());
     
-   
-    
+       
   // auto jsonPers = DataSamples::LoadJsonData();
   //  qDebug() << &jsonPers;
     
@@ -221,5 +206,8 @@ void RegisterTypes()
     
     qmlRegisterSingletonType<AppMessageBus>("AppQtTest12", 1,0,"AppMessageBus", &AppMessageBus::qmlInstance);
     qmlRegisterSingletonType<InternetChecker>("AppQtTest12", 1,0,"InternetChecker", &InternetChecker::qmlInstance);
+    
+    qmlRegisterType<CaterPlaneViewModel>("AppQtTest12", 1, 0, "CaterPlaneViewModel");
+    qmlRegisterType<CaterSeatViewModel>("AppQtTest12", 1, 0, "CaterSeatViewModel");
 
 }

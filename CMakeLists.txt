@@ -41,6 +41,9 @@ qt_add_qml_module(appQtTest1
         Components/Flights/FlightsList.qml
         Components/Flights/FlightListControl.qml
         
+        Components/Catering/CaterPlane.qml
+        Components/Catering/CaterSeat.qml
+        
         Utils/QmlTools/JSONListModel/JSONListModel.qml
         Utils/QmlTools/JSONListModel/jsonpath.js 
         
@@ -93,9 +96,13 @@ qt_add_qml_module(appQtTest1
         DataSources/appMessageBus.h DataSources/appMessageBus.cpp
                 
         Utils/JsonHelper/serializationBinder.h
+        Utils/boolinq.h
         Components/Test/derivedDeserializeTest.h
         
         Utils/internetChecker.h Utils/internetChecker.cpp
+        
+        Components/Catering/caterSeatViewModel.h 
+        Components/Catering/caterPlaneViewModel.h Components/Catering/caterPlaneViewModel.cpp
     )
 
 set_target_properties(appQtTest1 PROPERTIES

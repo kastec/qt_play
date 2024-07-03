@@ -47,7 +47,9 @@ class PlaneItemChair  : public PlaneItemBase
     bool isSelected; 
     
     // блок сидений в ряду - для внутреннего поиска
-    uint groupId;    
+    uint groupId;
+    // группа сидений в ряду
+    uint rowGroupId;  
     
     
     void draw(QPainter *p, QRect &rect);
