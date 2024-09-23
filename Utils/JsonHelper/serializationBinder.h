@@ -7,6 +7,20 @@
 #include <QMetaProperty>
 #include <QJsonObject>
 
+
+/*
+Deserialization/serisalization with descriminator property
+auto binder = SerializationBinder( descriminatorPropertyName )
+  .add<DerivedClass1> ( descrimPropValue )
+  .add<DerivedClass2> ( descrimPropValue )
+
+Example:
+auto binder = SerializationBinder("typeObj")
+               .add<PersonReportItem>("personType")
+               .add<AddressReportItem>("addressType")
+               .add<AddressReportExItem>("addressExtendedType");
+*/
+
 class SerializationBinder
 {
     QString descriminator;
@@ -15,7 +29,7 @@ class SerializationBinder
   public:
     SerializationBinder(){}
     SerializationBinder(QString descriminatorProp)
-          :descriminator(descriminatorProp){};
+        :descriminator(descriminatorProp){};
     
     template <typename T>
     SerializationBinder& add(QString name){
@@ -24,9 +38,10 @@ class SerializationBinder
         return *this;
     }
     
-    const QMetaObject* getMetadata(QJsonObject &jobj) const {
+    const QMetaObject* getMetadata(QJsonObject &jobj) const
+    {
         auto val = jobj.value(descriminator);
-        if(val==QJsonValue::Undefined) return nullptr;
+        if(val == QJsonValue::Undefined) return nullptr;
         
         auto key = val.toString();
         auto meta = mapper.value(key, nullptr);

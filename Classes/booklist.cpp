@@ -5,13 +5,15 @@
 #include <QDebug>
 #include "DataSources/appMessageBus.h"
 
-BookList::BookList(QObject *parent) : QObject(parent) {
-  auto book = getNewBookItem();
+BookList::BookList(QObject *parent) : QObject(parent)
+{
+    updateListData();
+  /*auto book = getNewBookItem();
   m_data << book;
 
   auto book2 = getNewBookItem();
   m_data << book2;
-  
+  */
   connect(AppMessageBus::i(), &AppMessageBus::createBook, this,
           [=](const QString& author) {
               qDebug() << "got SIGNAL CreateBook "<< author;
@@ -75,7 +77,19 @@ void BookList::updateListData() {
 
   auto book2 = getNewBookItem();
   newList << book2;
-
+  
+  auto book3 = getNewBookItem();
+  newList << book3;
+  auto book4 = getNewBookItem();
+  newList << book4;
+  auto book5 = getNewBookItem();
+  newList << book5;
+  
+  newList <<getNewBookItem() << getNewBookItem() << getNewBookItem()<<getNewBookItem();
+  newList <<getNewBookItem() << getNewBookItem() << getNewBookItem()<<getNewBookItem();
+  newList <<getNewBookItem() << getNewBookItem() << getNewBookItem()<<getNewBookItem();
+  newList <<getNewBookItem() << getNewBookItem() << getNewBookItem()<<getNewBookItem();
+  
   m_data = newList;
   emit dataChanged();
 }
@@ -99,4 +113,15 @@ void BookList::clearData(QQmlListProperty<BookItem> *list) {
   QList<BookItem *> *data = static_cast<QList<BookItem *> *>(list->data);
   qDeleteAll(data->begin(), data->end());
   data->clear();
+}
+
+void BookList::moveItemTest(int from, int to)
+{
+  if(from==to) return;
+  if(from<0 || from>=m_data.length()) return;
+  if(to<0 || to>=m_data.length()) return;
+  
+  m_data.move(from,to);
+  emit dataChanged();
+//  QAbstractListModel
 }

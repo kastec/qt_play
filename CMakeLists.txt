@@ -44,6 +44,8 @@ qt_add_qml_module(appQtTest1
         Components/Catering/CaterPlane.qml
         Components/Catering/CaterSeat.qml
         
+        Components/DragTest/DragDropTest.qml
+        
         Utils/QmlTools/JSONListModel/JSONListModel.qml
         Utils/QmlTools/JSONListModel/jsonpath.js 
         

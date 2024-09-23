@@ -21,6 +21,11 @@
 if (propertyName == propertyListName) \
         return QVariant::fromValue(JsonSerialization::toArray<childType>(__VA_ARGS__));
 
+/// Example: SET_LIST_CHILDREN_P(propname, [PARENT_CLASS_TYPE], "items", ItemA, json, parent, mapperFunc);
+#define SET_LIST_CHILDREN_P(propertyName, parentType, propertyListName, childType, ...) \
+if (propertyName == propertyListName) \
+    if(dynamic_cast<parentType*>(parent) != nullptr) \
+        return QVariant::fromValue(JsonSerialization::toArray<childType>(__VA_ARGS__));
 
 class JsonHelper
 {

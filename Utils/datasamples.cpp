@@ -13,7 +13,9 @@
 using namespace std;
 
 
-QList<QString> DataSamples::colors = {"red", "skyblue", "green", "blue", "gray","cyan", "yellow"};
+QList<QString> DataSamples::colors = {"red", "skyblue", "green", "blue",
+                                      "gray","cyan", "yellow","lime", "fuchsia","coral","chocolate",
+                                      "darkred","deeppink", "pink"};
 
 DataSamples::DataSamples()
 {

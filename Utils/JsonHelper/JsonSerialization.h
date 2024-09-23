@@ -12,8 +12,8 @@
 
 #include "qdebug.h"
 #include "qsequentialiterable.h"
-
-#include "serializationBinder.h" 
+#include "serializationBinder.h"
+//#include "../logger/logger.h"
 
 //#include "FileHelper.h" // test
 //#include "JsonHelper.h"
@@ -69,7 +69,8 @@ class JsonSerialization
         QObject *object = objMetadata->newInstance();
         if(object==nullptr)
         {
-            qDebug()<< "ERROR METADATA: CAN'T CREATE " << meta->className();
+            qDebug()<<QString("ERROR METADATA: CAN'T CREATE object %1").arg(meta->className());
+//            Logger::logError(QString("ERROR METADATA: CAN'T CREATE object %1").arg(meta->className()));
         }
         
         if (parent != nullptr)
@@ -100,9 +101,9 @@ class JsonSerialization
         //        auto propTypeName = property.typeName();
         //        auto typeName = QString(property.typeName());
         
-        //        if (propname == QString("tail")) { // test prop for debug
-        //            qDebug() << "prop: " << propname;
-        //        }
+               //        if (propname == QString("tail")) { // test prop for debug
+               //            qDebug() << "prop: " << propname;
+               //        }
         
         if (value.isArray()) {
             if(type==QMetaType::QStringList)
@@ -122,7 +123,7 @@ class JsonSerialization
                 //specific cases
             default:
                 auto jsonObject = value.toObject();
-                auto qQbj = toObject(QMetaType::metaObjectForType(type), jsonObject, object, createList, binder); 
+                auto qQbj = toObject(QMetaType::metaObjectForType(type), jsonObject, object, createList, binder);
                 return QVariant::fromValue(qQbj);
                 break;
             }
@@ -151,19 +152,47 @@ class JsonSerialization
         QJsonObject jobj;
         
         auto meta = object->metaObject();
-        
+        QList<QString> shouldNotDeserializeList;
         int propertyStart = QObject::staticMetaObject.propertyCount();
+        // цикл составления списка полей
+        // которые не будут сериализованы (префикс ShouldSerialize)
+        for (int i = propertyStart; i < meta->propertyCount(); ++i) {
+            QMetaProperty prop = meta->property(i);
+            
+            QString propname = prop.name();
+            //поля shouldSerialize должны быть bool по типу
+            if(propname.startsWith("ShouldSerialize"))
+            {
+                if(std::string(prop.typeName()) == "bool" )
+                {
+                    bool propertyValue = prop.read(object).value<bool>();
+                    if(propertyValue == false)
+                    {
+                        QString serializableProperty = propname.remove(0,15);
+                        shouldNotDeserializeList.append(serializableProperty);
+                    }
+                }
+            }
+        }
+        
+               //цикл сериализации
         for (int i = propertyStart; i < meta->propertyCount(); ++i) {
             QMetaProperty prop = meta->property(i);
             
             auto proptype = prop.userType();
             auto propname = prop.name();
             
-            //            if (propname == QString("card")) { // test prop for debug
-            //                auto t = QString(propname);
-            //                qDebug() << "prop: " << t;
-            //            }
+            if (QString(propname).startsWith("ShouldSerialize"))
+            {
+                //Logger::logInfo((QString("should not serialize was found ") + QString(propname)));
+                continue;
+            }
             
+            if (shouldNotDeserializeList.contains(propname))
+            {
+                //Logger::logInfo((QString("should not serialize was found ") + QString(propname)));
+                continue;
+            }
             QVariant variant = object->property(propname);
             
                    // test prop for debug
@@ -171,7 +200,11 @@ class JsonSerialization
                    //                qDebug() << "prop: " << propname;
                    //                qDebug() << "isValid: " << variant.isValid();
                    //                qDebug() << "isNull: " << variant.isNull();
-                   //            }
+                   //            } //QString sd;
+                   //bool ShouldSerializeSd;
+                   //можно по массиву бегать искать ShouldSerializeValue
+                   //по нему ориентироваться нужно сериализовать или нет
+                   //а после выкинуть эти поля
             
             if(proptype == QMetaType::QString)
             { // обработаем строку здесь, чтобы она не мешалась далее обработке массивов
@@ -236,7 +269,6 @@ class JsonSerialization
         
         return jobj;
     }
-    
     
 };
 

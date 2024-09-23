@@ -14,7 +14,7 @@
 #include "Components/PlaneMap/OpGlItem/glitem.h"
 #include "Components/PlaneMap/PaintedItem/airplaneViewModel.h"
 #include "Utils/InternetChecker.h"
-#include "Utils/JsonHelper/FileHelper.h"
+#include "Utils/sharedListItem.h"
 
 #include "Components/Test/derivedDeserializeTest.h"
 #include "DataSources/appMessageBus.h"
@@ -46,7 +46,7 @@ public:
   uint spec;
   QString mystr;
   
-  SpriteData(){qDebug()<<"ctr";}
+  SpriteData(){qDebug()<<"ctor";}
   SpriteData(int i, QString s){        
       spec =i, mystr=s;
       qDebug()<<"s:" << spec << ptrToStr((void *)this);     
@@ -78,37 +78,14 @@ void test2()
   qDebug()<< "t2-scoped:" << scop->spec;
 };
 
-
-
-void derivedDeserTest()
-{
-  auto rawData = FileHelper::readAll("C:\\Projects\\Aurora\\derivedTest.json");
-  auto list = PersonsReportList::toObject(rawData);
-  
-  if(list!=nullptr)
-      qDebug()<<"cnt:" << list->items.length();
-  
-  auto sdata = JsonHelper::serialize(list);
-  FileHelper::save("C:\\Projects\\Aurora\\derivedTest_s.json", sdata);
-}
-
-QList<SpriteData*> filltest()
-{
-  QList<SpriteData*>  l;
-  l.append(new SpriteData(11,"11"));
-  l.append(new SpriteData(22,"22"));
-  qDebug()<< "ret list" << &l;
-  qDebug()<< " list[0]" << &l[0];
-  return l;
-}
-
-SpriteData filltest2()
-{
-  auto r = filltest();
-  qDebug()<< "got R list" << &r;
-  qDebug()<< " R list[0]" << &r[0];
-  return *r[0];
-}
+class Storager{
+public:
+  SharedQList<SpriteData> data;
+//  Storager(){
+      
+//  };
+//  Storager(SharedQList<SpriteData> d):data(d){}
+};
 
 
 void testSplit()
@@ -125,13 +102,43 @@ void testSplit()
   qDeleteAll(b); 
 }
 
+SharedQList<SpriteData> TestSharedListItems0()
+{
+
+  SharedQList<SpriteData> l;
+  l->append(new SpriteData(1,"11"));
+  l->append(new SpriteData(1,"11"));
+  l->append(new SpriteData(2,"22"));
+  l->append(new SpriteData(3,"33"));
+  
+  //  auto sharedList = new SharedQList<SpriteData>(l);
+//  SharedQList<SpriteData> sharedList(l);
+  qDebug()<<"exit test-0";
+  return l;
+}
+void TestSharedListIncome(SharedQList<SpriteData> sp)
+{ 
+  QList<SpriteData*> *lst = sp.data();
+  qDebug()<<"income list: "<<  ptrToStr(lst);
+}
+
+void TestSharedListItems()
+{
+  qDebug()<<"enter test";
+
+  auto stor = new Storager();
+  stor->data = TestSharedListItems0();
+  delete stor;
+  qDebug()<<"exit test";
+}
 
 int main(int argc, char *argv[])
 {
- 
-  
+  DeserializeTest dest;
+  dest.Test();
+//  TestSharedListItems();
 //  derivedDeserTest();  
-//  return 0;
+  return 0;
   
 
 //   return 0;

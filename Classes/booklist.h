@@ -21,7 +21,8 @@ public:
     QQmlListProperty<BookItem> data();
     Q_INVOKABLE void add(const QString& name="");
     Q_INVOKABLE void updateListData();
-
+    
+    Q_INVOKABLE void moveItemTest(int from, int to);
 
 signals:
      void dataChanged();

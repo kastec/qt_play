@@ -10,6 +10,7 @@ import "./Components/PlaneMap"
 import "./Components/PlaneMap/PaintedItem"
 import "./Components/PlaneMap/OpGlItem"
 import "./Components/Catering"
+import "./Components/DragTest"
 
 Window {
     width: 1200
@@ -17,7 +18,10 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    CaterPlane {}
+    DragDropTest {}
+  
+	//CaterPlane {}
+
 
     /*
     SwipeView {
