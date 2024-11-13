@@ -133,12 +133,15 @@ class PlaneNavDrawer
         sLoc.setY(sLoc.y() * NAV_SPREAD_ROWS); // из-за растяжения NAV-карты надо изменить Y-координату
         
         auto w = sSize.width();
+
         auto h = sSize.height();
         QPen lineColor(Qt::red, h*0.2);
         painter->setPen(lineColor);
         
         QList<QPoint> points;
-        auto wlen = w*0.2;
+//        auto wlen = w*0.2;
+        auto wlen = h*0.4;
+//        auto wlen = 10 / scale;
         if(exit->isLeft)
         {
             points.append(sLoc+QPoint(wlen,2));

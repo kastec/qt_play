@@ -40,12 +40,14 @@ class PlaneLayoutSearcher{
   public:
     
     PlaneItemChair* findChair(const QString &seatNumber){
-        
+//        qDebug()<< "-findChair"<<seatNumber;
         auto index = PlaneItemChair::getSeatIndex(chairsInRow, seatNumber);
+//        qDebug()<< " finding: " << seatNumber << index;
 //        qDebug()<<"find-ch"<<seatNumber<< index;
 //        qDebug()<< "seats-len"<<this->seats.length() << "chairsInRow:"<< chairsInRow;
-        if(index <= 0 || index> this->seats.length())
+        if(index <= 0 || index>= this->seats.length())
         {
+            qDebug()<< "seat not found "<<seatNumber;
             // TODO: можно поискать по всем Items через find();
             return nullptr;
         }
@@ -54,6 +56,7 @@ class PlaneLayoutSearcher{
             qDebug()<< mess; // TODO: write to log
             return nullptr;
         }
+//        qDebug()<< "   found-seat ";
 //        qDebug()<< "   found: "<< seats[index]->rowNumber<< seats[index]->letter<< "ind:"<<seats[index]->index;
         return seats[index];
     }
@@ -77,9 +80,13 @@ class PlaneLayoutSearcher{
         {
             if(i->type!="seat") continue;
             auto seat = (PlaneItemChair*)i;
-            auto letterNum = seat->letter.toLatin1()-'A';
+            if(seat->letter=='0') continue;
+            int letterNum = seat->letter.toLatin1()-'A';
+            if(letterNum>15) qDebug() << "wrong letter";
             maxLetterNum = __max(letterNum, maxLetterNum);
             maxRow = __max(maxRow, seat->rowNumber);
+            
+//            if(letterNum==maxLetterNum) qDebug() << "  max letter: " << seat->letter;
         }
 //        qDebug()<<"getMaxIndexInRow:"<< maxRow<< maxLetterNum;
         return std::make_tuple(maxRow, maxLetterNum);
@@ -90,6 +97,7 @@ class PlaneLayoutSearcher{
         auto [rows, maxChairIndexInRow] = getMaxIndexInRow(planeItems);
         this->rows = rows;
         this->chairsInRow = maxChairIndexInRow+1;
+        //qDebug() << "rows:" << rows << "maxChairIndexInRow:" << maxChairIndexInRow;
         
         root = makeItemGroupsTree(planeItems);
                 
@@ -109,7 +117,7 @@ class PlaneLayoutSearcher{
             seat->index = this->chairsInRow * seat->rowNumber + (seat->letter.toLatin1() - 'A');
             
 //            if(seat->rowNumber<3)
-//                qDebug()<< "seat-ind:" << seat->index << seat->rowNumber<<seat->letter;
+//            qDebug()<< "seat-ind:" << seat->index << "="<< seat->rowNumber<<seat->letter;
             this->seats[seat->index] = seat;
         }
     }

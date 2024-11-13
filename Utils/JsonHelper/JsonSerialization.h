@@ -101,14 +101,15 @@ class JsonSerialization
         //        auto propTypeName = property.typeName();
         //        auto typeName = QString(property.typeName());
         
-               //        if (propname == QString("tail")) { // test prop for debug
-               //            qDebug() << "prop: " << propname;
-               //        }
-        
+//        if (propname == QString("id")) qDebug() << "id: " << propname << value;
+//        if (propname == QString("title")) qDebug() << "title: " <<  value;        
+//        if (propname == QString("block")) qDebug() << "block: " << propname << value ;
+           
         if (value.isArray()) {
             if(type==QMetaType::QStringList)
             {
                 auto sl = value.toVariant().toStringList();
+//                qDebug() << sl.length() <<"   vals: " << sl;
                 return QVariant::fromValue(sl);
             }
             
@@ -130,6 +131,8 @@ class JsonSerialization
             //todo other meta object types
         } else {
             //primitive types
+            
+       
             return value.toVariant();
         }
         
