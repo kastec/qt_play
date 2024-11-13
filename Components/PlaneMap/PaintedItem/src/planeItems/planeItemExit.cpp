@@ -2,22 +2,23 @@
 #include "planeItemExit.h"
 #include <QMargins>
 #include "../spriteCache.h"
-#include "qdebug.h"
-
 
 const QList<QLineF> PlaneItemExit::exitLines = PlaneItemExit::fillExitLines();
-
 
 QList<QLineF> PlaneItemExit::fillExitLines()
 {
      auto exitlines = QList<QLine>{
+        // E
         QLine(3,3, 22,3),
         QLine(3,3, 3,71),
         QLine(3,71, 22,71),
         QLine(3,35, 19,35),
+        // X
         QLine(28,3, 57,71),
         QLine(28,71, 57,3),
+        // I
         QLine(65,3, 65,71 ),
+        // T
         QLine(73,3, 99,3),
         QLine(85,3, 85,71)
     } ;
@@ -49,7 +50,8 @@ void PlaneItemExit::draw(QPainter *painter, QRect &rect)
     else
     {
         painter->drawPixmap(x, y+h*0.1, *exit);
-        painter->drawPixmap(x+exit->width()+space/2,y, *door);    
+//        painter->drawPixmap(x+exit->width()+space/2,y, *door);
+        painter->drawPixmap(x+w-door->width(),y, *door);    
     }
 }
 
@@ -83,8 +85,8 @@ QPixmap* PlaneItemExit::makePixmapDoor(int height, bool isLeft)
     else
     {
         points.append(QPoint{2,2});
-        points.append(QPoint{width-2,2});
-        points.append(QPoint{width-2,height-2});
+        points.append(QPoint{width-3,2});
+        points.append(QPoint{width-3,height-2});
         points.append(QPoint{2,height-2}); 
     }
     p.drawPolyline(points.data(),4);
@@ -99,7 +101,7 @@ QPixmap* PlaneItemExit::makePixmapDoor(int height, bool isLeft)
 
 QPixmap* PlaneItemExit::makePixmapExit(int width, int height)
 {
-    QString spriteKey("exit-text");
+    QString spriteKey = QString("exit-txt%1").arg(isShort?"-s":"");
     auto spite = SpriteCache().get(spriteKey, height);
     if(spite)
         return spite;
@@ -115,8 +117,7 @@ QPixmap* PlaneItemExit::makePixmapExit(int width, int height)
     p.setRenderHint(QPainter::Antialiasing);
     QPen exitColor(QColor(231,136,149), width*0.035);
     p.setPen(exitColor);
-    
-    
+        
     QList<QLine> scaledLines;
     for(auto &l: exitLines){
         scaledLines.append(QLine(l.x1()*width, l.y1()*height, l.x2()*width, l.y2()*height));

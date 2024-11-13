@@ -41,11 +41,6 @@ class PlaneItemWc : public PlaneItemBase
     void draw(QPainter *p, QRect &rect);
 };
 
-class PlaneItemText : public PlaneItemBase
-{
-  public:
-    PlaneItemText():PlaneItemBase("text"){}
-    void draw(QPainter *p, QRect &rect);
-};
+
 
 #endif // PLANEITEM_H

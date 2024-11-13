@@ -18,11 +18,14 @@ Window {
     visible: true
     title: qsTr("Hello World")
 
-    DragDropTest {}
+    //DragDropTest {}
   
 	//CaterPlane {}
 
-
+	AirPlaneMap {
+		anchors.fill: parent
+	}
+	
     /*
     SwipeView {
         id: swipeView

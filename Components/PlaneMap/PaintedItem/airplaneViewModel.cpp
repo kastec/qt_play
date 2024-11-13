@@ -35,12 +35,23 @@ void AirplaneViewModel::loadLayout()
  //   auto type = "3KR"; // A333-28-268
  //     auto type = "333"; // A333-36-265
 //     auto type = "359-28-288"; // A350-28-288
-   auto type = "73H"; // B737-20-138
+//   auto type = "73H"; // B737-20-138
  //   auto type = "77R"; // B777-28-24-375
     //    auto type = "77W"; // B777-30-48-324
    //     auto type = "SU9"; // SU95-12-75
        
-      
+//       auto type = "A319"; // ROS
+//       auto type = "A320"; // ROS
+//       auto type = "A320V2"; // ROS
+//       auto type = "B737V4"; // ROS
+//    auto type = "B737-900"; // ROS
+//    auto type = "B777ER"; // ROS
+//     auto type = "SU9"; // ROS
+     //auto type = "Y100"; // ROS
+//    auto type = "B744A"; // ROS
+//    auto type = "B744C-Test"; // ROS
+    auto type = "B744C"; // ROS
+    
     auto filepath = QString("D:\\0\\airplanes\\%1.airplane").arg(type);
     if(FileHelper::existFile(filepath)==false) return;
     qDebug() << "loading airplane layout" << type;
@@ -154,7 +165,7 @@ void AirplaneViewModel::setPassengers(const QList<int> &passengers)
         s4->hasPassenger=true;
         s4->title="KOZLOV ALEXANDER SERGEEVICH";
         QString t4 = "silver";
-        s3->cardType = CardServiceType::getCardType(t4);
+        s4->cardType = CardServiceType::getCardType(t4);
         s4->isSelected = false;
     }
    
@@ -202,11 +213,14 @@ void AirplaneViewModel::moveBy(qreal xOff, qreal yOff) {
    ox = position.x() - xOff;   
    oy = position.y() - yOff;
    
-  
    //    if (ox < 0) ox = 0;
-   //    if (oy < 0) oy = 0;
- 
-    this->set_position(QPoint(ox,oy));  
+   if (oy > 0) oy = 0;
+//   qDebug()<< oy;
+//   
+   auto pos = QPoint(ox,oy);
+   pos = validateYRestriction(pos);
+   
+    this->set_position(pos);  
 //   updatePaintArea();
 }
 
@@ -323,8 +337,9 @@ QPoint AirplaneViewModel::validateYRestriction(QPoint pos)
 {
    if(pos.y()>0)
        pos.setY(0);
-   
+  
    auto lowPoint =   (-pos.y() + airplanePainter->height()) / zoom;
+  
    if(lowPoint >= planeMap->layoutSize.height())
    {
        auto lowPointY = airplanePainter->height() - planeMap->layoutSize.height() * zoom;

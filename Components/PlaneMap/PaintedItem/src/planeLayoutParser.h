@@ -7,6 +7,9 @@
 #include "planeItems/planeItemChair.h"
 #include "planeItems/planeItemBase.h"
 #include "planeItems/planeItemExit.h"
+#include "planeItems/planeItemText.h"
+#include "planeItems/planeItemLine.h"
+#include "planeItems/planeItemRowNumber.h"
 #include "airplaneLayoutContants.h"
 
 using namespace AirplaneLayoutConstants;
@@ -95,6 +98,10 @@ class PlaneLayoutParser{
     {
         qDebug()<< "parsing airplane layout" << lines.length()<<"lines";
         int lineNum=0;
+        
+        // для красоты сделаем отступ сверху на 50 пиклелей
+        this->posY = 50;
+        
         for( auto &currLine: lines)
         {            
             lineNum++;
@@ -105,7 +112,7 @@ class PlaneLayoutParser{
             cline = cline.section(' ', 1);            
             auto line = clearLine(cline);          
                        
-//            qDebug() << "lineType:" << lineType << line;
+            // qDebug() << "lineType:" << lineType << line;
             
             if(lineType == "name") qDebug()<< "  layout "<< line;
             if(lineType == "plane_width") setMaxPlaneWidth(line);
@@ -113,8 +120,12 @@ class PlaneLayoutParser{
             if(lineType == "row") makeRowSeatsLine(line, lineNum);
             if(lineType == "space") makeSpace(line);
             if(lineType == "exit") makeExit(line);
-            if(lineType == "obj") makeObject(line);            
+            if(lineType == "obj") makeObject(line);
+            if(lineType == "text") makeText(line);
+            if(lineType == "lineh") makeLineH(line);  
         }
+        // для красоты сделаем отступ снизу на 50 пиклелей
+        this->posY += 50;
     }
     
     SeatRowMetric calcChairLayoutMetric(const SeatRowDeclaration &row)
@@ -159,7 +170,7 @@ class PlaneLayoutParser{
     
     void makeSpace(QString &line)
     {
-        auto  yOffset = line.toInt();
+        auto yOffset = line.trimmed().toInt();
         this->posY+= yOffset;
         this->posX=0;
     }
@@ -168,10 +179,11 @@ class PlaneLayoutParser{
     {
         //        auto  yOffset = line.toInt();
         this->exitCount++;
-                
-        // TODO: вынести это в разметку лайаута ?
-        int exitW = 180;
+        bool isShort = line.contains("short");
+        
+        int exitW = (!isShort)? 180 : 80;
         int exitH = 120;
+                
         int marginTop = exitH*0.2;
         int marginBottom = exitH*0.2;
         
@@ -186,12 +198,14 @@ class PlaneLayoutParser{
            
         auto exitL = new PlaneItemExit();
         exitL->isLeft = true;
+        exitL->isShort = isShort;
         exitL->title = QString("exit %1 left").arg(this->exitCount);
         exitL->id = QString("exit%1L").arg(this->exitCount);                
         exitL->location = QRect(0, posY+marginTop, exitW, exitH);
         
         auto exitR = new PlaneItemExit();
         exitR->isLeft = false;
+        exitR->isShort = isShort;
         exitR->title = QString("exit %1 right").arg(this->exitCount);
         exitR->id=QString("exit%1R").arg(this->exitCount);
         exitR->location = QRect(airplaneWidth-exitW, posY+marginTop, exitW, exitH);
@@ -272,8 +286,7 @@ class PlaneLayoutParser{
         row.rowSeatCount=0;
         
         while( sg.hasNext() ) {
-            auto match = sg.next();
-            
+            auto match = sg.next();            
             
             auto letters = match.captured("letters").toUpper();
             SeatGroup seatGroup = GetSeatGroup(letters);
@@ -320,10 +333,9 @@ class PlaneLayoutParser{
     
     void addRowNumber(int rowNumber, int posY)
     {
-        auto rowNumItem = new PlaneItemText();
+        auto rowNumItem = new PlaneItemRowNumber();
         auto strNum = (rowNumber<10?"0":"") + QString::number(rowNumber);
-        rowNumItem->type="rownum";
-        rowNumItem->id = "rownum"+strNum;
+        rowNumItem->id = "rownum" + strNum;
         rowNumItem->title = strNum;
         
         // для RowNumber указываем только позицию,
@@ -333,12 +345,119 @@ class PlaneLayoutParser{
         this->planeItems.append(rowNumItem);
     }
     
+    std::pair<QString,QString> parseObjName(QString &line)
+    {
+        //Ex: obj WC "Watercloset 1":WC1 (11KA:-250,0) 200x200
+        //Ex: "Watercloset 1":WC1
+        //Ex: "Watercloset 1
+        static QRegularExpression regPattern("\\\"(?<title>[^\"]+)\\\"(:(?<id>\\w+))?");
+        
+        // get object id and name
+        auto regMmatch = regPattern.match(line);
+        if(!regMmatch.hasMatch()) return std::make_pair("","");
+        
+        auto id = regMmatch.captured("id");
+        auto title = regMmatch.captured("title");
+        line.remove(regMmatch.capturedStart(), regMmatch.capturedEnd() - regMmatch.capturedStart());
+//        qDebug() << "parse obj-name: "<< line;
+//        qDebug() << "   id: "<< id;
+//        qDebug() << "   title: "<< title;
+        return std::make_pair(id,title);
+    }
+    
+    std::pair<int,int> parseSize(QString &line)
+    {
+        //Ex: 200x200
+        static QRegularExpression regPattern("(?<width>\\d+)x(?<height>\\d+)");
+        
+        // get object id and name
+        auto regMatch = regPattern.match(line);
+        if(!regMatch.hasMatch()) return std::make_pair(0,0);
+        
+        int width = regMatch.captured("width").toInt();
+        int height = regMatch.captured("height").toInt();
+        line.remove(regMatch.capturedStart(), regMatch.capturedEnd() - regMatch.capturedStart());
+        return std::make_pair(width,height);
+    }
+    
+    QColor parseColor(QString &line)
+    {
+        //Ex: #AA00FF
+        static QRegularExpression regPattern("(?<color>#[0-9A-F]{6})");
+        
+//        qDebug()<< "parse color:" <<  line;
+        // get object id and name
+        auto regMatch = regPattern.match(line);
+        if(!regMatch.hasMatch()) return Qt::black; // QColor::black();
+        
+        
+        QString color = regMatch.captured("color");
+//        qDebug()<< "   s-color:" <<  color;
+        bool ok;
+        int r = color.mid(1,2).toUInt(&ok, 16);
+        int g = color.mid(3,2).toUInt(&ok, 16);
+        int b = color.mid(5,2).toUInt(&ok, 16);
+        line.remove(regMatch.capturedStart(), regMatch.capturedEnd() - regMatch.capturedStart());
+        
+        return QColor(r,g,b);
+    }
+    
+    int parsePointSize(QString &line)
+    {
+        //Ex: 15pt
+        static QRegularExpression regPattern("(?<pointsize>[0-9]{1,2})pt");
+        
+        //        qDebug()<< "parse color:" <<  line;
+        // get object id and name
+        auto regMatch = regPattern.match(line);
+        if(!regMatch.hasMatch()) return 0;        
+        
+        QString sPSize = regMatch.captured("pointsize");
+        //qDebug()<< "   point-size:" <<  sPSize;
+        bool ok;
+        int pointSize = sPSize.toUInt();
+//        qDebug()<< "   point-size:" <<  pointSize;
+
+        line.remove(regMatch.capturedStart(), regMatch.capturedEnd() - regMatch.capturedStart());
+        
+        return pointSize;
+    }
+    std::pair<int,int> parseLocation(QString &line)
+    {
+        // Ex: (11KA:-250,0)
+        // Ex: (-250,0)
+        // Ex: (250)
+        //Ex: ([reference object?:] offY, offX)
+        
+//        qDebug() << "parce location" << line;
+        
+        auto offsStr = takeValueStr('(',')', line);
+        if(offsStr.isEmpty()) return  std::pair(0, this->posY);
+            
+        ItemOffset offset;
+        parseOffsets(offsStr, offset);
+        
+        auto x = 0, y = posY;
+        
+        if(!offset.refObjId.isEmpty()){
+            if(offset.refObjId[0]=='0') offset.refObjId = offset.refObjId.mid(1);
+                
+            auto refItem = findItem(offset.refObjId);
+            if(refItem!=nullptr)
+            {
+                x = refItem->location.left();
+                y = refItem->location.top();
+            }
+            else {qDebug() << "unknown object " <<offset.refObjId<< "in"<< line;}
+        }
+       
+        return  std::pair(x + offset.xOffset, y + offset.yOffset);
+    }
+    
     void makeObject(const QString &line)
     {
         //Ex: obj WC "Watercloset 1":WC1 (11KA:-250,0) 200x200
-        static QRegularExpression regName("\\\"(?<title>[^\"]+)\\\"(:(?<id>\\w+))?");
-        static QRegularExpression regSize("(?<width>\\d+)x(?<height>\\d+)");
-        
+       
         auto objType = line.section(' ',0,0).toLower();
         auto params = line.section(' ', 1);
         
@@ -351,43 +470,80 @@ class PlaneLayoutParser{
         }
         
         // get object id and name
-        auto matchName = regName.match(params);
-        if(matchName.hasMatch()){
-            item->id = matchName.captured("id");
-            item->title = matchName.captured("title");
-            params.remove(matchName.capturedStart(), matchName.capturedEnd() - matchName.capturedStart());
-        }
+        auto [id, name] = parseObjName(params);
+        item->id = id;
+        item->title = name;
         
         // get object location        
-        auto offsStr = takeValueStr('(',')',params);
-        ItemOffset offset;
-        parseOffsets(offsStr, offset);
-        
-        auto x = 0, y = posY;
-        if(offset.refObjId.isEmpty()==false){
-            auto refItem = findItem(offset.refObjId);
-            if(refItem!=nullptr)
-            {
-                x = refItem->location.left();
-                y = refItem->location.top();
-            }
-            else {qDebug() << "unknown object " <<offset.refObjId<< "in"<< line;}
-        }
-        
-        // get object size
-        int width=10,height=10;
-        auto matchSize = regSize.match(params);
-        if(matchSize.hasMatch()){
-            width = matchSize.captured("width").toInt();
-            height = matchSize.captured("height").toInt();
-            params.remove(matchName.capturedStart(), matchName.capturedEnd() - matchName.capturedStart());
-        }
-        
-        item->location = QRect(x + offset.xOffset, y + offset.yOffset, width, height);
+        auto [x, y] = parseLocation(params);
+        auto [width, height] = parseSize(params);
+        item->location = QRect(x, y, width, height);
         
         this->planeItems.append(item);
     }
     
+    void makeText(const QString &line)
+    {
+        //Ex: text "hello world1":txtHW (11KA:-250,0) 20 #FF00AA
+        //Ex: text "hello world1" (-40) 10
+        //Ex: text [text]:[id] (OffY, OffX) [FontSize] [color]
+        
+        auto params = line;        
+        auto item = new PlaneItemText();
+        
+        auto [id, title] = parseObjName(params);
+        item->id = id;
+        item->title = title;
+        
+        // get object location  
+        auto [x,y] = parseLocation(params);
+ 
+        // get text color
+        item->color = parseColor(params);
+        
+        // размер фонта
+        int fontsize = parsePointSize(params);
+        item->fontSize = fontsize > 0 ? fontsize : item->fontSize;
+        
+        // расчитаем место под текст
+        QFont font("Inter", item->fontSize);
+        QFontMetrics fm(font);
+        int width = fm.horizontalAdvance(item->title);
+        int height = fm.height();
+        
+        item->location = QRect(x, y, width * 1.03, height);
+        
+        this->planeItems.append(item);        
+    }
+    
+    void makeLineH(const QString &line)
+    {
+        qDebug() << "parse-line:" << line;
+        //Ex: lineH (04D: 150,50) 300 #555555 15pt
+        //Ex: lineH (margin) length [color] [width]
+       
+        auto params = line;        
+        auto item = new PlaneItemLine();
+        
+        // get object location  
+        auto [x,y] = parseLocation(params);
+                
+        item->color = parseColor(params);
+        // размер ширины
+        int width = parsePointSize(params);
+        item->width = width > 0 ? width : item->width;
+        
+        // оставшийся параметр - длинна линии        
+        auto length = params.trimmed().toInt();
+        
+        
+        item->location = QRect(QPoint(x, y), QSize(length , width));
+        
+//        this->posY+= width + 1;  ? надо ли ?
+//        this->posX=0;
+       
+        this->planeItems.append(item);       
+    }
     
     QString getValueStr(QChar symbol1, QChar symbol2, QString &value, bool remove=false){
         int st = value.indexOf(symbol1);
@@ -402,23 +558,6 @@ class PlaneLayoutParser{
         return getValueStr(symbol1, symbol2, value, true);
     }
     
-  /*  void parseOffsets(QString val, ItemOffset &offset){
-        // ex: 12S:+30,-10
-        //12S:+30,-10 # +10 # -22,+56 # 22,-56 # 12S # WC1:-12 # WC1
-        
-        if(val.isEmpty()) return;
-        
-        static QRegularExpression regOffsets("^((?<refobj>\\w+?)(:|$))?((?<yoff>([+-]?\\d+\\b))(,(?<xoff>([+-]?\\d+\\b)))?)?");
- 
-        auto m = regOffsets.match(val);
-        offset.refObjId= m.captured("refobj");
-        offset.yOffset= m.captured("yoff").toInt();
-        offset.xOffset= m.captured("xoff").toInt();
-        
-    }*/
-    
-    
-   
     void parseOffsets(QString val, ItemOffset &offset){
         // ex: 12S:+30,-10
         //12S:+30,-10 # +10 # -22,+56 # 22,-56 # 12S # WC1:-12 # WC1
@@ -457,7 +596,9 @@ class PlaneLayoutParser{
     
     QSize getPlaneDimensions()
     {
-        int maxW=0, maxH=0;
+        // В качестве размера по вертикали возьмем последний this->posY
+        // а вот max(posX) надо найти
+        int maxW=0, maxH=this->posY;
         for(int i=0; i< planeItems.length();i++)
         {
             auto item = planeItems[i];
@@ -467,9 +608,10 @@ class PlaneLayoutParser{
 //            if(item->location.right()> maxW)
 //                qDebug()<<"max "<< item->type<< item->id<< item->title<< item->location;
             maxW = __max(item->location.right(), maxW);
-            maxH = __max(item->location.bottom(), maxH);
+//            maxH = __max(item->location.bottom(), maxH);
         }
-        return QSize(maxW,maxH);
+        
+       return QSize(maxW,maxH);
     }
 };
 

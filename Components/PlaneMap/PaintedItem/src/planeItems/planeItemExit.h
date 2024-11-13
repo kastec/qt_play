@@ -9,7 +9,10 @@ class PlaneItemExit : public PlaneItemBase
 {
   public:
     bool isLeft;
-    PlaneItemExit():PlaneItemBase("exit"){}
+    bool isShort;
+    
+    PlaneItemExit():PlaneItemBase("exit"){
+    }
     
     void draw(QPainter *p, QRect &rect);
     

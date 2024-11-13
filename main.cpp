@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QRegularExpression>
 #include "Classes/bookitem.h"
 #include "Classes/booklist.h"
 #include "Components/PersonList/person.h"
@@ -16,9 +17,11 @@
 #include "Utils/InternetChecker.h"
 #include "Utils/sharedListItem.h"
 
-#include "Components/Test/derivedDeserializeTest.h"
+//#include "Components/Test/derivedDeserializeTest.h"
+#include "Components/Test/reportGroupElements/flightCatering.h"
+#include "Utils/JsonHelper/FileHelper.h"
 #include "DataSources/appMessageBus.h"
-#include "Utils/internetChecker.h"
+//#include "Utils/internetChecker.h"
 #include "Utils/datasamples.h"
 #include "qdebug.h"
 #include <QObject>
@@ -134,12 +137,7 @@ void TestSharedListItems()
 
 int main(int argc, char *argv[])
 {
-  DeserializeTest dest;
-  dest.Test();
-//  TestSharedListItems();
-//  derivedDeserTest();  
-  return 0;
-  
+
 
 //   return 0;
 //  auto spo = new SpriteData();
@@ -157,7 +155,11 @@ int main(int argc, char *argv[])
 //    ch->startMonitoring();
 //    QObject::connect(ch, &InternetChecker::connected, []() {qDebug()<<"Internet - connected - CLIENT";});
 //    QObject::connect(ch, &InternetChecker::disconnected,  []() {qDebug()<<"Internet - disconnetct - CLIENT";});
-     
+    
+    auto data = FileHelper::readAll("C:\\Projects\\Aurora\\0_VM_comm\\data\\flights-data\\20241010-204\\20241010-204-menu-catering.json");
+//    qDebug()<< "catl-1";
+    auto catering = FlightCatering::toObject(data);
+//    qDebug()<<"catl-2";     
  
     RegisterTypes();
     

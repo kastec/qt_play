@@ -55,7 +55,12 @@ int PlaneItemChair::getSeatIndex(int seatInRows, QString seatNumber)
         row = row * 10 + (seatNumber[i].toLatin1()-'0');
     
     QChar letter = seatNumber[len-1];
-    int  index = row * seatInRows + (letter.toLatin1() - 'A');
+    int letterIndex = letter.toLatin1() - 'A';
+    
+    if(letterIndex<0 || letterIndex > seatInRows)
+        return -1; // странная буква - выход за пределы
+    
+    int  index = row * seatInRows + letterIndex;
     return index;
 }
 
@@ -217,14 +222,15 @@ void PlaneItemChair::drawChairInfoBuss(QPainter *painter, const QRect &rect, Cha
     auto nameTextHeight = rect.height() * 0.31;
     QRect nameTextRect(rect.x(),rect.y()+ rect.height() - nameTextHeight, rect.width(), nameTextHeight);
     
+//    drawBusinessPaxName(painter,nameTextRect);
+//    return;
+    
     auto cacheKey = "paxName-" + QString::number(this->rowNumber) + QString(this->letter);
     if(this->hasPassenger)
-        DrawHelper::drawSprite(painter, nameTextRect, cacheKey, nameTextRect.width(),
+        DrawHelper::drawSprite(painter, cacheKey, nameTextRect.width(),
+            nameTextRect, 
             [this](auto p, auto r){drawBusinessPaxName(p, r);},
-            false);
-
-//     drawBusinessPaxName(painter,nameTextRect);
-   
+            true);
 }
 
 void PlaneItemChair::drawBusinessPaxName(QPainter *painter, const QRect &rect)

@@ -161,7 +161,49 @@ namespace DrawHelper
         
     }
     
-    static void drawSprite(QPainter *painter, const QRect &rect, QString cacheKey, int cacheCriteria,
+    /*
+    static void drawSprite(QPainter *painter, QString cacheKey, int cacheCriteria,
+                           const QRect &rect, 
+                           std::function<void(QPainter *painter, const QRect &rect)> drawFunc,
+                           bool smoothPixmapTransform = false,
+                           
+                           // функция нужна, когда мы не знаем точный размер, пока не начали перерисовывать
+                           // это когда требуется вычислить размер блока, в зависимости от FontSize
+                           std::function<QRect(const QRect &rect)> recalcRectFunc = nullptr 
+                           )
+    {
+        //        drawFunc(painter,rect);
+        //        return ;
+        auto sprite = SpriteCache().get(cacheKey, cacheCriteria);
+        
+        if(sprite==nullptr){
+            
+            QRect r = (recalcRectFunc)
+                          ? recalcRectFunc(rect)
+                          : QRect(0,0,rect.width(), rect.height());
+            
+            QPixmap* pixmap = new QPixmap(rect.width(), rect.height());
+            QPainter p(pixmap);
+            
+            
+            drawFunc(&p,r);
+            
+            p.end();
+            
+            SpriteCache().push(cacheKey, pixmap, cacheCriteria);
+            sprite = pixmap;
+        }
+        
+        if(smoothPixmapTransform)
+            painter->setRenderHint(QPainter::SmoothPixmapTransform,smoothPixmapTransform);
+        
+        painter->drawPixmap(rect.topLeft(), *sprite);
+        
+    }*/
+    
+ 
+    static void drawSprite(QPainter *painter, QString cacheKey, int cacheCriteria,
+                           const QRect &rect, 
                            std::function<void(QPainter *painter, const QRect &rect)> drawFunc,
                            bool smoothPixmapTransform = false
                            )
@@ -173,8 +215,9 @@ namespace DrawHelper
         if(sprite==nullptr){
             QPixmap* pixmap = new QPixmap(rect.width(), rect.height());
             QPainter p(pixmap);
-
+            
             QRect r(0,0,rect.width(), rect.height());
+            
             drawFunc(&p,r);
                     
             p.end();
@@ -189,6 +232,7 @@ namespace DrawHelper
         painter->drawPixmap(rect.topLeft(), *sprite);
         
     }
+  
 };
 
 #endif // DRAWHELPER_H

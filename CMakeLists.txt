@@ -81,7 +81,10 @@ qt_add_qml_module(appQtTest1
         Components/PlaneMap/PaintedItem/src/planeItems/planeItemExit.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemExit.cpp
         Components/PlaneMap/PaintedItem/src/planeItems/planeColors.h
 	Components/PlaneMap/PaintedItem/src/planeItems/cardServiceType.h
-	Components/PlaneMap/PaintedItem/src/planeItems/drawHelper.h 		
+	Components/PlaneMap/PaintedItem/src/planeItems/drawHelper.h 
+        Components/PlaneMap/PaintedItem/src/planeItems/planeItemRowNumber.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemRowNumber.cpp
+        Components/PlaneMap/PaintedItem/src/planeItems/planeItemText.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemText.cpp
+        Components/PlaneMap/PaintedItem/src/planeItems/planeItemLine.h Components/PlaneMap/PaintedItem/src/planeItems/planeItemLine.cpp
 	Components/PlaneMap/PaintedItem/paintArea.h
 	Components/PlaneMap/PaintedItem/src/planeMap.h Components/PlaneMap/PaintedItem/src/planeMap.cpp
         Components/PlaneMap/PaintedItem/src/airplaneLayoutContants.h
@@ -102,6 +105,9 @@ qt_add_qml_module(appQtTest1
         Components/Test/derivedDeserializeTest.h
         
         Utils/internetChecker.h Utils/internetChecker.cpp
+        Components/Test/reportGroupElements/flightCatering.h
+        
+        Utils/sharedQList.h
         
         Components/Catering/caterSeatViewModel.h 
         Components/Catering/caterPlaneViewModel.h Components/Catering/caterPlaneViewModel.cpp

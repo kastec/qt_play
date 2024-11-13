@@ -22,7 +22,6 @@ CaterPlaneViewModel::CaterPlaneViewModel(QObject *parent): QObject{parent}
 }
 
 
-
 void CaterPlaneViewModel::loadLayout()
 {
     auto type = "73H";
