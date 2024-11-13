@@ -3,6 +3,7 @@
 #define PLANENAVDRAWER_H
 
 #include <QObject>
+#include "Components/PlaneMap/PaintedItem/src/planeItems/planeItemLine.h"
 #include "planeItems/planeItemExit.h"
 #include "spriteCache.h"
 #include "qpainter.h"
@@ -104,7 +105,10 @@ class PlaneNavDrawer
                 drawSeat(painter, (PlaneItemChair*)i, scale, centerOffset);
             
             if(i->type=="exit")
-                drawExit(painter, (PlaneItemExit*)i, scale, centerOffset);      
+                drawExit(painter, (PlaneItemExit*)i, scale, centerOffset);
+            
+            if(i->type=="line")
+                drawLine(painter, (PlaneItemLine*)i, scale, centerOffset);  
         }
     }
     
@@ -158,6 +162,24 @@ class PlaneNavDrawer
         }
         painter->drawPolyline(points.data(),4);
     }
+    
+    void drawLine(QPainter *painter, PlaneItemLine *line,  qreal scale, QPoint centerOffset)
+    {
+        auto sLoc = line->location.topLeft() / scale + centerOffset;
+        
+        // уменьшим масштаб на 1.2, чтобы лучше отделить сиденья друг от друга
+        auto sSize =  line->location.size() / (scale);
+        if(sSize.height()<1)
+            sSize.setHeight(1);
+        
+        sLoc.setY(sLoc.y() * NAV_SPREAD_ROWS); // из-за растяжения NAV-карты надо изменить Y-координату
+        
+        QRect seatNav(sLoc, sSize);
+        qDebug() << "draw-nav-line:" << seatNav;
+        painter->fillRect(seatNav,  line->color/*->isSelected?QColorConstants::Black:QColorConstants::White*/);   
+    }
+    
+
 };
 
 

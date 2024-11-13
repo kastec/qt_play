@@ -28,7 +28,6 @@ void PlaneMap::createLayout(QList<QString> lines)
     
     planeSearcher.setItems(items);
     //    planeSearcher.print();
-
 }
 
 
