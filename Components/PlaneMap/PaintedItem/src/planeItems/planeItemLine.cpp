@@ -7,7 +7,8 @@ void PlaneItemLine::draw(QPainter *p, QRect &rect)
    // return;
 //     qDebug() << "draw-line:" << location << color << width;
     
-    auto width = zoom(this->width, rect);
+//    auto width = zoom(this->width, rect);
+    auto width = rect.height();
     
     p->save();
     p->setRenderHint(QPainter::Antialiasing);

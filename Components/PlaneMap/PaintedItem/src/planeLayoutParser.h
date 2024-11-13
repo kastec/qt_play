@@ -536,8 +536,7 @@ class PlaneLayoutParser{
         // оставшийся параметр - длинна линии        
         auto length = params.trimmed().toInt();
         
-        
-        item->location = QRect(QPoint(x, y), QSize(length , width));
+        item->location = QRect(QPoint(x, y), QSize(length , width)); // ширина линии - это высота у Rect
         
 //        this->posY+= width + 1;  ? надо ли ?
 //        this->posX=0;
