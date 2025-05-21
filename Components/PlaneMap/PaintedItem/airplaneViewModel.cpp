@@ -46,12 +46,14 @@ void AirplaneViewModel::loadLayout()
 //       auto type = "B737V4"; // ROS
 //    auto type = "B737-900"; // ROS
 //    auto type = "B777ER"; // ROS
+//    auto type = "B777"; // ROS
 //     auto type = "SU9"; // ROS
      //auto type = "Y100"; // ROS
 //    auto type = "B744A"; // ROS
 //    auto type = "B744C-Test"; // ROS
-    auto type = "B744C"; // ROS
+//    auto type = "B744C"; // ROS
     
+        auto type = "B744C"; // ROS
     auto filepath = QString("D:\\0\\airplanes\\%1.airplane").arg(type);
     if(FileHelper::existFile(filepath)==false) return;
     qDebug() << "loading airplane layout" << type;

@@ -167,7 +167,6 @@ class PlaneNavDrawer
     {
         auto sLoc = line->location.topLeft() / scale + centerOffset;
         
-        // уменьшим масштаб на 1.2, чтобы лучше отделить сиденья друг от друга
         auto sSize =  line->location.size() / (scale);
         if(sSize.height()<1)
             sSize.setHeight(1);

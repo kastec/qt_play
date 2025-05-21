@@ -1,11 +1,13 @@
+
 cmake_minimum_required(VERSION 3.16)
 
 project(QtTest1 VERSION 0.1 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.2 COMPONENTS Quick Network REQUIRED)
+find_package(Qt6 6.2 COMPONENTS Quick Network WebSockets REQUIRED)
 
 
 qt_add_executable(appQtTest1
@@ -55,7 +57,13 @@ qt_add_qml_module(appQtTest1
         Utils/JsonHelper/JsonHelper.h
         Utils/JsonHelper/FileHelper.h
         Utils/JsonHelper/qqmlhelper.h
-        Utils/JsonHelper/JsonSerialization.h
+        Utils/JsonHelper/JsonSerialization.h        
+        Utils/futureManager.h
+        Utils/futureManagerTest.h
+        Utils/webSock/wsClient.h
+        
+        Utils/futureManager2.h
+        Utils/futureManager2Test.h
         Components/Test/testAsyncCall.h
         
         Components/Flights/flight.h 
@@ -125,7 +133,9 @@ target_link_libraries(appQtTest1
     PRIVATE Qt6::Quick)
 
 target_link_libraries(appQtTest1  
-    PRIVATE Qt6::Network)
+    PRIVATE Qt6::Network Qt::WebSockets
+)
+
 
 install(TARGETS appQtTest1
     BUNDLE DESTINATION .

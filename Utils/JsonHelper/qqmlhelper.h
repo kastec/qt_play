@@ -76,21 +76,19 @@ protected: \
     private:
 */
 
-
 #define QML_LIST_PROPERTY(type, name) \
-              Q_PROPERTY (type name READ get_##name WRITE set_##name) \
-              Q_PROPERTY (QList<QObject*> name##Display READ get_##name##Display NOTIFY name##DisplayChanged) \
-              public: \
+Q_PROPERTY (type name READ get_##name WRITE set_##name) \
+    Q_PROPERTY (QList<QObject*> name##Display READ get_##name##Display NOTIFY name##DisplayChanged) \
+    public: \
     type name; \
     type get_##name () const { \
         return name ; \
 } \
-    bool set_##name (type value) { \
+    bool set_##name (type valuee) { \
         bool ret = false; \
-        if ((ret = value != name)) { \
-            name = value; \
-            emit name##Changed (name); \
-            emit name##DisplayChanged (name); \
+        if ((ret = valuee != name)) { \
+            name = valuee; \
+            emit name##DisplayChanged (); \
     } \
         return ret; \
 } \
@@ -101,8 +99,7 @@ protected: \
         QT_WARNING_POP  \
 } \
     Q_SIGNALS: \
-    void name##Changed (type name); \
-    void name##DisplayChanged (type name); \
+    void name##DisplayChanged (); \
     private:
 
 

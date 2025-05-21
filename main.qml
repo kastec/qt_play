@@ -26,7 +26,7 @@ Window {
 		anchors.fill: parent
 	}
 	
-    /*
+   /* 
     SwipeView {
         id: swipeView
 
@@ -38,11 +38,12 @@ Window {
         //2 FlickPlan {}
         //1        PlaneMap {}
         //        LayoutCtrl {}
-        //JsonListComp {}
-        //InternetConnectinTest {}
-        //        BookListCtrl {}
-        //         PersonListCtrl {}
+      //  JsonListComp {}
+      //  InternetConnectinTest {}
+                BookListCtrl {}
+              //   PersonListCtrl {}
     }
+	
     PageIndicator {
         anchors.bottom: parent.bottom
         anchors.horizontalCenter: parent.horizontalCenter

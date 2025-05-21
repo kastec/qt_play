@@ -145,7 +145,13 @@ QPixmap* PlaneItemChair::makePixmap(int width, int height, ChairColor &chairColo
 //====  DRAW COMMON SEAT ==========================================
 
 void PlaneItemChair::drawSpriteCommon(QPainter &p, int width, int height, ChairColor &chairColor, QList<QRectF> parts)
-{
+{    
+//    p.save();
+//    QTransform transform;
+//    transform.translate(width, height);
+//    transform.rotate(180);
+//    p.setTransform(transform);
+        
     // место для ног
     if(settings & ChairSettingsEnum::SpacePlus)
         DrawHelper::drawRect(p, parts[1], width,  height, QColorConstants::White, chairColor.border, 7);
@@ -162,7 +168,8 @@ void PlaneItemChair::drawSpriteCommon(QPainter &p, int width, int height, ChairC
         DrawHelper::drawRect(p, parts[3], width,  height, chairColor.font);
     if(settings & ChairSettingsEnum::RightArmrest)
         DrawHelper::drawRect(p, parts[4], width,  height, chairColor.font);
-    
+  
+//    p.restore();
 }
 
 void PlaneItemChair::drawChairInfoCommon(QPainter *painter, const QRect &rect, ChairColor &chairColor)
